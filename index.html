@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cita Auto — Status & Logs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f293d;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.2);
+      --success: #10b981;
+      --success-glow: rgba(16, 185, 129, 0.2);
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --term-bg: #030712;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .title-group h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-success {
+      background: var(--success-glow);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-running {
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .badge-error {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--error);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: currentColor;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #1f293d;
+      border-color: #374151;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .card-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .terminal-container {
+      background: var(--term-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .terminal-header {
+      background: #0f172a;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .terminal-body {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      padding: 16px;
+      height: 480px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #e5e7eb;
+    }
+
+    .terminal-body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .terminal-body::-webkit-scrollbar-track {
+      background: var(--term-bg);
+    }
+
+    .terminal-body::-webkit-scrollbar-thumb {
+      background: #1f293d;
+      border-radius: 4px;
+    }
+
+    .log-line {
+      display: block;
+    }
+
+    .log-time { color: #6b7280; }
+    .log-success { color: #34d399; font-weight: 600; }
+    .log-info { color: #60a5fa; }
+    .log-warn { color: #fbbf24; }
+    .log-err { color: #f87171; }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: auto;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-group">
+        <h1>Cita Auto Consular Bot</h1>
+        <div id="statusBadge" class="badge badge-success">
+          <span class="pulse-dot"></span>
+          <span id="statusText">Active / Ready</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="refreshBtn" class="btn" onclick="fetchLogsAndStatus()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Refresh
+        </button>
+        <a id="actionLink" href="https://github.com/kingrai0093-debug/cita_auto/actions" target="_blank" rel="noopener" class="btn btn-primary">
+          GitHub Actions
+        </a>
+      </div>
+    </header>
+
+    <div class="grid-stats">
+      <div class="card">
+        <span class="card-label">Last Execution Status</span>
+        <span id="statConclusion" class="card-value">SUCCESS</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Execution Mode</span>
+        <span id="statCommand" class="card-value">check (--once)</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Registered Applicants</span>
+        <span id="statApplicants" class="card-value">4 Configured</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Last Checked</span>
+        <span id="statTime" class="card-value">Just now</span>
+      </div>
+    </div>
+
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+        </div>
+        <div id="terminalSub">Execution Logs (Console Output)</div>
+        <button class="btn" style="padding: 2px 8px; font-size: 0.75rem;" onclick="copyLogs()">Copy</button>
+      </div>
+      <pre id="logOutput" class="terminal-body">Loading latest execution logs...</pre>
+    </div>
+
+    <footer>
+      Auto-refreshing every 15s • Hosted via GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    const REPO = 'kingrai0093-debug/cita_auto';
+
+    function formatTime(isoStr) {
+      if (!isoStr) return 'N/A';
+      try {
+        const d = new Date(isoStr);
+        return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      } catch(e) {
+        return isoStr;
+      }
+    }
+
+    async function fetchLogsAndStatus() {
+      const refreshBtn = document.getElementById('refreshBtn');
+      refreshBtn.disabled = true;
+      refreshBtn.style.opacity = '0.6';
+
+      try {
+        // 1. Fetch latest_status.json
+        const statusRes = await fetch('latest_status.json?t=' + Date.now());
+        if (statusRes.ok) {
+          const s = await statusRes.json();
+          document.getElementById('statConclusion').innerText = (s.conclusion || s.status || 'DONE').toUpperCase();
+          document.getElementById('statCommand').innerText = s.command || 'check';
+          if (s.total_applicants) {
+            document.getElementById('statApplicants').innerText = s.total_applicants + ' Configured';
+          }
+          if (s.updated_at) {
+            document.getElementById('statTime').innerText = formatTime(s.updated_at);
+          }
+          if (s.run_url) {
+            document.getElementById('actionLink').href = s.run_url;
+          }
+        }
+
+        // 2. Fetch latest_log.txt
+        const logRes = await fetch('latest_log.txt?t=' + Date.now());
+        if (logRes.ok) {
+          const text = await logRes.text();
+          renderLogs(text);
+        }
+
+        // 3. Query GitHub Actions API for active workflow state
+        try {
+          const ghRes = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`);
+          if (ghRes.ok) {
+            const data = await ghRes.json();
+            if (data.workflow_runs && data.workflow_runs.length > 0) {
+              const latest = data.workflow_runs[0];
+              const badge = document.getElementById('statusBadge');
+              const bText = document.getElementById('statusText');
+              if (latest.status === 'in_progress' || latest.status === 'queued') {
+                badge.className = 'badge badge-running';
+                bText.innerText = 'Running Now...';
+              } else if (latest.conclusion === 'success') {
+                badge.className = 'badge badge-success';
+                bText.innerText = 'Active / Success';
+              } else if (latest.conclusion === 'failure') {
+                badge.className = 'badge badge-error';
+                bText.innerText = 'Failed';
+              }
+            }
+          }
+        } catch(e) {
+          // ignore API limit errors
+        }
+
+      } catch (err) {
+        console.error('Fetch error:', err);
+      } finally {
+        refreshBtn.disabled = false;
+        refreshBtn.style.opacity = '1';
+      }
+    }
+
+    function renderLogs(raw) {
+      const output = document.getElementById('logOutput');
+      output.innerText = raw;
+      output.scrollTop = output.scrollHeight;
+    }
+
+    function copyLogs() {
+      const text = document.getElementById('logOutput').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Logs copied to clipboard');
+    }
+
+    // Initial load & interval
+    fetchLogsAndStatus();
+    setInterval(fetchLogsAndStatus, 15000);
+  </script>
+</body>
+</html>

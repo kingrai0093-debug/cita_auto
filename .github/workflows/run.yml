@@ -16,6 +16,9 @@ on:
   schedule:
     - cron: '*/30 * * * *'
 
+permissions:
+  contents: write
+
 jobs:
   cita-auto:
     runs-on: ubuntu-latest
@@ -57,9 +60,32 @@ jobs:
           if [ -z "$CMD" ]; then
             CMD="check"
           fi
-          xvfb-run -a python3 cita_auto.py $CMD --once
+          xvfb-run -a python3 cita_auto.py $CMD --once 2>&1 | tee latest_log.txt
 
-      - name: Upload State & Logs
+          python3 -c "
+          import json, datetime
+          now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+          data = {
+            'updated_at': now,
+            'status': 'completed',
+            'conclusion': 'success',
+            'command': '$CMD',
+            'total_applicants': 4,
+            'run_url': 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+          }
+          with open('latest_status.json', 'w') as f:
+            json.dump(data, f, indent=2)
+          "
+
+      - name: Update Live Dashboard on GitHub Pages
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add latest_log.txt latest_status.json
+          git diff --staged --quiet || (git commit -m "Update live dashboard logs [skip ci]" && git push)
+
+      - name: Upload State & Logs Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:

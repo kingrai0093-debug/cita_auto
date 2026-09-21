@@ -1,0 +1,18 @@
+[08:46:40] Launching headless browser on GitHub Actions runner (xvfb)...
+[08:46:42] Passed Cloudflare Turnstile & captcha challenge successfully.
+[08:46:42] TOTAL CONFIGURED APPLICANTS: 4
+--------------------------------------------------------------------------------------------
+#   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+1   | C00581897         | ***********      | document   | GNB      | Active           | PENDING   
+2   | C00303363         | ***********      | document   | GNB      | Active           | PENDING   
+3   | C00522628         | ***********      | document   | GNB      | Active           | PENDING   
+4   | C00393019         | ***********      | document   | GNB      | Active           | PENDING   
+--------------------------------------------------------------------------------------------
+[ROUND 1] === Deep Checking 4 Pending Applicant(s) ===
+[08:47:36] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
+[08:48:08] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
+[08:48:47] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
+[08:49:26] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
+==================== ROUND 1 SUMMARY ====================
+[08:49:33] No free appointment slots released by consulate currently.
+[08:49:33] Single-pass check finished (--once); exiting cleanly.
