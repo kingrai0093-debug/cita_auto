@@ -1,0 +1,21 @@
+{
+ "widget_url": "https://www.citaconsular.es/es/hosteds/widgetdefault/YOUR_OFFICE_HASH/",
+ "office_hash": "YOUR_OFFICE_HASH",
+ "office_name": "Embajada de Ejemplo",
+ "lang": "es",
+ "api_base": "https://www.citaconsular.es/onlinebookings/",
+ "accounts": [
+  {
+   "login": "USER_LOGIN_ID",
+   "password": "USER_PASSWORD",
+   "login_type": "document",
+   "profile": {
+    "first_name": "Firstname",
+    "last_name": "Lastname",
+    "email": "user@example.com",
+    "phone": "000000000",
+    "country": "ESP"
+   }
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": 2,
+    "name": "@",
+    "type": "A",
+    "content": "203.0.113.10",
+    "ttl": 300,
+    "priority": null
+  }
+]

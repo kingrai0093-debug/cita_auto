@@ -1,0 +1,23 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# Logs and runtime artifacts
+logs/
+*.log
+*.png
+
+# State and session storage
+state/
+.kilo/
+
+# Secrets and environment configurations
+.env*
+!.env.example
+config.json
