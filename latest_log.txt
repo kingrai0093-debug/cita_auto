@@ -1,40 +1,24 @@
-[09:55:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-21 09:55:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-21 09:55:59] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[09:55:59] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[09:55:59] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[2026-09-21 09:55:59] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[09:55:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
-[2026-09-21 09:55:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
-[09:55:59] trying to reach services view...
-[2026-09-21 09:55:59] trying to reach services view...
-[09:55:59] route=signinaccount
-[2026-09-21 09:55:59] route=signinaccount
-[09:56:02] route=datetime
-[2026-09-21 09:56:02] route=datetime
-[2026-09-21 09:56:02] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[09:56:02] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[09:56:02] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[2026-09-21 09:56:02] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[09:56:04] [LOGIN PHASE] C00303363: Logged in successfully.
-[2026-09-21 09:56:04] [LOGIN PHASE] C00303363: Logged in successfully.
-[09:56:04] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[2026-09-21 09:56:04] tokens: auto-saved login token for C00303363 (token=J4Z6bXvxvBBfhMO... expires in 2h)
-[09:56:04] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[2026-09-21 09:56:04] [TOKEN] Active token cached for C00303363 (token=J4Z6bXvxvBBfhMOk...)
-[09:56:04] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> J4Z6bXvxvBBfhM... (valid 2h)
-[2026-09-21 09:56:04] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> J4Z6bXvxvBBfhM... (valid 2h)
-[09:56:04] 
-[2/3] === Logging in applicant: C00522628 ===
-[2026-09-21 09:56:04] 
-[2/3] === Logging in applicant: C00522628 ===
-[2026-09-21 09:56:09] entered login: C00522628
-[09:56:09] entered login: C00522628
-[09:56:09] entered password
-[2026-09-21 09:56:09] entered password
-[09:56:10] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-21 09:56:10] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-21 09:56:11] login skipped/failed: Message: 
+[09:56:31] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
+[2026-09-21 09:56:31] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
+[09:56:33] [LOGIN PHASE] C00522628: Logged in successfully.
+[2026-09-21 09:56:33] [LOGIN PHASE] C00522628: Logged in successfully.
+[09:56:33] tokens: auto-saved login token for C00522628 (token=YdwCW219cTXcxin... expires in 2h)
+[2026-09-21 09:56:33] tokens: auto-saved login token for C00522628 (token=YdwCW219cTXcxin... expires in 2h)
+[09:56:33] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
+[2026-09-21 09:56:33] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
+[09:56:33] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> YdwCW219cTXcxi... (valid 2h)
+[2026-09-21 09:56:33] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> YdwCW219cTXcxi... (valid 2h)
+[09:56:33] 
+[3/3] === Logging in applicant: C00393019 ===
+[2026-09-21 09:56:33] 
+[3/3] === Logging in applicant: C00393019 ===
+[09:56:38] entered login: C00393019
+[2026-09-21 09:56:38] entered login: C00393019
+[09:56:39] entered password
+[2026-09-21 09:56:39] entered password
+[09:56:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[2026-09-21 09:56:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[09:56:50] login skipped/failed: Message: 
 Stacktrace:
 #0 0x5e5f5b1379fa <unknown>
 #1 0x5e5f5aa6d5b9 <unknown>
@@ -55,7 +39,7 @@ Stacktrace:
 #16 0x71dde82a3dfa <unknown>
 #17 0x71dde83375cc <unknown>
 
-[09:56:11] login skipped/failed: Message: 
+[2026-09-21 09:56:50] login skipped/failed: Message: 
 Stacktrace:
 #0 0x5e5f5b1379fa <unknown>
 #1 0x5e5f5aa6d5b9 <unknown>
@@ -76,25 +60,41 @@ Stacktrace:
 #16 0x71dde82a3dfa <unknown>
 #17 0x71dde83375cc <unknown>
 
-[09:56:11] trying to reach services view...
-[2026-09-21 09:56:11] trying to reach services view...
-[09:56:11] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[2026-09-21 09:56:11] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[09:56:13] transitioned from history to #services
-[2026-09-21 09:56:13] transitioned from history to #services
-[2026-09-21 09:56:13] tokens: auto-saved login token for C00303363 (token=5moJvUVtSVkx8VD... expires in 2h)
-[09:56:13] tokens: auto-saved login token for C00303363 (token=5moJvUVtSVkx8VD... expires in 2h)
-[09:56:13] [TOKEN] Active token cached for C00303363 (token=5moJvUVtSVkx8VDl...)
-[2026-09-21 09:56:13] [TOKEN] Active token cached for C00303363 (token=5moJvUVtSVkx8VDl...)
-[09:56:15] [LOGIN PHASE] C00303363: Logged in successfully.
-[2026-09-21 09:56:15] [LOGIN PHASE] C00303363: Logged in successfully.
-[2026-09-21 09:56:15] tokens: auto-saved login token for C00303363 (token=5moJvUVtSVkx8VD... expires in 2h)
-[09:56:15] tokens: auto-saved login token for C00303363 (token=5moJvUVtSVkx8VD... expires in 2h)
-[09:56:15] [TOKEN] Active token cached for C00303363 (token=5moJvUVtSVkx8VDl...)
-[2026-09-21 09:56:15] [TOKEN] Active token cached for C00303363 (token=5moJvUVtSVkx8VDl...)
-[2026-09-21 09:56:15] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> 5moJvUVtSVkx8V... (valid 2h)
-[09:56:15] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> 5moJvUVtSVkx8V... (valid 2h)
-[09:56:15] 
-[3/4] === Logging in applicant: C00522628 ===
-[2026-09-21 09:56:15] 
-[3/4] === Logging in applicant: C00522628 ===
+[09:56:50] trying to reach services view...
+[2026-09-21 09:56:50] trying to reach services view...
+[09:56:50] route=signinaccount
+[2026-09-21 09:56:50] route=signinaccount
+[09:56:51] transitioned from history to #services
+[2026-09-21 09:56:51] transitioned from history to #services
+[09:56:52] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
+[2026-09-21 09:56:52] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
+[09:56:52] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
+[2026-09-21 09:56:52] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
+[09:56:54] [LOGIN PHASE] C00522628: Logged in successfully.
+[2026-09-21 09:56:54] [LOGIN PHASE] C00522628: Logged in successfully.
+[09:56:54] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
+[2026-09-21 09:56:54] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
+[09:56:54] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
+[2026-09-21 09:56:54] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
+[09:56:54] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> bgCmT8ZtyUI-be... (valid 2h)
+[2026-09-21 09:56:54] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> bgCmT8ZtyUI-be... (valid 2h)
+[09:56:54] 
+[4/4] === Logging in applicant: C00393019 ===
+[2026-09-21 09:56:54] 
+[4/4] === Logging in applicant: C00393019 ===
+[2026-09-21 09:56:59] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
+[09:56:59] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
+[09:56:59] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
+[2026-09-21 09:56:59] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
+[09:56:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
+[2026-09-21 09:56:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
+[09:56:59] trying to reach services view...
+[2026-09-21 09:56:59] trying to reach services view...
+[09:56:59] route=signinaccount
+[2026-09-21 09:56:59] route=signinaccount
+[09:57:02] route=datetime
+[2026-09-21 09:57:02] route=datetime
+[2026-09-21 09:57:02] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
+[09:57:02] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
+[2026-09-21 09:57:02] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
+[09:57:02] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
