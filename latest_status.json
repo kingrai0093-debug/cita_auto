@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-21T08:50:10+05:45",
-  "status": "completed",
-  "conclusion": "success",
-  "command": "check",
+  "updated_at": "2026-09-21T04:00:32.165275+00:00",
+  "status": "in_progress",
+  "conclusion": "live",
+  "command": "run (24/7 live)",
   "total_applicants": 4,
-  "run_url": "https://github.com/kingrai0093-debug/cita_auto/actions/runs/35556073886"
+  "run_url": "https://kingrai0093-debug.github.io/cita_auto/"
 }
