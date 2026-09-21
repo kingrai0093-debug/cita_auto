@@ -1,0 +1,70 @@
+name: Run Cita Auto
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Subcommand to run'
+        required: true
+        default: 'check'
+        type: choice
+        options:
+          - check
+          - run
+          - status
+          - verify
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  cita-auto:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install system packages & python dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Inject configuration & secrets
+        env:
+          CONFIG_JSON: ${{ secrets.CONFIG_JSON }}
+          ENV_DIGITALPLAT: ${{ secrets.ENV_DIGITALPLAT }}
+        run: |
+          if [ -n "$CONFIG_JSON" ]; then
+            echo "$CONFIG_JSON" > config.json
+          fi
+          if [ -n "$ENV_DIGITALPLAT" ]; then
+            echo "$ENV_DIGITALPLAT" > .env.digitalplat
+          fi
+
+      - name: Execute Cita Auto
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          CMD="${{ github.event.inputs.command }}"
+          if [ -z "$CMD" ]; then
+            CMD="check"
+          fi
+          xvfb-run -a python3 cita_auto.py $CMD --once
+
+      - name: Upload State & Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cita-state
+          path: |
+            state/
+            logs/
+          retention-days: 7
