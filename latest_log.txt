@@ -1,91 +1,3 @@
-[09:56:31] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
-[2026-09-21 09:56:31] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
-[09:56:33] [LOGIN PHASE] C00522628: Logged in successfully.
-[2026-09-21 09:56:33] [LOGIN PHASE] C00522628: Logged in successfully.
-[09:56:33] tokens: auto-saved login token for C00522628 (token=YdwCW219cTXcxin... expires in 2h)
-[2026-09-21 09:56:33] tokens: auto-saved login token for C00522628 (token=YdwCW219cTXcxin... expires in 2h)
-[09:56:33] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
-[2026-09-21 09:56:33] [TOKEN] Active token cached for C00522628 (token=YdwCW219cTXcxinq...)
-[09:56:33] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> YdwCW219cTXcxi... (valid 2h)
-[2026-09-21 09:56:33] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> YdwCW219cTXcxi... (valid 2h)
-[09:56:33] 
-[3/3] === Logging in applicant: C00393019 ===
-[2026-09-21 09:56:33] 
-[3/3] === Logging in applicant: C00393019 ===
-[09:56:38] entered login: C00393019
-[2026-09-21 09:56:38] entered login: C00393019
-[09:56:39] entered password
-[2026-09-21 09:56:39] entered password
-[09:56:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-21 09:56:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[09:56:50] login skipped/failed: Message: 
-Stacktrace:
-#0 0x5e5f5b1379fa <unknown>
-#1 0x5e5f5aa6d5b9 <unknown>
-#2 0x5e5f5aac3dfc <unknown>
-#3 0x5e5f5aac4071 <unknown>
-#4 0x5e5f5ab10664 <unknown>
-#5 0x5e5f5ab0d8de <unknown>
-#6 0x5e5f5aab6b8b <unknown>
-#7 0x5e5f5aab7971 <unknown>
-#8 0x5e5f5b0fa667 <unknown>
-#9 0x5e5f5b0f8e95 <unknown>
-#10 0x5e5f5b0e3f55 <unknown>
-#11 0x5e5f5b0f9aea <unknown>
-#12 0x5e5f5b0cc6c9 <unknown>
-#13 0x5e5f5b1219a8 <unknown>
-#14 0x5e5f5b121b45 <unknown>
-#15 0x5e5f5b136353 <unknown>
-#16 0x71dde82a3dfa <unknown>
-#17 0x71dde83375cc <unknown>
-
-[2026-09-21 09:56:50] login skipped/failed: Message: 
-Stacktrace:
-#0 0x5e5f5b1379fa <unknown>
-#1 0x5e5f5aa6d5b9 <unknown>
-#2 0x5e5f5aac3dfc <unknown>
-#3 0x5e5f5aac4071 <unknown>
-#4 0x5e5f5ab10664 <unknown>
-#5 0x5e5f5ab0d8de <unknown>
-#6 0x5e5f5aab6b8b <unknown>
-#7 0x5e5f5aab7971 <unknown>
-#8 0x5e5f5b0fa667 <unknown>
-#9 0x5e5f5b0f8e95 <unknown>
-#10 0x5e5f5b0e3f55 <unknown>
-#11 0x5e5f5b0f9aea <unknown>
-#12 0x5e5f5b0cc6c9 <unknown>
-#13 0x5e5f5b1219a8 <unknown>
-#14 0x5e5f5b121b45 <unknown>
-#15 0x5e5f5b136353 <unknown>
-#16 0x71dde82a3dfa <unknown>
-#17 0x71dde83375cc <unknown>
-
-[09:56:50] trying to reach services view...
-[2026-09-21 09:56:50] trying to reach services view...
-[09:56:50] route=signinaccount
-[2026-09-21 09:56:50] route=signinaccount
-[09:56:51] transitioned from history to #services
-[2026-09-21 09:56:51] transitioned from history to #services
-[09:56:52] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
-[2026-09-21 09:56:52] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
-[09:56:52] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
-[2026-09-21 09:56:52] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
-[09:56:54] [LOGIN PHASE] C00522628: Logged in successfully.
-[2026-09-21 09:56:54] [LOGIN PHASE] C00522628: Logged in successfully.
-[09:56:54] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
-[2026-09-21 09:56:54] tokens: auto-saved login token for C00522628 (token=bgCmT8ZtyUI-beZ... expires in 2h)
-[09:56:54] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
-[2026-09-21 09:56:54] [TOKEN] Active token cached for C00522628 (token=bgCmT8ZtyUI-beZ0...)
-[09:56:54] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> bgCmT8ZtyUI-be... (valid 2h)
-[2026-09-21 09:56:54] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> bgCmT8ZtyUI-be... (valid 2h)
-[09:56:54] 
-[4/4] === Logging in applicant: C00393019 ===
-[2026-09-21 09:56:54] 
-[4/4] === Logging in applicant: C00393019 ===
-[2026-09-21 09:56:59] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
-[09:56:59] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
-[09:56:59] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
-[2026-09-21 09:56:59] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
 [09:56:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
 [2026-09-21 09:56:59] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recuperar contraseña |  |  |  |  |  |  |  |  | Accede a tu cuenta de usuario | USE SOLO MAYÚSCULAS | Acceder | Recuperar contraseña |  |  |  |  |  |  | Cancelar o consultar mis reservas
 [09:56:59] trying to reach services view...
@@ -98,3 +10,91 @@ Stacktrace:
 [09:57:02] tokens: auto-saved login token for C00393019 (token=VBGWV4u0BvXZH8u... expires in 2h)
 [2026-09-21 09:57:02] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
 [09:57:02] [TOKEN] Active token cached for C00393019 (token=VBGWV4u0BvXZH8uO...)
+[09:57:30] login skipped/failed: Message: 
+Stacktrace:
+#0 0x5e5f5b1379fa <unknown>
+#1 0x5e5f5aa6d5b9 <unknown>
+#2 0x5e5f5aac3dfc <unknown>
+#3 0x5e5f5aac4071 <unknown>
+#4 0x5e5f5ab10664 <unknown>
+#5 0x5e5f5ab0d8de <unknown>
+#6 0x5e5f5aab6b8b <unknown>
+#7 0x5e5f5aab7971 <unknown>
+#8 0x5e5f5b0fa667 <unknown>
+#9 0x5e5f5b0f8e95 <unknown>
+#10 0x5e5f5b0e3f55 <unknown>
+#11 0x5e5f5b0f9aea <unknown>
+#12 0x5e5f5b0cc6c9 <unknown>
+#13 0x5e5f5b1219a8 <unknown>
+#14 0x5e5f5b121b45 <unknown>
+#15 0x5e5f5b136353 <unknown>
+#16 0x71dde82a3dfa <unknown>
+#17 0x71dde83375cc <unknown>
+
+[2026-09-21 09:57:30] login skipped/failed: Message: 
+Stacktrace:
+#0 0x5e5f5b1379fa <unknown>
+#1 0x5e5f5aa6d5b9 <unknown>
+#2 0x5e5f5aac3dfc <unknown>
+#3 0x5e5f5aac4071 <unknown>
+#4 0x5e5f5ab10664 <unknown>
+#5 0x5e5f5ab0d8de <unknown>
+#6 0x5e5f5aab6b8b <unknown>
+#7 0x5e5f5aab7971 <unknown>
+#8 0x5e5f5b0fa667 <unknown>
+#9 0x5e5f5b0f8e95 <unknown>
+#10 0x5e5f5b0e3f55 <unknown>
+#11 0x5e5f5b0f9aea <unknown>
+#12 0x5e5f5b0cc6c9 <unknown>
+#13 0x5e5f5b1219a8 <unknown>
+#14 0x5e5f5b121b45 <unknown>
+#15 0x5e5f5b136353 <unknown>
+#16 0x71dde82a3dfa <unknown>
+#17 0x71dde83375cc <unknown>
+
+[2026-09-21 09:57:30] trying to reach services view...
+[09:57:30] trying to reach services view...
+[09:57:30] route=signinaccount
+[2026-09-21 09:57:30] route=signinaccount
+[09:57:31] transitioned from history to #services
+[2026-09-21 09:57:31] transitioned from history to #services
+[2026-09-21 09:57:31] tokens: auto-saved login token for C00393019 (token=f3shHx7WeKNvS0z... expires in 2h)
+[09:57:31] tokens: auto-saved login token for C00393019 (token=f3shHx7WeKNvS0z... expires in 2h)
+[09:57:31] [TOKEN] Active token cached for C00393019 (token=f3shHx7WeKNvS0zf...)
+[2026-09-21 09:57:31] [TOKEN] Active token cached for C00393019 (token=f3shHx7WeKNvS0zf...)
+[09:57:33] [LOGIN PHASE] C00393019: Logged in successfully.
+[2026-09-21 09:57:33] [LOGIN PHASE] C00393019: Logged in successfully.
+[09:57:33] tokens: auto-saved login token for C00393019 (token=f3shHx7WeKNvS0z... expires in 2h)
+[2026-09-21 09:57:33] tokens: auto-saved login token for C00393019 (token=f3shHx7WeKNvS0z... expires in 2h)
+[09:57:33] [TOKEN] Active token cached for C00393019 (token=f3shHx7WeKNvS0zf...)
+[2026-09-21 09:57:33] [TOKEN] Active token cached for C00393019 (token=f3shHx7WeKNvS0zf...)
+[2026-09-21 09:57:33] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> f3shHx7WeKNvS0... (valid 2h)
+[09:57:33] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> f3shHx7WeKNvS0... (valid 2h)
+[09:57:33] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 4
+[2026-09-21 09:57:33] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 4
+[09:57:33] 
+==================================================================
+[2026-09-21 09:57:33] 
+==================================================================
+[09:57:33] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[2026-09-21 09:57:33] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[09:57:33] ==================================================================
+[2026-09-21 09:57:33] ==================================================================
+[09:57:33] Navigating to consular services & calendar...
+[2026-09-21 09:57:33] Navigating to consular services & calendar...
+[09:57:37] === Continuous real-time slot checking active (window=2026-09-21..2027-12-31, interval=5s) ===
+[2026-09-21 09:57:37] === Continuous real-time slot checking active (window=2026-09-21..2027-12-31, interval=5s) ===
+[09:57:40] [09:57:40][ROUND 1] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:57:40] [09:57:40][ROUND 1] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[09:57:48] [09:57:48][ROUND 2] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:57:48] [09:57:48][ROUND 2] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[09:57:57] [09:57:57][ROUND 3] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:57:57] [09:57:57][ROUND 3] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:58:05] [09:58:05][ROUND 4] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[09:58:05] [09:58:05][ROUND 4] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:58:13] [09:58:13][ROUND 5] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[09:58:13] [09:58:13][ROUND 5] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[09:58:22] [09:58:22][ROUND 6] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-21 09:58:22] [09:58:22][ROUND 6] 0 free slots in 2026-09-21..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
