@@ -12,29 +12,29 @@
 #16 0x71dde82a3dfa <unknown>
 #17 0x71dde83375cc <unknown>
 
-[12:00:09] trying to reach services view...
-[2026-09-21 12:00:09] trying to reach services view...
-[2026-09-21 12:00:09] route=signinaccount
-[12:00:09] route=signinaccount
-[2026-09-21 12:00:11] transitioned from history to #services
-[12:00:11] transitioned from history to #services
-[2026-09-21 12:00:11] tokens: auto-saved login token for C00581897 (token=GgmBu29NbU0gEzN... expires in 2h)
-[2026-09-21 12:00:11] [TOKEN] Active token cached for C00581897 (token=GgmBu29NbU0gEzNQ...)
-[12:00:11] tokens: auto-saved login token for C00581897 (token=GgmBu29NbU0gEzN... expires in 2h)
-[12:00:11] [TOKEN] Active token cached for C00581897 (token=GgmBu29NbU0gEzNQ...)
-[2026-09-21 12:00:13] [LOGIN PHASE] C00581897: Logged in successfully.
-[12:00:13] [LOGIN PHASE] C00581897: Logged in successfully.
-[2026-09-21 12:00:13] tokens: auto-saved login token for C00581897 (token=GgmBu29NbU0gEzN... expires in 2h)
-[12:00:13] tokens: auto-saved login token for C00581897 (token=GgmBu29NbU0gEzN... expires in 2h)
-[12:00:13] [TOKEN] Active token cached for C00581897 (token=GgmBu29NbU0gEzNQ...)
-[2026-09-21 12:00:13] [TOKEN] Active token cached for C00581897 (token=GgmBu29NbU0gEzNQ...)
-[12:00:13] [LOGIN PHASE] C00581897: SUCCESS: Fresh token cached -> GgmBu29NbU0gEz... (valid 2h)
-[2026-09-21 12:00:13] [LOGIN PHASE] C00581897: SUCCESS: Fresh token cached -> GgmBu29NbU0gEz... (valid 2h)
-[12:00:13] 
-[2/4] === Logging in applicant: C00303363 ===
-[2026-09-21 12:00:13] 
-[2/4] === Logging in applicant: C00303363 ===
-[2026-09-21 12:00:45] login skipped/failed: Message: 
+[12:01:22] trying to reach services view...
+[2026-09-21 12:01:22] trying to reach services view...
+[2026-09-21 12:01:22] route=signinaccount
+[12:01:22] route=signinaccount
+[2026-09-21 12:01:23] transitioned from history to #services
+[12:01:23] transitioned from history to #services
+[12:01:23] tokens: auto-saved login token for C00522628 (token=cVGjgI8dld9N5%2... expires in 2h)
+[2026-09-21 12:01:23] tokens: auto-saved login token for C00522628 (token=cVGjgI8dld9N5%2... expires in 2h)
+[12:01:23] [TOKEN] Active token cached for C00522628 (token=cVGjgI8dld9N5%2C...)
+[2026-09-21 12:01:23] [TOKEN] Active token cached for C00522628 (token=cVGjgI8dld9N5%2C...)
+[2026-09-21 12:01:25] [LOGIN PHASE] C00522628: Logged in successfully.
+[12:01:25] [LOGIN PHASE] C00522628: Logged in successfully.
+[2026-09-21 12:01:25] tokens: auto-saved login token for C00522628 (token=cVGjgI8dld9N5%2... expires in 2h)
+[12:01:25] tokens: auto-saved login token for C00522628 (token=cVGjgI8dld9N5%2... expires in 2h)
+[12:01:25] [TOKEN] Active token cached for C00522628 (token=cVGjgI8dld9N5%2C...)[2026-09-21 12:01:25] [TOKEN] Active token cached for C00522628 (token=cVGjgI8dld9N5%2C...)
+
+[12:01:25] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> cVGjgI8dld9N5%... (valid 2h)
+[2026-09-21 12:01:25] [LOGIN PHASE] C00522628: SUCCESS: Fresh token cached -> cVGjgI8dld9N5%... (valid 2h)
+[12:01:25] 
+[4/4] === Logging in applicant: C00393019 ===
+[2026-09-21 12:01:25] 
+[4/4] === Logging in applicant: C00393019 ===
+[2026-09-21 12:01:58] login skipped/failed: Message: 
 Stacktrace:
 #0 0x5e5f5b1379fa <unknown>
 #1 0x5e5f5aa6d5b9 <unknown>
@@ -55,7 +55,7 @@ Stacktrace:
 #16 0x71dde82a3dfa <unknown>
 #17 0x71dde83375cc <unknown>
 
-[12:00:45] login skipped/failed: Message: 
+[12:01:58] login skipped/failed: Message: 
 Stacktrace:
 #0 0x5e5f5b1379fa <unknown>
 #1 0x5e5f5aa6d5b9 <unknown>
@@ -76,25 +76,25 @@ Stacktrace:
 #16 0x71dde82a3dfa <unknown>
 #17 0x71dde83375cc <unknown>
 
-[12:00:45] trying to reach services view...
-[2026-09-21 12:00:45] trying to reach services view...
-[2026-09-21 12:00:45] route=signinaccount
-[12:00:45] route=signinaccount
-[2026-09-21 12:00:47] transitioned from history to #services
-[12:00:47] transitioned from history to #services
-[2026-09-21 12:00:47] tokens: auto-saved login token for C00303363 (token=4NtQH7m2PY9zdxQ... expires in 2h)
-[12:00:47] tokens: auto-saved login token for C00303363 (token=4NtQH7m2PY9zdxQ... expires in 2h)
-[12:00:47] [TOKEN] Active token cached for C00303363 (token=4NtQH7m2PY9zdxQz...)
-[2026-09-21 12:00:47] [TOKEN] Active token cached for C00303363 (token=4NtQH7m2PY9zdxQz...)
-[2026-09-21 12:00:49] [LOGIN PHASE] C00303363: Logged in successfully.
-[12:00:49] [LOGIN PHASE] C00303363: Logged in successfully.
-[12:00:49] tokens: auto-saved login token for C00303363 (token=4NtQH7m2PY9zdxQ... expires in 2h)
-[2026-09-21 12:00:49] tokens: auto-saved login token for C00303363 (token=4NtQH7m2PY9zdxQ... expires in 2h)
-[12:00:49] [TOKEN] Active token cached for C00303363 (token=4NtQH7m2PY9zdxQz...)
-[2026-09-21 12:00:49] [TOKEN] Active token cached for C00303363 (token=4NtQH7m2PY9zdxQz...)
-[2026-09-21 12:00:49] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> 4NtQH7m2PY9zdx... (valid 2h)
-[12:00:49] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> 4NtQH7m2PY9zdx... (valid 2h)
-[12:00:49] 
-[3/4] === Logging in applicant: C00522628 ===
-[2026-09-21 12:00:49] 
-[3/4] === Logging in applicant: C00522628 ===
+[12:01:58] trying to reach services view...
+[2026-09-21 12:01:58] trying to reach services view...
+[12:01:58] route=signinaccount
+[2026-09-21 12:01:58] route=signinaccount
+[2026-09-21 12:01:59] transitioned from history to #services
+[12:01:59] transitioned from history to #services
+[12:01:59] tokens: auto-saved login token for C00393019 (token=hWE9wGwktb2GWql... expires in 2h)
+[2026-09-21 12:01:59] tokens: auto-saved login token for C00393019 (token=hWE9wGwktb2GWql... expires in 2h)
+[2026-09-21 12:01:59] [TOKEN] Active token cached for C00393019 (token=hWE9wGwktb2GWql0...)
+[12:01:59] [TOKEN] Active token cached for C00393019 (token=hWE9wGwktb2GWql0...)
+[12:02:01] [LOGIN PHASE] C00393019: Logged in successfully.
+[2026-09-21 12:02:01] [LOGIN PHASE] C00393019: Logged in successfully.
+[12:02:01] tokens: auto-saved login token for C00393019 (token=hWE9wGwktb2GWql... expires in 2h)
+[2026-09-21 12:02:01] tokens: auto-saved login token for C00393019 (token=hWE9wGwktb2GWql... expires in 2h)
+[2026-09-21 12:02:01] [TOKEN] Active token cached for C00393019 (token=hWE9wGwktb2GWql0...)
+[2026-09-21 12:02:01] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> hWE9wGwktb2GWq... (valid 2h)
+[12:02:01] [TOKEN] Active token cached for C00393019 (token=hWE9wGwktb2GWql0...)
+[12:02:01] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> hWE9wGwktb2GWq... (valid 2h)
+[12:02:01] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 4
+[2026-09-21 12:02:01] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 4
