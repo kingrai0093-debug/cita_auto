@@ -1,100 +1,156 @@
-#16 0x704f832a3dfa <unknown>
-#17 0x704f833375cc <unknown>
+[07:02:55] 
+============================================================================================
+[07:02:55]   TOTAL CONFIGURED APPLICANTS: 4
+[07:02:55] ============================================================================================
+[07:02:55] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+[07:02:55] --------------------------------------------------------------------------------------------
+[07:02:55] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
+[07:02:55] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
+[07:02:55] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
+[07:02:55] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
+[07:02:55] ============================================================================================
 
-[2026-09-22 10:47:05] login skipped/failed: Message: 
+[07:02:55] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
+[07:02:56] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33729
+[07:03:11] Connecting to Bookitit (residential proxy & Turnstile solve)...
+[07:03:18] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[07:03:23] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[07:03:27] attempting capsolver cloudflare solve...
+[07:03:28] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[07:03:28] capsolver unavailable/failed; continuing with auto-click loop
+[07:03:29] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[07:03:34] alert: Welcome / Bienvenido
+[07:04:04] challenge passed after 49s
+[07:04:08] captcha gate: clicked Continue / Continuar (attempt 1)
+[07:04:12] captcha gate: passed, widget page served
+[07:04:15] widget booted after 2s (title='Embajada de España en República de Guine')
+[07:04:19] session saved -> state/session.json (5 cookies)
+[07:04:19] 
+[ROUND 1] === Deep Checking 4 Pending Applicant(s) ===
+[07:04:19] 
+[1/4] === DEEP CHECK: APPLICANT C00581897 ===
+[07:04:19] ============================================================
+[07:04:19] [DEEP-CHECK] >>> Checking application: C00581897 <<<
+[07:04:19] ============================================================
+[07:04:23] entered login: C00581897
+[07:04:23] entered password
+[07:04:23] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[07:04:36] tokens: auto-saved login token for C00581897 (token=SdbYKYMPYFRRRuK... expires in 2h)
+[07:04:36] [TOKEN] Active token cached for C00581897 (token=SdbYKYMPYFRRRuKm...)
+[07:04:36] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
+[07:04:36] trying to reach services view...
+[07:04:36] route=signinaccount
+[07:04:49] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[07:04:51] transitioned from history to #services
+[07:04:51] tokens: auto-saved login token for C00581897 (token=SdbYKYMPYFRRRuK... expires in 2h)
+[07:04:51] [TOKEN] Active token cached for C00581897 (token=SdbYKYMPYFRRRuKm...)
+[07:04:53] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
+[07:04:55] accepted terms dialog
+[07:04:57] [DEEP-CHECK] C00581897: Arrived at #services under authenticated session
+[07:04:57] tokens: auto-saved login token for C00581897 (token=SdbYKYMPYFRRRuK... expires in 2h)
+[07:04:57] [TOKEN] Active token cached for C00581897 (token=SdbYKYMPYFRRRuKm...)
+[07:04:57] accepted terms dialog via #bktContinue
+[07:04:57] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[07:05:07] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-09-22..2027-12-31).
+[07:05:09] 
+[2/4] === DEEP CHECK: APPLICANT C00303363 ===
+[07:05:09] ============================================================
+[07:05:09] [DEEP-CHECK] >>> Checking application: C00303363 <<<
+[07:05:09] ============================================================
+[07:05:12] entered login: C00303363
+[07:05:12] entered password
+[07:05:13] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[07:05:26] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | TRÁMITES DE VISADOS · [A] ... SOLICITUD DE VISADO | Cambiar de día | Martes 22 de Septiembre de 2026 | No hay horas disponibles. Inténtelo de nuevo dentro de unos días. | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recu
+[07:05:26] trying to reach services view...
+[07:05:26] route=signinaccount
+[07:05:28] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[07:05:30] transitioned from history to #services
+[07:05:30] tokens: auto-saved login token for C00303363 (token=OKm-FF0f2VvH3X1... expires in 2h)
+[07:05:30] [TOKEN] Active token cached for C00303363 (token=OKm-FF0f2VvH3X1q...)
+[07:05:32] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
+[07:05:34] accepted terms dialog
+[07:05:36] [DEEP-CHECK] C00303363: Arrived at #https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/ under authenticated session
+[07:05:36] tokens: auto-saved login token for C00303363 (token=OKm-FF0f2VvH3X1... expires in 2h)
+[07:05:36] [TOKEN] Active token cached for C00303363 (token=OKm-FF0f2VvH3X1q...)
+[07:05:48] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-09-22..2027-12-31).
+[07:05:49] 
+[3/4] === DEEP CHECK: APPLICANT C00522628 ===
+[07:05:49] ============================================================
+[07:05:49] [DEEP-CHECK] >>> Checking application: C00522628 <<<
+[07:05:49] ============================================================
+[07:06:17] login skipped/failed: Message: 
 Stacktrace:
-#0 0x6230ee5ad9fa <unknown>
-#1 0x6230edee35b9 <unknown>
-#2 0x6230edf39dfc <unknown>
-#3 0x6230edf3a071 <unknown>
-#4 0x6230edf86664 <unknown>
-#5 0x6230edf838de <unknown>
-#6 0x6230edf2cb8b <unknown>
-#7 0x6230edf2d971 <unknown>
-#8 0x6230ee570667 <unknown>
-#9 0x6230ee56ee95 <unknown>
-#10 0x6230ee559f55 <unknown>
-#11 0x6230ee56faea <unknown>
-#12 0x6230ee5426c9 <unknown>
-#13 0x6230ee5979a8 <unknown>
-#14 0x6230ee597b45 <unknown>
-#15 0x6230ee5ac353 <unknown>
-#16 0x704f832a3dfa <unknown>
-#17 0x704f833375cc <unknown>
+#0 0x563d27bcf03a <unknown>
+#1 0x563d275374c9 <unknown>
+#2 0x563d2758d242 <unknown>
+#3 0x563d2758d4a1 <unknown>
+#4 0x563d275d8394 <unknown>
+#5 0x563d275d55ad <unknown>
+#6 0x563d2758083b <unknown>
+#7 0x563d27581621 <unknown>
+#8 0x563d27b935f0 <unknown>
+#9 0x563d27b91c6a <unknown>
+#10 0x563d27b7c9f5 <unknown>
+#11 0x563d27b9292a <unknown>
+#12 0x563d27b65d10 <unknown>
+#13 0x563d27bba158 <unknown>
+#14 0x563d27bba2f5 <unknown>
+#15 0x563d27bcdbc3 <unknown>
+#16 0x7f0e3189cb84 <unknown>
+#17 0x7f0e31929d6c <unknown>
 
-[10:47:05] trying to reach services view...
-[2026-09-22 10:47:05] trying to reach services view...
-[10:47:05] route=signinaccount
-[2026-09-22 10:47:05] route=signinaccount
-[10:47:07] transitioned from history to #services
-[2026-09-22 10:47:07] transitioned from history to #services
-[10:47:07] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
-[2026-09-22 10:47:07] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
-[10:47:07] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
-[2026-09-22 10:47:07] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
-[10:47:09] [LOGIN PHASE] C00393019: Logged in successfully.
-[2026-09-22 10:47:09] [LOGIN PHASE] C00393019: Logged in successfully.
-[10:47:09] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
-[2026-09-22 10:47:09] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
-[2026-09-22 10:47:09] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
-[2026-09-22 10:47:09] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> rNxIlKIybHMdPh... (valid 2h)
-[10:47:09] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
-[10:47:09] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> rNxIlKIybHMdPh... (valid 2h)
-[10:47:09] 
-[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 2
-[2026-09-22 10:47:09] 
-[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 2
-[10:47:30] [10:47:30][ROUND 145] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:47:30] [10:47:30][ROUND 145] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:47:57] [10:47:57][ROUND 146] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:47:57] [10:47:57][ROUND 146] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:48:32] [10:48:32][ROUND 147] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:48:32] [10:48:32][ROUND 147] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:49:02] [10:49:02][ROUND 148] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:49:02] [10:49:02][ROUND 148] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:49:35] [10:49:35][ROUND 149] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:49:35] [10:49:35][ROUND 149] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:50:04] [10:50:04][ROUND 150] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:50:04] [10:50:04][ROUND 150] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:50:35] [10:50:35][ROUND 151] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:50:35] [10:50:35][ROUND 151] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:51:06] [10:51:06][ROUND 152] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:51:06] [10:51:06][ROUND 152] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:51:42] [10:51:42][ROUND 153] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:51:42] [10:51:42][ROUND 153] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:52:12] [10:52:12][ROUND 154] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:52:12] [10:52:12][ROUND 154] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:52:45] [10:52:45][ROUND 155] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:52:45] [10:52:45][ROUND 155] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:53:18] [10:53:18][ROUND 156] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:53:18] [10:53:18][ROUND 156] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:53:58] [10:53:58][ROUND 157] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:53:58] [10:53:58][ROUND 157] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:54:31] [10:54:31][ROUND 158] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:54:31] [10:54:31][ROUND 158] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:55:04] [10:55:04][ROUND 159] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:55:04] [10:55:04][ROUND 159] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:55:36] [10:55:36][ROUND 160] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:55:36] [10:55:36][ROUND 160] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:56:15] [10:56:15][ROUND 161] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:56:15] [10:56:15][ROUND 161] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:56:48] [10:56:48][ROUND 162] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:56:48] [10:56:48][ROUND 162] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:57:28] [10:57:28][ROUND 163] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:57:28] [10:57:28][ROUND 163] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:58:16] [10:58:16][ROUND 164] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:58:16] [10:58:16][ROUND 164] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:59:00] [10:59:00][ROUND 165] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:59:00] [10:59:00][ROUND 165] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:59:32] [10:59:32][ROUND 166] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:59:32] [10:59:32][ROUND 166] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[11:00:05] [11:00:05][ROUND 167] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 11:00:05] [11:00:05][ROUND 167] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[11:00:38] [11:00:38][ROUND 168] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 11:00:38] [11:00:38][ROUND 168] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[11:01:17] [11:01:17][ROUND 169] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 11:01:17] [11:01:17][ROUND 169] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[11:01:44] [11:01:44][ROUND 170] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 11:01:44] [11:01:44][ROUND 170] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[11:02:18] [11:02:18][ROUND 171] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 11:02:18] [11:02:18][ROUND 171] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[07:06:17] trying to reach services view...
+[07:06:17] route=signinaccount
+[07:06:19] transitioned from history to #services
+[07:06:19] tokens: auto-saved login token for C00522628 (token=s4gi6t%2Cb6wUt6... expires in 2h)
+[07:06:19] [TOKEN] Active token cached for C00522628 (token=s4gi6t%2Cb6wUt6j...)
+[07:06:21] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
+[07:06:24] [DEEP-CHECK] C00522628: Arrived at #services under authenticated session
+[07:06:24] tokens: auto-saved login token for C00522628 (token=s4gi6t%2Cb6wUt6... expires in 2h)
+[07:06:24] [TOKEN] Active token cached for C00522628 (token=s4gi6t%2Cb6wUt6j...)
+[07:06:37] [DEEP-CHECK] C00522628: No free slots currently open in date window (2026-09-22..2027-12-31).
+[07:06:39] 
+[4/4] === DEEP CHECK: APPLICANT C00393019 ===
+[07:06:39] ============================================================
+[07:06:39] [DEEP-CHECK] >>> Checking application: C00393019 <<<
+[07:06:39] ============================================================
+[07:07:07] login skipped/failed: Message: 
+Stacktrace:
+#0 0x563d27bcf03a <unknown>
+#1 0x563d275374c9 <unknown>
+#2 0x563d2758d242 <unknown>
+#3 0x563d2758d4a1 <unknown>
+#4 0x563d275d8394 <unknown>
+#5 0x563d275d55ad <unknown>
+#6 0x563d2758083b <unknown>
+#7 0x563d27581621 <unknown>
+#8 0x563d27b935f0 <unknown>
+#9 0x563d27b91c6a <unknown>
+#10 0x563d27b7c9f5 <unknown>
+#11 0x563d27b9292a <unknown>
+#12 0x563d27b65d10 <unknown>
+#13 0x563d27bba158 <unknown>
+#14 0x563d27bba2f5 <unknown>
+#15 0x563d27bcdbc3 <unknown>
+#16 0x7f0e3189cb84 <unknown>
+#17 0x7f0e31929d6c <unknown>
+
+[07:07:07] trying to reach services view...
+[07:07:07] route=signinaccount
+[07:07:08] transitioned from history to #services
+[07:07:08] tokens: auto-saved login token for C00393019 (token=edz97mpo0QDAkix... expires in 2h)
+[07:07:08] [TOKEN] Active token cached for C00393019 (token=edz97mpo0QDAkixc...)
+[07:07:10] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
+[07:07:14] [DEEP-CHECK] C00393019: Arrived at #services under authenticated session
+[07:07:14] tokens: auto-saved login token for C00393019 (token=edz97mpo0QDAkix... expires in 2h)
+[07:07:14] [TOKEN] Active token cached for C00393019 (token=edz97mpo0QDAkixc...)
+[07:07:25] [DEEP-CHECK] C00393019: No free slots currently open in date window (2026-09-22..2027-12-31).
+[07:07:27] 
+==================== ROUND 1 SUMMARY ====================
+[07:07:27]   C00581897: 0 slots available in configured window
+[07:07:27]   C00303363: 0 slots available in configured window
+[07:07:27]   C00522628: 0 slots available in configured window
+[07:07:27]   C00393019: 0 slots available in configured window
+[07:07:27] ============================================================
+
+[07:07:27] Single-pass check finished (--once); exiting.
