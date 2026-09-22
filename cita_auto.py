@@ -480,30 +480,159 @@ class ApiBrowser:
         return self.post("confirmclient/validate", p)
 
 
+def ensure_datetime_view(drv, conf, logfn=log):
+    """Ensure the browser is routed cleanly to #datetime view with terms, service, and agenda selected."""
+    from selenium.webdriver.common.by import By
+    try:
+        cur_url = drv.current_url
+        hash_route = (cur_url.split("#")[-1] or "").lower()
+        if "datetime" in hash_route:
+            dp = drv.find_elements(By.CSS_SELECTOR, "#idDivBktDatetimeDatePicker")
+            if dp and dp[0].is_displayed():
+                return True
+        accept_alert_any(drv)
+        auto_click_robot_captcha(drv, logfn)
+        if "services" not in hash_route and "datetime" not in hash_route and "agenda" not in hash_route:
+            drv.get(conf["widget_url"] + "#services")
+            time.sleep(1.2)
+        accept_terms(drv, conf, logfn)
+        select_service(drv, conf, logfn)
+        time.sleep(0.8)
+        select_agenda(drv, logfn)
+        time.sleep(1.0)
+        cur_url = drv.current_url
+        return "datetime" in (cur_url.split("#")[-1] or "").lower()
+    except Exception as e:
+        logfn(f"ensure_datetime_view note: {e}")
+        return False
+
+
 def browser_api_check(drv, conf, verbose=True):
-    """Poll availability through the live browser lane directly via widget state and DOM. Returns (slots, why)."""
+    """Poll availability through the live browser lane directly via:
+    1. In-page API queries (ApiBrowser.datetime chunked across date window)
+    2. In-page client memory inspection (any window.oClientValues* / bkt_init_widget)
+    3. Multi-month deep DOM & datepicker inspection (clicks selectable days, waits for slots, advances months).
+    Returns (slots, why).
+    """
     from selenium.common.exceptions import WebDriverException
     try:
         cur_url = drv.current_url
     except WebDriverException as e:
         return None, f"browser disconnected: {e}"
 
-    hash_route = cur_url.split("#")[-1] or ""
-    if "datetime" not in hash_route:
-        accept_terms(drv, conf)
-        select_service(drv, conf)
-        time.sleep(2)
+    slots = []
+    seen = set()
 
+    # Clear any blocking modals/alerts
     try:
-        res = drv.execute_script("""
-            let o = window.oClientValues_248295 || {};
-            let slots = [];
+        accept_alert_any(drv)
+        auto_click_robot_captcha(drv)
+    except Exception:
+        pass
 
-            // 1. Direct DOM slot elements
-            let slotEls = document.querySelectorAll('.clsDivDatetimeSlot, a[href*="#selecttime"]');
-            for (let el of slotEls) {
+    # Ensure browser is routed to booking flow (#datetime)
+    hash_route = (cur_url.split("#")[-1] or "").lower()
+    if "datetime" not in hash_route:
+        ensure_datetime_view(drv, conf)
+
+    # LAYER 1: In-Page Authenticated API Query (Same-Origin XHR via live browser session)
+    try:
+        bapi = ApiBrowser(drv, conf)
+        d_start = conf.get("date_start", datetime.now().strftime("%Y-%m-%d"))
+        d_end = conf.get("date_end", (datetime.now() + timedelta(days=90)).strftime("%Y-%m-%d"))
+        try:
+            start_dt = datetime.strptime(d_start, "%Y-%m-%d")
+            end_dt = datetime.strptime(d_end, "%Y-%m-%d")
+        except Exception:
+            start_dt = datetime.now()
+            end_dt = start_dt + timedelta(days=90)
+
+        cur_dt = start_dt
+        # Query in 40-day chunks so Bookitit's maxDays limit is respected
+        while cur_dt < end_dt:
+            next_dt = min(cur_dt + timedelta(days=40), end_dt)
+            s_str = cur_dt.strftime("%Y-%m-%d")
+            e_str = next_dt.strftime("%Y-%m-%d")
+            avail = bapi.datetime(s_str, e_str)
+            parsed = parse_slots(avail)
+            for s in parsed:
+                k = (s.get("date"), s.get("time"))
+                if k not in seen:
+                    seen.add(k)
+                    slots.append(s)
+            if slots and len(slots) >= 50:
+                break
+            cur_dt = next_dt + timedelta(days=1)
+    except Exception:
+        pass
+
+    # LAYER 2 & 3: Dynamic in-memory state inspection + DOM slot scraping
+    try:
+        dom_res = drv.execute_script("""
+            let found = [];
+            let seenKeys = {};
+
+            function addSlot(d, t, meta) {
+                if (!d || !t) return;
+                d = String(d).trim();
+                t = String(t).trim();
+                let k = d + '|' + t;
+                if (!seenKeys[k]) {
+                    seenKeys[k] = true;
+                    found.push({date: d, time: t, meta: meta || {}});
+                }
+            }
+
+            // 1. Dynamic memory scan across ANY object on window matching oClientValues or bkt_init_widget
+            for (let k of Object.keys(window)) {
+                if (k.toLowerCase().includes('clientvalues') || k === 'bkt_init_widget') {
+                    try {
+                        let o = window[k];
+                        if (!o || typeof o !== 'object') continue;
+                        let rawList = [];
+                        if (Array.isArray(o.slots)) rawList = o.slots;
+                        else if (Array.isArray(o.Slots)) rawList = o.Slots;
+                        else if (o.datetime && Array.isArray(o.datetime.Slots)) rawList = o.datetime.Slots;
+                        else if (o.datetime && Array.isArray(o.datetime.slots)) rawList = o.datetime.slots;
+                        else if (Array.isArray(o.availableSlots)) rawList = o.availableSlots;
+                        for (let s of rawList) {
+                            let d = s.date || s.datetime || s.day || '';
+                            if (!d) continue;
+                            if (typeof s.time === 'string' && s.time) addSlot(d, s.time, s);
+                            else if (Array.isArray(s.times)) {
+                                for (let t of s.times) {
+                                    if (typeof t === 'string') addSlot(d, t, s);
+                                    else if (t && t.time) addSlot(d, t.time, t);
+                                }
+                            } else if (s.times && typeof s.times === 'object') {
+                                for (let t of Object.keys(s.times)) addSlot(d, t, s.times[t]);
+                            }
+                        }
+                    } catch(e) {}
+                }
+            }
+
+            // 2. Direct DOM slot scraping across all known Bookitit selectors
+            let selectors = [
+                '.clsDivDatetimeSlot',
+                'a[href*="#selecttime"]',
+                '#idTimeListTable a',
+                '#idDivBktSlots a',
+                '#idDivBktSlots li',
+                '#idDivBktSlots input',
+                '.clsBktSlot a',
+                '.clsBktSlot li',
+                '.clsBktTime a',
+                '.clsBktTime li',
+                'td.clsTdTime a',
+                'button[data-time]',
+                'a[data-handler="selectTime"]',
+                'input[type=radio][name*="time"]'
+            ];
+            let els = document.querySelectorAll(selectors.join(', '));
+            for (let el of els) {
                 let d = el.getAttribute('data-date') || '';
-                let t = el.getAttribute('data-time') || '';
+                let t = el.getAttribute('data-time') || el.getAttribute('value') || '';
                 let href = el.getAttribute('href') || '';
                 if (href && href.includes('#selecttime/')) {
                     let parts = href.split('#selecttime/')[1].split('/');
@@ -512,66 +641,126 @@ def browser_api_check(drv, conf, verbose=True):
                         t = t || parts[1];
                     }
                 }
-                if (d && t) {
-                    slots.push({date: d, time: t});
+                if (!t) {
+                    let txt = (el.innerText || el.textContent || '').trim();
+                    let m = txt.match(/(\\d{1,2}:\\d{2})/);
+                    if (m) t = m[1];
                 }
+                if (d && t) addSlot(d, t);
             }
 
-            // 2. Client state inspection across all variants (o.slots, o.Slots, o.datetime, etc.)
-            let rawList = [];
-            if (Array.isArray(o.slots)) rawList = o.slots;
-            else if (Array.isArray(o.Slots)) rawList = o.Slots;
-            else if (o.datetime && Array.isArray(o.datetime.Slots)) rawList = o.datetime.Slots;
-            else if (o.datetime && Array.isArray(o.datetime.slots)) rawList = o.datetime.slots;
-            else if (Array.isArray(o.availableSlots)) rawList = o.availableSlots;
-
-            for (let s of rawList) {
-                let d = s.date || s.datetime || '';
-                if (!d) continue;
-                if (typeof s.time === 'string' && s.time) {
-                    slots.push({date: d, time: s.time});
-                } else if (s.times && typeof s.times === 'object') {
-                    for (let t of Object.keys(s.times)) {
-                        if (t) slots.push({date: d, time: t});
-                    }
-                }
-            }
-
-            // 3. Datepicker selectable days: if datepicker has available days, trigger the first one to render its slots
-            let selectableDays = document.querySelectorAll('#idDivBktDatetimeDatePicker td[data-handler="selectDay"]');
-            let datepickerDays = [];
-            for (let td of selectableDays) {
-                let m = td.getAttribute('data-month');
-                let y = td.getAttribute('data-year');
-                let a = td.querySelector('a');
-                let d = a ? a.innerText.trim() : td.innerText.trim();
-                if (y && m !== null && d) {
-                    let mm = String(parseInt(m) + 1).padStart(2, '0');
-                    let dd = String(d).padStart(2, '0');
-                    datepickerDays.push(`${y}-${mm}-${dd}`);
-                }
-            }
-            if (slots.length === 0 && selectableDays.length > 0) {
-                let target = selectableDays[0].querySelector('a') || selectableDays[0];
-                try { target.click(); } catch(e){}
-            }
-
-            let noSlots = document.getElementById('idDivNotAvailableSlotsContainer');
-            let isNoSlots = noSlots ? (noSlots.offsetParent !== null) : false;
-            return {slots: slots, noSlots: isNoSlots, datepickerDays: datepickerDays, max: o.max};
+            return found;
         """)
-    except WebDriverException as e:
-        return None, f"script error: {e}"
+        if dom_res and isinstance(dom_res, list):
+            for s in dom_res:
+                k = (s.get("date"), s.get("time"))
+                if k not in seen:
+                    seen.add(k)
+                    slots.append(s)
+    except Exception:
+        pass
 
-    dom_slots = res.get("slots", []) if isinstance(res, dict) else []
-    slots = []
-    seen = set()
-    for s in dom_slots:
-        k = (s.get("date"), s.get("time"))
-        if k not in seen:
-            seen.add(k)
-            slots.append(s)
+    # LAYER 4: Multi-Month Calendar Datepicker Deep Check
+    # If no slots found yet, inspect the Datepicker across up to 12 upcoming months
+    if not slots:
+        for month_idx in range(12):
+            try:
+                days_info = drv.execute_script("""
+                    let days = document.querySelectorAll('#idDivBktDatetimeDatePicker td[data-handler="selectDay"]');
+                    let found = [];
+                    for (let td of days) {
+                        let m = td.getAttribute('data-month');
+                        let y = td.getAttribute('data-year');
+                        let a = td.querySelector('a');
+                        let d = a ? a.innerText.trim() : td.innerText.trim();
+                        if (y && m !== null && d) {
+                            let mm = String(parseInt(m) + 1).padStart(2, '0');
+                            let dd = String(d).padStart(2, '0');
+                            found.push({date: `${y}-${mm}-${dd}`, day: d});
+                        }
+                    }
+                    return found;
+                """)
+                if days_info:
+                    if verbose:
+                        log(f"datepicker month {month_idx + 1}: found {len(days_info)} selectable day(s): {[d['date'] for d in days_info]}")
+                    for d_info in days_info[:5]:
+                        target_day = d_info["day"]
+                        target_date = d_info["date"]
+                        # Click the selectable day to trigger time rendering
+                        drv.execute_script(f"""
+                            let days = document.querySelectorAll('#idDivBktDatetimeDatePicker td[data-handler="selectDay"]');
+                            for (let td of days) {{
+                                let a = td.querySelector('a') || td;
+                                if (a.innerText.trim() === '{target_day}') {{
+                                    a.click();
+                                    break;
+                                }}
+                            }}
+                        """)
+                        # Wait for time slots to render in DOM
+                        time.sleep(0.7)
+                        new_slots = drv.execute_script("""
+                            let found = [];
+                            let selectors = ['.clsDivDatetimeSlot', 'a[href*="#selecttime"]', '#idTimeListTable a',
+                                             '#idDivBktSlots a', '#idDivBktSlots li', '.clsBktSlot a',
+                                             '.clsBktTime a', 'td.clsTdTime a', 'button[data-time]', 'a[data-handler="selectTime"]'];
+                            let els = document.querySelectorAll(selectors.join(', '));
+                            for (let el of els) {
+                                let d = el.getAttribute('data-date') || '';
+                                let t = el.getAttribute('data-time') || el.getAttribute('value') || '';
+                                let href = el.getAttribute('href') || '';
+                                if (href && href.includes('#selecttime/')) {
+                                    let parts = href.split('#selecttime/')[1].split('/');
+                                    if (parts.length >= 2) {
+                                        d = d || parts[0];
+                                        t = t || parts[1];
+                                    }
+                                }
+                                if (!t) {
+                                    let txt = (el.innerText || el.textContent || '').trim();
+                                    let m = txt.match(/(\\d{1,2}:\\d{2})/);
+                                    if (m) t = m[1];
+                                }
+                                if (t) found.push({date: d, time: t});
+                            }
+                            return found;
+                        """)
+                        if new_slots:
+                            for s in new_slots:
+                                d = s.get("date") or target_date
+                                t = s.get("time")
+                                if d and t:
+                                    k = (d, t)
+                                    if k not in seen:
+                                        seen.add(k)
+                                        slots.append({"date": d, "time": t})
+                        else:
+                            # Selectable day is confirmed open on consulate calendar!
+                            k = (target_date, "09:00")
+                            if k not in seen:
+                                seen.add(k)
+                                slots.append({"date": target_date, "time": "09:00", "meta": {"day_only": True}})
 
+                    if slots:
+                        break
+
+                # Advance to next month in datepicker
+                adv = drv.execute_script("""
+                    let nextBtn = document.querySelector('#idDivBktDatetimeDatePicker .ui-datepicker-next:not(.ui-state-disabled), .ui-datepicker-next:not(.ui-state-disabled), a[data-handler="next"]');
+                    if (nextBtn && nextBtn.offsetParent !== null) {
+                        nextBtn.click();
+                        return true;
+                    }
+                    return false;
+                """)
+                if not adv:
+                    break
+                time.sleep(0.4)
+            except Exception:
+                break
+
+    slots = sorted(slots, key=lambda x: (x.get("date", ""), x.get("time", "")))
     if verbose and slots:
         log(f"availability: {len(slots)} free slot(s) in window {conf['date_start']}..{conf['date_end']}")
         for s in slots[:50]:
@@ -713,23 +902,87 @@ def conf_get(conf, key, default=None):
 
 
 def parse_slots(resp):
+    """Parse slots from any Bookitit response schema: Slots/slots/availableSlots,
+    dict or list times, flat slot lists, or embedded datetime objects."""
     slots = []
-    if not isinstance(resp, dict):
+    if resp is None:
         return slots
-    # if response is an error/HTML wrapper, no slots
-    if resp.get("_error") or resp.get("_blocked") or resp.get("_raw"):
+
+    raw_list = []
+    if isinstance(resp, list):
+        raw_list = resp
+    elif isinstance(resp, dict):
+        if resp.get("_error") or resp.get("_blocked") or resp.get("_raw"):
+            return slots
+        raw_list = (resp.get("Slots") or resp.get("slots") or 
+                    resp.get("availableSlots") or resp.get("data"))
+        if not raw_list and isinstance(resp.get("datetime"), dict):
+            raw_list = resp["datetime"].get("Slots") or resp["datetime"].get("slots")
+        if not raw_list and isinstance(resp.get("response"), dict):
+            raw_list = resp["response"].get("Slots") or resp["response"].get("slots")
+        if not raw_list and not isinstance(raw_list, list):
+            raw_list = []
+            for k, v in resp.items():
+                if isinstance(k, str) and len(k) == 10 and k.count("-") == 2:
+                    raw_list.append({"date": k, "times": v})
+    else:
         return slots
-    for s in resp.get("Slots", []) or []:
-        date = s.get("date")
+
+    if not isinstance(raw_list, list):
+        return slots
+
+    seen = set()
+    for s in raw_list:
+        if not isinstance(s, dict):
+            continue
+        date = s.get("date") or s.get("datetime") or s.get("day") or s.get("Date")
         if not date or not isinstance(date, str):
             continue
-        times = s.get("times") or {}
-        if not isinstance(times, dict):
-            continue
-        for t, meta in times.items():
-            if not t or not isinstance(t, str):
+        date = date.strip()
+        if "T" in date or " " in date:
+            parts = date.replace("T", " ").split()
+            if len(parts) >= 2:
+                d, t = parts[0], parts[1][:5]
+                k = (d, t)
+                if k not in seen:
+                    seen.add(k)
+                    slots.append({"date": d, "time": t, "meta": s})
                 continue
-            slots.append({"date": date, "time": t, "meta": meta})
+
+        direct_time = s.get("time") or s.get("Time") or s.get("hour")
+        if direct_time and isinstance(direct_time, str):
+            t = direct_time.strip()
+            k = (date, t)
+            if k not in seen:
+                seen.add(k)
+                slots.append({"date": date, "time": t, "meta": s.get("meta", {}) if isinstance(s.get("meta"), dict) else {}})
+
+        times = s.get("times") or s.get("Times") or s.get("slots") or s.get("hours")
+        if isinstance(times, dict):
+            for t, meta in times.items():
+                if isinstance(t, str) and t.strip():
+                    t_clean = t.strip()
+                    k = (date, t_clean)
+                    if k not in seen:
+                        seen.add(k)
+                        slots.append({"date": date, "time": t_clean, "meta": meta if isinstance(meta, dict) else {}})
+        elif isinstance(times, (list, tuple)):
+            for item in times:
+                if isinstance(item, str) and item.strip():
+                    t_clean = item.strip()
+                    k = (date, t_clean)
+                    if k not in seen:
+                        seen.add(k)
+                        slots.append({"date": date, "time": t_clean, "meta": {}})
+                elif isinstance(item, dict):
+                    t = item.get("time") or item.get("slot") or item.get("hour")
+                    if t and isinstance(t, str):
+                        t_clean = t.strip()
+                        k = (date, t_clean)
+                        if k not in seen:
+                            seen.add(k)
+                            slots.append({"date": date, "time": t_clean, "meta": item})
+
     return sorted(slots, key=lambda x: (x["date"], x["time"]))
 
 
@@ -2162,19 +2415,19 @@ def watch_mode(conf, selector=None):
                     log(f"no free slots yet in window {d_start}..{d_end}; "
                         f"checking date and time again in {interval}s...")
                     time.sleep(interval)
-                    # In browser lane, refresh widget availability by fast in-page service re-query
                     if auto_book and drv is not None:
                         try:
                             accept_alert_any(drv)
                             auto_click_robot_captcha(drv, log)
-                            drv.execute_script("""
-                                let back = document.querySelector('.clsDivSubHeaderBackButton') || document.querySelector('a[href*="#services"]');
-                                if (back) back.click();
-                                else window.location.hash = '#services';
-                            """)
-                            time.sleep(0.8)
-                            accept_terms(drv, conf, log)
-                            select_service(drv, conf, log)
+                            cur_url = drv.current_url
+                            if "datetime" not in (cur_url.split("#")[-1] or "").lower():
+                                ensure_datetime_view(drv, conf, log)
+                            else:
+                                drv.execute_script("""
+                                    if (window.jQuery && window.jQuery('#idDivBktDatetimeDatePicker').length) {
+                                        try { window.jQuery('#idDivBktDatetimeDatePicker').datepicker('refresh'); } catch(e){}
+                                    }
+                                """)
                         except Exception as e:
                             log(f"lane refresh warning: {e}")
                             if any(k in str(e).lower() for k in ("invalid session", "disconnected", "no such window")):
@@ -3341,6 +3594,33 @@ def select_agenda(drv, logfn=log):
         logfn(f"agenda select: {e}")
 
 
+def ensure_datetime_view(drv, conf, logfn=log):
+    """Ensure the browser is routed cleanly to #datetime view with terms, service, and agenda selected."""
+    from selenium.webdriver.common.by import By
+    try:
+        cur_url = drv.current_url
+        hash_route = (cur_url.split("#")[-1] or "").lower()
+        if "datetime" in hash_route:
+            dp = drv.find_elements(By.CSS_SELECTOR, "#idDivBktDatetimeDatePicker")
+            if dp and dp[0].is_displayed():
+                return True
+        accept_alert_any(drv)
+        auto_click_robot_captcha(drv, logfn)
+        if "services" not in hash_route and "datetime" not in hash_route and "agenda" not in hash_route:
+            drv.get(conf["widget_url"] + "#services")
+            time.sleep(1.2)
+        accept_terms(drv, conf, logfn)
+        select_service(drv, conf, logfn)
+        time.sleep(0.8)
+        select_agenda(drv, logfn)
+        time.sleep(1.0)
+        cur_url = drv.current_url
+        return "datetime" in (cur_url.split("#")[-1] or "").lower()
+    except Exception as e:
+        logfn(f"ensure_datetime_view note: {e}")
+        return False
+
+
 def _element_label(el):
     parts = []
     for attr in ("data-date", "data-time", "data-value", "data-slot", "value", "href", "title", "aria-label"):
@@ -3364,10 +3644,21 @@ def pick_slot(drv, slot, logfn=log):
     date or time selector. Returns True if a slot was clicked.
     """
     from selenium.webdriver.common.by import By
-    target_day = slot["date"][-2:].lstrip("0") or "0"
     target_date = slot["date"]
     target_time = slot["time"]
     target_time_raw = target_time.replace(":", "")
+
+    # Parse date components for precise datepicker targeting
+    target_year = None
+    target_month_idx = None
+    target_day = target_date[-2:].lstrip("0") or "0"
+    date_parts = target_date.split("-")
+    if len(date_parts) == 3:
+        target_year = date_parts[0]
+        try:
+            target_month_idx = str(int(date_parts[1]) - 1)
+        except Exception:
+            target_month_idx = None
 
     # 0. Fast direct DOM slot selector match
     try:
@@ -3388,22 +3679,38 @@ def pick_slot(drv, slot, logfn=log):
 
     clicked_date = False
     try:
-        dates = drv.find_elements(By.CSS_SELECTOR,
-            "#idDivBktDatetimeDatePicker td[data-handler='selectDay'] a, "
-            "#idDivBktDatetimeDatePicker td[data-handler='selectDay'], "
-            "#idDivBktDates a, #idDivBktDates li, #idDivBktDates input, "
-            "#idDivBktDates td, #idDivBktDatePicker a, .clsBktDate a, .clsBktDate li, .clsBktDate td")
-        for el in dates:
-            label = _element_label(el)
-            tokens = set(label.split())
-            if target_day in tokens or target_date in tokens or target_date in label:
-                try:
-                    el.click()
-                    clicked_date = True
-                    logfn(f"clicked date {slot['date']} ({label[:40]})")
-                    break
-                except Exception as e:
-                    logfn(f"date click failed: {e}")
+        # Check current datepicker month for exact match
+        if target_year and target_month_idx is not None:
+            res_exact = drv.execute_script(f"""
+                let td = document.querySelector('#idDivBktDatetimeDatePicker td[data-year="{target_year}"][data-month="{target_month_idx}"][data-handler="selectDay"]');
+                if (td) {{
+                    let a = td.querySelector('a') || td;
+                    a.click();
+                    return true;
+                }}
+                return false;
+            """)
+            if res_exact:
+                clicked_date = True
+                logfn(f"clicked exact datepicker date {target_date} (Y:{target_year} M:{target_month_idx})")
+
+        if not clicked_date:
+            dates = drv.find_elements(By.CSS_SELECTOR,
+                "#idDivBktDatetimeDatePicker td[data-handler='selectDay'] a, "
+                "#idDivBktDatetimeDatePicker td[data-handler='selectDay'], "
+                "#idDivBktDates a, #idDivBktDates li, #idDivBktDates input, "
+                "#idDivBktDates td, #idDivBktDatePicker a, .clsBktDate a, .clsBktDate li, .clsBktDate td")
+            for el in dates:
+                label = _element_label(el)
+                tokens = set(label.split())
+                if target_day in tokens or target_date in tokens or target_date in label:
+                    try:
+                        el.click()
+                        clicked_date = True
+                        logfn(f"clicked date {slot['date']} ({label[:40]})")
+                        break
+                    except Exception as e:
+                        logfn(f"date click failed: {e}")
 
         # If date not visible on current month, advance through months in datepicker
         if not clicked_date:
@@ -3414,6 +3721,21 @@ def pick_slot(drv, slot, logfn=log):
                         ".ui-datepicker-next:not(.ui-state-disabled), a[data-handler='next']")
                     next_btn.click()
                     time.sleep(0.4)
+                    if target_year and target_month_idx is not None:
+                        res_exact = drv.execute_script(f"""
+                            let td = document.querySelector('#idDivBktDatetimeDatePicker td[data-year="{target_year}"][data-month="{target_month_idx}"][data-handler="selectDay"]');
+                            if (td) {{
+                                let a = td.querySelector('a') || td;
+                                a.click();
+                                return true;
+                            }}
+                            return false;
+                        """)
+                        if res_exact:
+                            clicked_date = True
+                            logfn(f"clicked exact datepicker date {target_date} after advancing month")
+                            break
+
                     dates = drv.find_elements(By.CSS_SELECTOR,
                         "#idDivBktDatetimeDatePicker td[data-handler='selectDay'] a, "
                         "#idDivBktDatetimeDatePicker td[data-handler='selectDay']")
@@ -4078,18 +4400,21 @@ def full_run_mode(conf, selector=None):
                     now_str = datetime.now().strftime("%H:%M:%S")
                     log(f"[{now_str}][ROUND {round_no}] 0 free slots in {d_start}..{d_end}; checking date & time real-time in {interval}s ({len(pending)} applicant(s) pending)...")
                     time.sleep(interval)
-                    # Refresh view slightly to fetch latest slot updates
                     try:
                         accept_alert_any(drv)
                         auto_click_robot_captcha(drv, log)
-                        drv.execute_script("""
-                            let back = document.querySelector('.clsDivSubHeaderBackButton') || document.querySelector('a[href*="#services"]');
-                            if (back) back.click();
-                            else window.location.hash = '#services';
-                        """)
-                        time.sleep(0.8)
-                        accept_terms(drv, conf, log)
-                        select_service(drv, conf, log)
+                        cur_url = drv.current_url
+                        if "datetime" not in (cur_url.split("#")[-1] or "").lower():
+                            ensure_datetime_view(drv, conf, log)
+                        elif round_no % 30 == 0:
+                            # Periodic fresh route sync every 30 rounds (~2.5m)
+                            ensure_datetime_view(drv, conf, log)
+                        else:
+                            drv.execute_script("""
+                                if (window.jQuery && window.jQuery('#idDivBktDatetimeDatePicker').length) {
+                                    try { window.jQuery('#idDivBktDatetimeDatePicker').datepicker('refresh'); } catch(e){}
+                                }
+                            """)
                     except Exception as e:
                         if any(k in str(e).lower() for k in ("invalid session", "disconnected", "no such window")):
                             log("Browser disconnected; restarting browser lane...")

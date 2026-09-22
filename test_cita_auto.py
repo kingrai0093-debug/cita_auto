@@ -42,6 +42,28 @@ def test_parse_slots_drops_widget_error_bodies():
     assert cita_auto.parse_slots(resp) == []
 
 
+def test_parse_slots_lowercase_and_list_times():
+    resp = {
+        "slots": [
+            {"date": "2026-10-15", "times": ["11:00", "09:30"]},
+            {"date": "2026-10-14", "times": ["14:00"]}
+        ]
+    }
+    slots = cita_auto.parse_slots(resp)
+    assert len(slots) == 3
+    assert slots[0] == {"date": "2026-10-14", "time": "14:00", "meta": {}}
+    assert slots[1] == {"date": "2026-10-15", "time": "09:30", "meta": {}}
+    assert slots[2] == {"date": "2026-10-15", "time": "11:00", "meta": {}}
+
+
+def test_parse_slots_flat_and_datetime_formats():
+    resp1 = [{"date": "2026-11-01", "time": "08:30"}]
+    assert cita_auto.parse_slots(resp1) == [{"date": "2026-11-01", "time": "08:30", "meta": {}}]
+
+    resp2 = {"availableSlots": [{"date": "2026-11-05 10:15:00"}]}
+    assert cita_auto.parse_slots(resp2) == [{"date": "2026-11-05", "time": "10:15", "meta": {"date": "2026-11-05 10:15:00"}}]
+
+
 def test_assign_slots_one_per_user_earliest():
     pending = [{"login": "u1"}, {"login": "u2"}, {"login": "u3"}]
     slots = [
