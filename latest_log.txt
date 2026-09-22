@@ -1,100 +1,100 @@
-[09:53:15] [09:53:15][ROUND 101] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:53:15] [09:53:15][ROUND 101] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:53:44] [09:53:44][ROUND 102] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:53:44] [09:53:44][ROUND 102] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:54:16] [09:54:16][ROUND 103] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:54:16] [09:54:16][ROUND 103] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:54:41] [09:54:41][ROUND 104] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:54:41] [09:54:41][ROUND 104] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:55:10] [09:55:10][ROUND 105] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:55:10] [09:55:10][ROUND 105] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:55:38] [09:55:38][ROUND 106] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:55:38] [09:55:38][ROUND 106] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:56:10] [09:56:10][ROUND 107] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:56:10] [09:56:10][ROUND 107] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:56:48] [09:56:48][ROUND 108] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:56:48] [09:56:48][ROUND 108] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:57:12] [09:57:12][ROUND 109] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:57:12] [09:57:12][ROUND 109] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:57:41] [09:57:41][ROUND 110] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:57:41] [09:57:41][ROUND 110] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:59:00] [09:59:00][ROUND 111] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[09:59:00] [09:59:00][ROUND 111] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 09:59:50] 
-============================================================================================
-[2026-09-22 09:59:50]   TOTAL CONFIGURED APPLICANTS: 4
-[2026-09-22 09:59:50] ============================================================================================
-[2026-09-22 09:59:50] #   | LOGIN / PASSPORT  | PASSWORD         ********* TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[2026-09-22 09:59:50] --------------------------------------------------------------------------------------------
-[2026-09-22 09:59:50] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Active (42m)     | PENDING   
-[2026-09-22 09:59:50] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Active (43m)     | PENDING   
-[2026-09-22 09:59:50] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Active (43m)     | PENDING   
-[2026-09-22 09:59:50] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Active (44m)     | PENDING   
-[2026-09-22 09:59:50] ============================================================================================
-
-[2026-09-22 09:59:50] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
-[2026-09-22 09:59:51] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 35577
-[2026-09-22 09:59:56] Connecting to Bookitit (residential proxy & Turnstile solve)...
-[2026-09-22 10:00:08] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:00:11] [10:00:11][ROUND 112] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:00:11] [10:00:11][ROUND 112] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:00:14] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:00:20] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:00:20] attempting capsolver cloudflare solve...
-[2026-09-22 10:00:20] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
-[2026-09-22 10:00:20] capsolver unavailable/failed; continuing with auto-click loop
-[2026-09-22 10:00:28] alert: Welcome / Bienvenido
-[2026-09-22 10:00:29] challenge passed after 21s
-[2026-09-22 10:00:34] captcha gate: clicked Continue / Continuar (attempt 1)
-[10:00:36] [10:00:36][ROUND 113] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:00:36] [10:00:36][ROUND 113] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:00:38] captcha gate: passed, widget page served
-[2026-09-22 10:00:45] widget booted after 6s (title='Embajada de España en República de Guine')
-[2026-09-22 10:00:49] session saved -> state/session.json (5 cookies)
-[2026-09-22 10:00:52] 
-[ROUND 1] === Deep Checking 4 Pending Applicant(s) ===
-[2026-09-22 10:00:52] 
-[1/4] === DEEP CHECK: APPLICANT C00581897 ===
-[2026-09-22 10:00:52] ============================================================
-[2026-09-22 10:00:52] [DEEP-CHECK] >>> Checking application: C00581897 <<<
-[2026-09-22 10:00:52] ============================================================
-[2026-09-22 10:00:57] entered login: C00581897
-[2026-09-22 10:00:57] entered password
-[2026-09-22 10:00:58] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[10:01:10] [10:01:10][ROUND 114] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:01:10] [10:01:10][ROUND 114] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:01:13] tokens: auto-saved login token for C00581897 (token=GHdDvSrPQIP2H57... expires in 2h)
-[2026-09-22 10:01:13] [TOKEN] Active token cached for C00581897 (token=GHdDvSrPQIP2H57r...)
-[2026-09-22 10:01:13] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
-[2026-09-22 10:01:13] trying to reach services view...
-[2026-09-22 10:01:13] route=signinaccount
-[2026-09-22 10:01:17] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[2026-09-22 10:01:18] transitioned from history to #services
-[2026-09-22 10:01:18] tokens: auto-saved login token for C00581897 (token=GHdDvSrPQIP2H57... expires in 2h)
-[2026-09-22 10:01:18] [TOKEN] Active token cached for C00581897 (token=GHdDvSrPQIP2H57r...)
-[2026-09-22 10:01:20] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
-[2026-09-22 10:01:23] accepted terms dialog
-[2026-09-22 10:01:25] [DEEP-CHECK] C00581897: Arrived at #https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/ under authenticated session
-[2026-09-22 10:01:25] tokens: auto-saved login token for C00581897 (token=GHdDvSrPQIP2H57... expires in 2h)
-[2026-09-22 10:01:25] [TOKEN] Active token cached for C00581897 (token=GHdDvSrPQIP2H57r...)
-[2026-09-22 10:01:27] accepted terms dialog via #bktContinue
-[2026-09-22 10:01:27] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
-[2026-09-22 10:01:41] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-09-22..2027-12-31).
-[2026-09-22 10:01:43] 
-[2/4] === DEEP CHECK: APPLICANT C00303363 ===
-[2026-09-22 10:01:43] ============================================================
-[2026-09-22 10:01:43] [DEEP-CHECK] >>> Checking application: C00303363 <<<
-[2026-09-22 10:01:43] ============================================================
-[10:01:44] [10:01:44][ROUND 115] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:01:44] [10:01:44][ROUND 115] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:01:47] entered login: C00303363
-[2026-09-22 10:01:48] entered password
-[2026-09-22 10:01:49] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[2026-09-22 10:02:05] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | TRÁMITES DE VISADOS · [A] ... SOLICITUD DE VISADO | Cambiar de día | Martes 22 de Septiembre de 2026 | No hay horas disponibles. Inténtelo de nuevo dentro de unos días. | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | Recu
-[2026-09-22 10:02:05] trying to reach services view...
-[2026-09-22 10:02:05] route=signinaccount
 [2026-09-22 10:02:19] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
 [2026-09-22 10:02:21] transitioned from history to #services
 [2026-09-22 10:02:21] tokens: auto-saved login token for C00303363 (token=xV7Kz495jbyRlY7... expires in 2h)
 [2026-09-22 10:02:21] [TOKEN] Active token cached for C00303363 (token=xV7Kz495jbyRlY75...)
 [2026-09-22 10:02:23] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
+[2026-09-22 10:02:25] accepted terms dialog
+[2026-09-22 10:02:27] [DEEP-CHECK] C00303363: Arrived at #services under authenticated session
+[2026-09-22 10:02:27] tokens: auto-saved login token for C00303363 (token=xV7Kz495jbyRlY7... expires in 2h)
+[2026-09-22 10:02:27] [TOKEN] Active token cached for C00303363 (token=xV7Kz495jbyRlY75...)
+[2026-09-22 10:02:28] accepted terms dialog via #bktContinue
+[2026-09-22 10:02:28] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[10:02:34] [10:02:34][ROUND 116] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:02:34] [10:02:34][ROUND 116] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:02:34] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-09-22..2027-12-31).
+[2026-09-22 10:02:34] 
+[3/4] === DEEP CHECK: APPLICANT C00522628 ===
+[2026-09-22 10:02:34] ============================================================
+[2026-09-22 10:02:34] [DEEP-CHECK] >>> Checking application: C00522628 <<<
+[2026-09-22 10:02:34] ============================================================
+[2026-09-22 10:02:39] Browser disconnected; restarting browser lane...
+[10:02:39] Browser disconnected; restarting browser lane...
+[10:02:39] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33085
+[2026-09-22 10:02:39] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33085
+[2026-09-22 10:02:44] challenge passed after 3s
+[10:02:44] challenge passed after 3s
+[10:02:46] captcha gate: no Continue button; widget page served
+[2026-09-22 10:02:46] captcha gate: no Continue button; widget page served
+[2026-09-22 10:02:51] login skipped/failed: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+#0 0x6192563359fa <unknown>
+#1 0x619255c6b370 <unknown>
+#2 0x619255cb3e3e <unknown>
+#3 0x619255ce7a06 <unknown>
+#4 0x619255ce1d95 <unknown>
+#5 0x619255ce14bc <unknown>
+#6 0x619255c2f34b <unknown>
+#7 0x619255c2fab4 <unknown>
+#8 0x619255c300c5 <unknown>
+#9 0x6192562f8667 <unknown>
+#10 0x6192562f6e95 <unknown>
+#11 0x6192562e1f55 <unknown>
+#12 0x6192562f7aea <unknown>
+#13 0x6192562ca6c9 <unknown>
+#14 0x619255c2da6a <unknown>
+#15 0x7143de22a601 <unknown>
+#16 0x7143de22a718 __libc_start_main
+#17 0x619255bf896a _start
+
+[2026-09-22 10:02:51] trying to reach services view...
+[2026-09-22 10:02:55] widget page present after 9s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
+[10:02:55] widget page present after 9s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
+[10:02:59] session saved -> state/session.json (0 cookies)
+[2026-09-22 10:02:59] session saved -> state/session.json (0 cookies)
+[2026-09-22 10:03:03] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
+[2026-09-22 10:03:03] service select: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+#0 0x6192563359fa <unknown>
+#1 0x619255c6b370 <unknown>
+#2 0x619255cb3e3e <unknown>
+#3 0x619255ce7a06 <unknown>
+#4 0x619255ce1d95 <unknown>
+#5 0x619255ce14bc <unknown>
+#6 0x619255c2f34b <unknown>
+#7 0x619255c2fab4 <unknown>
+#8 0x619255c300c5 <unknown>
+#9 0x6192562f8667 <unknown>
+#10 0x6192562f6e95 <unknown>
+#11 0x6192562e1f55 <unknown>
+#12 0x6192562f7aea <unknown>
+#13 0x6192562ca6c9 <unknown>
+#14 0x619255c2da6a <unknown>
+#15 0x7143de22a601 <unknown>
+#16 0x7143de22a718 __libc_start_main
+#17 0x619255bf896a _start
+
+[2026-09-22 10:03:03] agenda select: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+#0 0x6192563359fa <unknown>
+#1 0x619255c6b370 <unknown>
+#2 0x619255cb3e3e <unknown>
+#3 0x619255ce7a06 <unknown>
+#4 0x619255ce1d95 <unknown>
+#5 0x619255ce14bc <unknown>
+#6 0x619255c2f34b <unknown>
+#7 0x619255c2fab4 <unknown>
+#8 0x619255c300c5 <unknown>
+#9 0x6192562f8667 <unknown>
+#10 0x6192562f6e95 <unknown>
+#11 0x6192562e1f55 <unknown>
+#12 0x6192562f7aea <unknown>
+#13 0x6192562ca6c9 <unknown>
+#14 0x619255c2da6a <unknown>
+#15 0x7143de22a601 <unknown>
+#16 0x7143de22a718 __libc_start_main
+#17 0x619255bf896a _start
+
+[2026-09-22 10:03:03] [10:03:03][ROUND 117] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[10:03:03] [10:03:03][ROUND 117] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[10:30:09] [10:30:09][ROUND 118] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:30:09] [10:30:09][ROUND 118] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
