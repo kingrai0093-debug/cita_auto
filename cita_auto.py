@@ -1610,8 +1610,10 @@ def browser_new(conf):
         opts.binary_location = binary
     opts.add_argument("--no-sandbox")
     opts.add_argument("--disable-dev-shm-usage")
-    opts.add_argument("--disable-gpu")
     opts.add_argument("--lang=es-ES")
+    import tempfile
+    profile_dir = tempfile.mkdtemp(prefix="cita_chrome_")
+    opts.add_argument(f"--user-data-dir={profile_dir}")
     if conf.get("browser", {}).get("headless"):
         opts.add_argument("--headless=new")
         opts.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")

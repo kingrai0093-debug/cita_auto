@@ -20,7 +20,7 @@ if not exist config.json (
 if exist cita_auto.exe (
     echo [LAUNCH] Starting standalone cita_auto.exe...
     echo.
-    cita_auto.exe
+    cita_auto.exe %*
 ) else (
     echo [ERROR] cita_auto.exe was not found in this directory!
     echo.
