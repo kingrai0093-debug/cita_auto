@@ -17,5 +17,10 @@
     "country": "ESP"
    }
   }
- ]
+ ],
+ "telegram": {
+  "enabled": true,
+  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "chat_id": ""
+ }
 }

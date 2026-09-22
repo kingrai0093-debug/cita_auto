@@ -370,3 +370,53 @@ def test_book_slot_anyhow_falls_back_to_token_api_when_browser_crashes(fresh_sta
     ok = cita_auto.book_slot_anyhow(conf, acc, slot, drv=None)
     assert ok is True
     assert "C0099" in cita_auto.load_state()["booked_logins"]
+
+
+def test_telegram_notifications(monkeypatch, tmp_path):
+    monkeypatch.setattr(cita_auto, "STATE_DIR", str(tmp_path))
+    monkeypatch.setattr(cita_auto, "TELEGRAM_CHATS_PATH", str(tmp_path / "telegram_chats.json"))
+
+    sent_messages = []
+
+    def fake_notify(conf, text, parse_mode="HTML", document_path=None):
+        sent_messages.append({"text": text, "doc": document_path})
+        return True
+
+    monkeypatch.setattr(cita_auto, "telegram_notify", fake_notify)
+
+    conf = {
+        "office_name": "Consulado de España",
+        "telegram": {"enabled": True, "bot_token": "fake_token", "chat_id": "12345"}
+    }
+
+    # Test slot found notification
+    slots = [{"date": "2026-10-01", "time": "09:30"}, {"date": "2026-10-01", "time": "10:00"}]
+    res = cita_auto.telegram_notify_slot_found(conf, slots, "2026-10-01..2026-10-31")
+    assert res is True
+    assert len(sent_messages) == 1
+    assert "FREE APPOINTMENT SLOTS AVAILABLE" in sent_messages[0]["text"]
+    assert "2026-10-01" in sent_messages[0]["text"]
+    assert "09:30" in sent_messages[0]["text"]
+
+    # Test booking success notification
+    acc = {
+        "login": "TEST_USER_99",
+        "password": "SecretPassword123",
+        "profile": {"first_name": "Carlos", "last_name": "Santana"}
+    }
+    slot = {"date": "2026-10-01", "time": "09:30"}
+    res_book = cita_auto.telegram_notify_booking_success(conf, acc, slot, pdf_path=None)
+    assert res_book is True
+    assert len(sent_messages) == 2
+    book_msg = sent_messages[1]["text"]
+    assert "APPOINTMENT SUCCESSFULLY BOOKED" in book_msg
+    assert "Carlos Santana" in book_msg
+    assert "TEST_USER_99" in book_msg
+    assert "SecretPassword123" in book_msg
+    assert "2026-10-01 at 09:30h" in book_msg
+
+    # Test live check notification
+    res_live = cita_auto.telegram_notify_live_check(conf, round_no=1, interval=5, window="all", pending_count=3, total_count=4, force=True)
+    assert res_live is True
+    assert len(sent_messages) == 3
+    assert "CITA AUTO: 24/7 Real-Time Live Status" in sent_messages[2]["text"]

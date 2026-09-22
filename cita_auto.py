@@ -239,6 +239,205 @@ def extract_and_save_token(drv, login, logfn=log):
     return None
 
 
+TELEGRAM_CHATS_PATH = os.path.join(STATE_DIR, "telegram_chats.json")
+LAST_TELEGRAM_LOG_TIME = 0
+
+
+def load_telegram_chats():
+    if os.path.exists(TELEGRAM_CHATS_PATH):
+        try:
+            with open(TELEGRAM_CHATS_PATH, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
+    return []
+
+
+def save_telegram_chats(chats):
+    try:
+        os.makedirs(STATE_DIR, exist_ok=True)
+        with open(TELEGRAM_CHATS_PATH, "w", encoding="utf-8") as f:
+            json.dump(chats, f, indent=1)
+    except Exception:
+        pass
+
+
+def telegram_get_chat_ids(conf):
+    """Retrieve chat IDs from config and auto-poll Telegram /getUpdates for new subscribers."""
+    tg = conf.get("telegram", {})
+    if not tg or not tg.get("enabled"):
+        return []
+    token = str(tg.get("bot_token", "")).strip()
+    if not token or "YOUR_" in token:
+        return []
+
+    chats = set(str(c).strip() for c in load_telegram_chats() if c)
+    cfg_chat = tg.get("chat_id")
+    if cfg_chat:
+        if isinstance(cfg_chat, list):
+            for c in cfg_chat:
+                if c:
+                    chats.add(str(c).strip())
+        elif str(cfg_chat).strip():
+            chats.add(str(cfg_chat).strip())
+
+    # Check for new chats from users who pressed /start or messaged the bot
+    try:
+        import urllib.request
+        import urllib.parse
+        url = f"https://api.telegram.org/bot{token}/getUpdates?timeout=1"
+        req = urllib.request.Request(url, headers={"User-Agent": "CitaAuto/1.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            if data.get("ok"):
+                new_found = False
+                for u in data.get("result", []):
+                    msg = u.get("message") or u.get("channel_post") or {}
+                    chat = msg.get("chat") or {}
+                    cid = str(chat.get("id", "")).strip()
+                    if cid and cid not in chats:
+                        chats.add(cid)
+                        new_found = True
+                        try:
+                            welcome = (
+                                "🤖 <b>CapSpain_bot Connected Successfully!</b>\n\n"
+                                "🇪🇸 <b>Consular Appointment Live Bot is Active.</b>\n\n"
+                                "• 🟢 <b>Real-time status</b>: Live date & time monitoring updates.\n"
+                                "• 🚨 <b>Instant alerts</b>: As soon as an appointment slot appears.\n"
+                                "• 👤 <b>Booking reports</b>: Full name, username, password, booked date/time, and consular receipt PDF.\n\n"
+                                "<i>Monitoring 24/7 in real time...</i>"
+                            )
+                            send_url = f"https://api.telegram.org/bot{token}/sendMessage"
+                            payload = urllib.parse.urlencode({
+                                "chat_id": cid,
+                                "text": welcome,
+                                "parse_mode": "HTML"
+                            }).encode("utf-8")
+                            s_req = urllib.request.Request(send_url, data=payload, headers={"User-Agent": "CitaAuto/1.0"})
+                            urllib.request.urlopen(s_req, timeout=5)
+                        except Exception:
+                            pass
+                if new_found:
+                    save_telegram_chats(list(chats))
+    except Exception:
+        pass
+
+    return list(chats)
+
+
+def telegram_notify(conf, text, parse_mode="HTML", document_path=None):
+    """Send real-time alert and optional PDF document to all Telegram subscribers."""
+    tg = conf.get("telegram", {})
+    if not tg or not tg.get("enabled"):
+        return False
+    token = str(tg.get("bot_token", "")).strip()
+    if not token or "YOUR_" in token:
+        return False
+
+    chat_ids = telegram_get_chat_ids(conf)
+    if not chat_ids:
+        return False
+
+    import urllib.request
+    import urllib.parse
+
+    success = False
+    for cid in chat_ids:
+        try:
+            if document_path and os.path.exists(document_path):
+                # Try sending document via requests if available
+                try:
+                    import requests
+                    with open(document_path, "rb") as f:
+                        r = requests.post(
+                            f"https://api.telegram.org/bot{token}/sendDocument",
+                            data={"chat_id": cid, "caption": text[:1024], "parse_mode": parse_mode},
+                            files={"document": (os.path.basename(document_path), f, "application/pdf")},
+                            timeout=25
+                        )
+                    if r.status_code == 200:
+                        success = True
+                        continue
+                except Exception:
+                    pass
+
+            # Standard HTML text message
+            url = f"https://api.telegram.org/bot{token}/sendMessage"
+            payload = urllib.parse.urlencode({
+                "chat_id": cid,
+                "text": text,
+                "parse_mode": parse_mode
+            }).encode("utf-8")
+            req = urllib.request.Request(url, data=payload, headers={"User-Agent": "CitaAuto/1.0"})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                if resp.status == 200:
+                    success = True
+        except Exception:
+            pass
+    return success
+
+
+def telegram_notify_slot_found(conf, slots, window):
+    """Send immediate high-priority alert when slots are found."""
+    slot_lines = []
+    for s in slots[:12]:
+        slot_lines.append(f"  • <b>{s['date']}</b> at <b>{s['time']}</b>")
+    slots_text = "\n".join(slot_lines)
+    msg = (
+        f"🚨 <b>FREE APPOINTMENT SLOTS AVAILABLE!</b> 🚨\n\n"
+        f"🏛️ <b>Consulate:</b> {conf.get('office_name', 'Embajada de España')}\n"
+        f"📅 <b>Window:</b> {window}\n"
+        f"🔥 <b>Total Free Slots:</b> {len(slots)}\n\n"
+        f"<b>Available Dates & Times:</b>\n{slots_text}\n\n"
+        f"⚡ <i>Fast parallel auto-booking is claiming distinct slots for all pending applicants right now!</i>"
+    )
+    return telegram_notify(conf, msg)
+
+
+def telegram_notify_booking_success(conf, acc, slot, pdf_path=None):
+    """Send full booking details: full name, user name, password, date & time, and receipt PDF."""
+    profile = acc.get("profile", {}) if isinstance(acc.get("profile"), dict) else {}
+    full_name = f"{profile.get('first_name', '')} {profile.get('last_name', '')}".strip()
+    if not full_name:
+        token_entry = get_account_token(acc["login"]) or {}
+        full_name = token_entry.get("name") or acc["login"]
+
+    date_val = slot.get("date", "N/A")
+    time_val = slot.get("time", "N/A")
+
+    msg = (
+        f"🎉 <b>APPOINTMENT SUCCESSFULLY BOOKED!</b> 🎉\n\n"
+        f"👤 <b>Full Name:</b> <b>{full_name}</b>\n"
+        f"🪪 <b>User Name (Login):</b> <code>{acc['login']}</code>\n"
+        f"🔑 <b>Password:</b> <code>{acc.get('password', '***')}</code>\n"
+        f"📅 <b>Booking Date & Time:</b> <b>{date_val} at {time_val}h</b>\n"
+        f"🏛️ <b>Consulate:</b> {conf.get('office_name', 'Embajada de España')}\n"
+        f"📄 <b>Official Receipt PDF:</b> {'Attached below' if pdf_path and os.path.exists(pdf_path) else 'Auto-saved in receipts/'}\n\n"
+        f"✅ <i>Appointment confirmed and receipt archived.</i>"
+    )
+    return telegram_notify(conf, msg, document_path=pdf_path)
+
+
+def telegram_notify_live_check(conf, round_no, interval, window, pending_count, total_count, force=False):
+    """Send periodic live monitoring heartbeats to Telegram."""
+    global LAST_TELEGRAM_LOG_TIME
+    now = time.time()
+    if not force and round_no > 1 and (now - LAST_TELEGRAM_LOG_TIME < 300):
+        return False
+    LAST_TELEGRAM_LOG_TIME = now
+    now_str = datetime.now().strftime("%H:%M:%S")
+    msg = (
+        f"🟢 <b>CITA AUTO: 24/7 Real-Time Live Status</b>\n\n"
+        f"🕒 <b>Local Time:</b> {now_str} (Round {round_no})\n"
+        f"🔍 <b>Status:</b> Actively scanning dates & times real-time (every {interval}s)\n"
+        f"📅 <b>Target Window:</b> {window}\n"
+        f"👥 <b>Pending Applicants:</b> {pending_count} / {total_count}\n"
+        f"⚡ <b>Engine:</b> 4-Layer multi-month calendar & in-page API\n\n"
+        f"<i>Bot will alert immediately as soon as a free slot opens!</i>"
+    )
+    return telegram_notify(conf, msg)
+
+
 def show_applicants_info(conf, selector=None, logfn=log):
     """Display comprehensive information, count, and live status for all configured applicants."""
     accounts = self_accounts(conf, selector)
@@ -2370,8 +2569,10 @@ def watch_mode(conf, selector=None):
         f"pending={len(pending)} applicant(s): {[a['login'] for a in pending]})")
 
     drv = None
+    round_no = 0
     try:
         while True:
+            round_no += 1
             try:
                 if auto_book:
                     try:
@@ -2441,6 +2642,10 @@ def watch_mode(conf, selector=None):
                 if not slots:
                     log(f"no free slots yet in window {d_start}..{d_end}; "
                         f"checking date and time again in {interval}s...")
+                    try:
+                        telegram_notify_live_check(conf, round_no, interval, f"{d_start}..{d_end}", len(pending), len(self_accounts(conf, selector)))
+                    except Exception:
+                        pass
                     time.sleep(interval)
                     if auto_book and drv is not None:
                         try:
@@ -2465,6 +2670,10 @@ def watch_mode(conf, selector=None):
                 log(f"FOUND {len(slots)} AVAILABLE SLOT(S) in window {d_start}..{d_end}!")
                 for s in slots[:10]:
                     log(f"  FREE SLOT: {s['date']} at {s['time']}")
+                try:
+                    telegram_notify_slot_found(conf, slots, f"{d_start}..{d_end}")
+                except Exception:
+                    pass
 
                 if not auto_book:
                     log("auto-book is disabled; read-only discovery done")
@@ -3185,8 +3394,18 @@ def fast_parallel_claim(drv, conf, assignment, logfn=log):
             logfn(f"[PARALLEL CLAIM] >>> SUCCESS <<< {login} booked slot {slot['date']} {slot['time']} via In-Page Fast Batch API!")
             note_booked(login)
             booked_now.append(login)
+            pdf = None
             try:
-                save_booking_pdf(drv, conf, acc, slot, logfn=logfn)
+                pdf = save_booking_pdf(drv, conf, acc, slot, logfn=logfn)
+            except Exception:
+                pass
+            if not pdf or not os.path.exists(pdf):
+                clean_t = str(slot.get('time', '')).replace(':', '')
+                candidate = os.path.join(RECEIPTS_DIR, f"{login}_{slot.get('date', '')}_{clean_t}.pdf")
+                if os.path.exists(candidate):
+                    pdf = candidate
+            try:
+                telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf)
             except Exception:
                 pass
         else:
@@ -3210,8 +3429,18 @@ def fast_parallel_claim(drv, conf, assignment, logfn=log):
                         logfn(f"[PARALLEL CLAIM] >>> SUCCESS <<< {acc['login']} booked slot {slot['date']} {slot['time']} via External Token API!")
                         note_booked(acc["login"])
                         booked_now.append(acc["login"])
+                        pdf = None
                         try:
-                            export_pdf_for_account(conf, acc, slot, logfn)
+                            pdf = export_pdf_for_account(conf, acc, slot, logfn)
+                        except Exception:
+                            pass
+                        if not pdf or not os.path.exists(pdf):
+                            clean_t = str(slot.get('time', '')).replace(':', '')
+                            candidate = os.path.join(RECEIPTS_DIR, f"{acc['login']}_{slot.get('date', '')}_{clean_t}.pdf")
+                            if os.path.exists(candidate):
+                                pdf = candidate
+                        try:
+                            telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf)
                         except Exception:
                             pass
                 except Exception as e:
@@ -3225,7 +3454,6 @@ def fast_parallel_claim(drv, conf, assignment, logfn=log):
             try:
                 if book_slot_anyhow(conf, acc, slot, drv=drv, logfn=logfn):
                     logfn(f"[PARALLEL CLAIM] >>> SUCCESS <<< {acc['login']} booked slot {slot['date']} {slot['time']} via Driver DOM!")
-                    note_booked(acc["login"])
                     booked_now.append(acc["login"])
             except Exception as e:
                 logfn(f"[PARALLEL CLAIM] Driver DOM booking error for {acc['login']}: {e}")
@@ -3247,15 +3475,28 @@ def book_slot_anyhow(conf, acc, slot, drv=None, logfn=log):
     tok_data = get_account_token(login)
     token = tok_data.get("token") if tok_data else None
 
+    def _finish_success(pdf_path=None):
+        note_booked(login)
+        if not pdf_path or not os.path.exists(pdf_path):
+            d = slot.get("date", "unknown") if isinstance(slot, dict) else "unknown"
+            t = str(slot.get("time", "unknown") if isinstance(slot, dict) else "unknown").replace(":", "")
+            candidate = os.path.join(RECEIPTS_DIR, f"{login}_{d}_{t}.pdf")
+            if os.path.exists(candidate):
+                pdf_path = candidate
+        try:
+            telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf_path)
+        except Exception:
+            pass
+        return True
+
     # TIER 1: In-Page Fast API Booking with Token (Inside drv if available)
     if drv is not None and token and isinstance(slot, dict) and slot.get("date") and slot.get("time"):
         try:
             ok, res = api_direct_book_in_page(drv, conf, acc, slot, token, logfn)
             if ok:
-                note_booked(login)
                 time.sleep(1.5)
-                save_booking_pdf(drv, conf, acc, slot, logfn)
-                return True
+                pdf = save_booking_pdf(drv, conf, acc, slot, logfn)
+                return _finish_success(pdf)
         except Exception as e:
             logfn(f"[ANYHOW-BOOK] Tier 1 in-page API note for {login}: {e}")
 
@@ -3264,9 +3505,8 @@ def book_slot_anyhow(conf, acc, slot, drv=None, logfn=log):
         try:
             ok = book_one_in_driver(drv, conf, acc, slot, logfn)
             if ok:
-                note_booked(login)
                 close_confirmation(drv, conf, logfn)
-                return True
+                return _finish_success()
         except Exception as e:
             logfn(f"[ANYHOW-BOOK] Tier 2 DOM booking note for {login}: {e}")
 
@@ -3276,13 +3516,13 @@ def book_slot_anyhow(conf, acc, slot, drv=None, logfn=log):
         try:
             ok, res = api_direct_book_external(conf, acc, slot, token, logfn)
             if ok:
-                note_booked(login)
                 logfn(f"[ANYHOW-BOOK] SUCCESS: Slot {slot['date']} {slot['time']} booked via Direct Token API for {login}!")
+                pdf = None
                 try:
-                    export_pdf_for_account(conf, acc, slot, logfn)
+                    pdf = export_pdf_for_account(conf, acc, slot, logfn)
                 except Exception as pe:
                     logfn(f"[ANYHOW-BOOK] Note capturing PDF for {login}: {pe}")
-                return True
+                return _finish_success(pdf)
         except Exception as e:
             logfn(f"[ANYHOW-BOOK] Tier 3 external API note for {login}: {e}")
 
@@ -3296,15 +3536,13 @@ def book_slot_anyhow(conf, acc, slot, drv=None, logfn=log):
                 if token and isinstance(slot, dict) and slot.get("date") and slot.get("time"):
                     ok, res = api_direct_book_in_page(w_drv, conf, acc, slot, token, logfn)
                     if ok:
-                        note_booked(login)
                         time.sleep(1.5)
-                        save_booking_pdf(w_drv, conf, acc, slot, logfn)
-                        return True
+                        pdf = save_booking_pdf(w_drv, conf, acc, slot, logfn)
+                        return _finish_success(pdf)
                 ok = book_one_in_driver(w_drv, conf, acc, slot, logfn)
                 if ok:
-                    note_booked(login)
                     close_confirmation(w_drv, conf, logfn)
-                    return True
+                    return _finish_success()
         except Exception as e:
             logfn(f"[ANYHOW-BOOK] Tier 4 lane recovery failed for {login}: {e}")
         finally:
@@ -4015,6 +4253,10 @@ def deep_check_account(drv, conf, acc, logfn=log):
         pdf = save_booking_pdf(drv, conf, acc, slot, logfn=logfn)
         if pdf:
             logfn(f"[DEEP-CHECK] {login}: Real consular PDF receipt saved -> {pdf}")
+        try:
+            telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf)
+        except Exception:
+            pass
         return {"login": login, "status": "already_booked", "slot": slot, "pdf": pdf}
 
     if has_no_appt:
@@ -4140,6 +4382,10 @@ def deep_check_account(drv, conf, acc, logfn=log):
         logfn(f"[DEEP-CHECK] {login}: >>> {len(all_found_slots)} AVAILABLE SLOT(S) FOUND! <<<")
         for s in all_found_slots[:10]:
             logfn(f"  [AVAILABLE] {s['date']} at {s['time']}")
+        try:
+            telegram_notify_slot_found(conf, all_found_slots, f"{conf.get('date_start')}..{conf.get('date_end')}")
+        except Exception:
+            pass
 
         if conf.get("auto_book"):
             target_slot = all_found_slots[0]
@@ -4194,6 +4440,13 @@ def deep_check_applications(conf, selector=None, once=False):
             if not pending_accounts:
                 log("All configured accounts booked successfully! Done.")
                 return 0
+
+            d_start = conf.get("date_start", "start")
+            d_end = conf.get("date_end", "end")
+            try:
+                telegram_notify_live_check(conf, round_no, interval, f"{d_start}..{d_end}", len(pending_accounts), len(accounts))
+            except Exception:
+                pass
 
             log(f"\n[ROUND {round_no}] === Deep Checking {len(pending_accounts)} Pending Applicant(s) ===")
             summary = []
@@ -4294,6 +4547,10 @@ def run_login_phase(drv, conf, selector=None, logfn=log):
                 pdf = save_booking_pdf(drv, conf, acc, slot, logfn=logfn)
                 if pdf:
                     logfn(f"[LOGIN PHASE] {login}: Real consular PDF receipt saved -> {pdf}")
+                try:
+                    telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf)
+                except Exception:
+                    pass
                 continue
 
             if has_no_appt:
@@ -4426,6 +4683,10 @@ def full_run_mode(conf, selector=None):
                 if not slots:
                     now_str = datetime.now().strftime("%H:%M:%S")
                     log(f"[{now_str}][ROUND {round_no}] 0 free slots in {d_start}..{d_end}; checking date & time real-time in {interval}s ({len(pending)} applicant(s) pending)...")
+                    try:
+                        telegram_notify_live_check(conf, round_no, interval, f"{d_start}..{d_end}", len(pending), len(self_accounts(conf, selector)))
+                    except Exception:
+                        pass
                     time.sleep(interval)
                     try:
                         accept_alert_any(drv)
@@ -4458,6 +4719,10 @@ def full_run_mode(conf, selector=None):
                 log("******************************************************************")
                 for s in slots[:15]:
                     log(f"  FREE SLOT: {s['date']} at {s['time']}")
+                try:
+                    telegram_notify_slot_found(conf, slots, f"{d_start}..{d_end}")
+                except Exception:
+                    pass
 
                 if not auto_book:
                     log("auto-book is disabled; read-only discovery done.")
@@ -4561,6 +4826,10 @@ def export_pdf_mode(conf, selector=None):
                 if pdf:
                     saved += 1
                     log(f"[REAL-PDF] Successfully auto-saved consular receipt -> {pdf}")
+                try:
+                    telegram_notify_booking_success(conf, acc, slot, pdf_path=pdf)
+                except Exception:
+                    pass
             else:
                 unbooked_list.append(login)
                 if has_no_appt:
