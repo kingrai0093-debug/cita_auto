@@ -1,71 +1,3 @@
-[10:41:41] [10:41:41][ROUND 137] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:41:41] [10:41:41][ROUND 137] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:42:10] [10:42:10][ROUND 138] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:42:10] [10:42:10][ROUND 138] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:42:45] [10:42:45][ROUND 139] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:42:45] [10:42:45][ROUND 139] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:43:20] [10:43:20][ROUND 140] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:43:20] [10:43:20][ROUND 140] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:44:00] [10:44:00][ROUND 141] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:44:00] [10:44:00][ROUND 141] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:44:31] [10:44:31][ROUND 142] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:44:31] [10:44:31][ROUND 142] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:45:06] [10:45:06][ROUND 143] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:45:06] [10:45:06][ROUND 143] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:45:37] [10:45:37][ROUND 144] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:45:37] [10:45:37][ROUND 144] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:45:49] tokens: auto-removed expired token for C00522628
-[10:45:49] tokens: auto-removed expired token for C00522628
-[2026-09-22 10:45:49] tokens: auto-removed expired token for C00393019
-[10:45:49] tokens: auto-removed expired token for C00393019
-[10:45:49] [TOKEN REFRESH] Found 2 applicant(s) with expired tokens: ['C00522628', 'C00393019']
-[2026-09-22 10:45:49] [TOKEN REFRESH] Found 2 applicant(s) with expired tokens: ['C00522628', 'C00393019']
-[2026-09-22 10:45:49] [TOKEN REFRESH] Re-authenticating only expired applicant accounts...
-[10:45:49] [TOKEN REFRESH] Re-authenticating only expired applicant accounts...
-[2026-09-22 10:45:49] ==================================================================
-[10:45:49] ==================================================================
-[10:45:49] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
-[2026-09-22 10:45:49] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
-[2026-09-22 10:45:49] ==================================================================
-[10:45:49] ==================================================================
-[2026-09-22 10:45:49] [LOGIN PHASE] Processing 2 applicant(s) needing fresh token authentication...
-[10:45:49] [LOGIN PHASE] Processing 2 applicant(s) needing fresh token authentication...
-[10:45:49] 
-[1/2] === Logging in applicant: C00522628 ===
-[2026-09-22 10:45:49] 
-[1/2] === Logging in applicant: C00522628 ===
-[10:46:25] login skipped/failed: Message: 
-Stacktrace:
-#0 0x6230ee5ad9fa <unknown>
-#1 0x6230edee35b9 <unknown>
-#2 0x6230edf39dfc <unknown>
-#3 0x6230edf3a071 <unknown>
-#4 0x6230edf86664 <unknown>
-#5 0x6230edf838de <unknown>
-#6 0x6230edf2cb8b <unknown>
-#7 0x6230edf2d971 <unknown>
-#8 0x6230ee570667 <unknown>
-#9 0x6230ee56ee95 <unknown>
-#10 0x6230ee559f55 <unknown>
-#11 0x6230ee56faea <unknown>
-#12 0x6230ee5426c9 <unknown>
-#13 0x6230ee5979a8 <unknown>
-#14 0x6230ee597b45 <unknown>
-#15 0x6230ee5ac353 <unknown>
-#16 0x704f832a3dfa <unknown>
-#17 0x704f833375cc <unknown>
-
-[2026-09-22 10:46:25] login skipped/failed: Message: 
-Stacktrace:
-#0 0x6230ee5ad9fa <unknown>
-#1 0x6230edee35b9 <unknown>
-#2 0x6230edf39dfc <unknown>
-#3 0x6230edf3a071 <unknown>
-#4 0x6230edf86664 <unknown>
-#5 0x6230edf838de <unknown>
-#6 0x6230edf2cb8b <unknown>
-#7 0x6230edf2d971 <unknown>
-#8 0x6230ee570667 <unknown>
 #9 0x6230ee56ee95 <unknown>
 #10 0x6230ee559f55 <unknown>
 #11 0x6230ee56faea <unknown>
@@ -98,3 +30,71 @@ Stacktrace:
 [2/2] === Logging in applicant: C00393019 ===
 [10:46:29] 
 [2/2] === Logging in applicant: C00393019 ===
+[10:47:05] login skipped/failed: Message: 
+Stacktrace:
+#0 0x6230ee5ad9fa <unknown>
+#1 0x6230edee35b9 <unknown>
+#2 0x6230edf39dfc <unknown>
+#3 0x6230edf3a071 <unknown>
+#4 0x6230edf86664 <unknown>
+#5 0x6230edf838de <unknown>
+#6 0x6230edf2cb8b <unknown>
+#7 0x6230edf2d971 <unknown>
+#8 0x6230ee570667 <unknown>
+#9 0x6230ee56ee95 <unknown>
+#10 0x6230ee559f55 <unknown>
+#11 0x6230ee56faea <unknown>
+#12 0x6230ee5426c9 <unknown>
+#13 0x6230ee5979a8 <unknown>
+#14 0x6230ee597b45 <unknown>
+#15 0x6230ee5ac353 <unknown>
+#16 0x704f832a3dfa <unknown>
+#17 0x704f833375cc <unknown>
+
+[2026-09-22 10:47:05] login skipped/failed: Message: 
+Stacktrace:
+#0 0x6230ee5ad9fa <unknown>
+#1 0x6230edee35b9 <unknown>
+#2 0x6230edf39dfc <unknown>
+#3 0x6230edf3a071 <unknown>
+#4 0x6230edf86664 <unknown>
+#5 0x6230edf838de <unknown>
+#6 0x6230edf2cb8b <unknown>
+#7 0x6230edf2d971 <unknown>
+#8 0x6230ee570667 <unknown>
+#9 0x6230ee56ee95 <unknown>
+#10 0x6230ee559f55 <unknown>
+#11 0x6230ee56faea <unknown>
+#12 0x6230ee5426c9 <unknown>
+#13 0x6230ee5979a8 <unknown>
+#14 0x6230ee597b45 <unknown>
+#15 0x6230ee5ac353 <unknown>
+#16 0x704f832a3dfa <unknown>
+#17 0x704f833375cc <unknown>
+
+[10:47:05] trying to reach services view...
+[2026-09-22 10:47:05] trying to reach services view...
+[10:47:05] route=signinaccount
+[2026-09-22 10:47:05] route=signinaccount
+[10:47:07] transitioned from history to #services
+[2026-09-22 10:47:07] transitioned from history to #services
+[10:47:07] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
+[2026-09-22 10:47:07] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
+[10:47:07] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
+[2026-09-22 10:47:07] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
+[10:47:09] [LOGIN PHASE] C00393019: Logged in successfully.
+[2026-09-22 10:47:09] [LOGIN PHASE] C00393019: Logged in successfully.
+[10:47:09] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
+[2026-09-22 10:47:09] tokens: auto-saved login token for C00393019 (token=rNxIlKIybHMdPhs... expires in 2h)
+[2026-09-22 10:47:09] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
+[2026-09-22 10:47:09] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> rNxIlKIybHMdPh... (valid 2h)
+[10:47:09] [TOKEN] Active token cached for C00393019 (token=rNxIlKIybHMdPhsb...)
+[10:47:09] [LOGIN PHASE] C00393019: SUCCESS: Fresh token cached -> rNxIlKIybHMdPh... (valid 2h)
+[10:47:09] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 2
+[2026-09-22 10:47:09] 
+[LOGIN PHASE COMPLETE] Active tokens: ['C00581897', 'C00303363', 'C00522628', 'C00393019'] | Booked: [] | Remaining pending: 2
+[10:47:30] [10:47:30][ROUND 145] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:47:30] [10:47:30][ROUND 145] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[10:47:57] [10:47:57][ROUND 146] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:47:57] [10:47:57][ROUND 146] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
