@@ -1,47 +1,3 @@
-[2026-09-22 08:56:57] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
-[2026-09-22 08:56:57]   FREE SLOT: 2026-08-19 at 10:00
-[2026-09-22 08:56:57] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
-[2026-09-22 08:56:57]   Applicant u3: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
-[2026-09-22 08:56:57] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Fallback: Claiming u3 via live driver DOM for 2026-08-19 10:00...
-[2026-09-22 08:56:57] [PARALLEL CLAIM] >>> SUCCESS <<< u3 booked slot 2026-08-19 10:00 via Driver DOM!
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM SUMMARY] 1/1 applicant(s) successfully booked ===
-[2026-09-22 08:56:57] All configured accounts booked successfully! Done.
-[2026-09-22 08:56:57] starting continuous watch mode (interval=1s, auto_book=True, pending=2 applicant(s): ['u1', 'u2'])
-[2026-09-22 08:56:57] opening browser lane for continuous watching & booking...
-[2026-09-22 08:56:57] Found 2 applicant(s) without active login token; executing fast login pass...
-[2026-09-22 08:56:57] ==================================================================
-[2026-09-22 08:56:57] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
-[2026-09-22 08:56:57] ==================================================================
-[2026-09-22 08:56:57] [LOGIN PHASE] Processing 2 applicant(s) needing fresh token authentication...
-[2026-09-22 08:56:57] 
-[1/2] === Logging in applicant: u1 ===
-[2026-09-22 08:56:57] login skipped/failed: 'str' object has no attribute 'find_element'
-[2026-09-22 08:56:57] trying to reach services view...
-[2026-09-22 08:56:57] [LOGIN PHASE] u1: Logged in successfully.
-[2026-09-22 08:56:57] [TOKEN] Note extracting token for u1: 'str' object has no attribute 'execute_script'
-[2026-09-22 08:56:57] [LOGIN PHASE] u1: Logged in, session active in browser.
-[2026-09-22 08:56:57] 
-[2/2] === Logging in applicant: u2 ===
-[2026-09-22 08:56:57] login skipped/failed: 'str' object has no attribute 'find_element'
-[2026-09-22 08:56:57] trying to reach services view...
-[2026-09-22 08:56:57] [LOGIN PHASE] u2: Logged in successfully.
-[2026-09-22 08:56:57] [TOKEN] Note extracting token for u2: 'str' object has no attribute 'execute_script'
-[2026-09-22 08:56:57] [LOGIN PHASE] u2: Logged in, session active in browser.
-[2026-09-22 08:56:57] 
-[LOGIN PHASE COMPLETE] Active tokens: [] | Booked: [] | Remaining pending: 2
-[2026-09-22 08:56:57] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
-[2026-09-22 08:56:57]   FREE SLOT: 2026-08-19 at 10:00
-[2026-09-22 08:56:57] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
-[2026-09-22 08:56:57]   Applicant u1: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
-[2026-09-22 08:56:57] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
-[2026-09-22 08:56:57] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
 [2026-09-22 08:56:57] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
 [2026-09-22 08:56:57] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
 [2026-09-22 08:56:57]   FREE SLOT: 2026-08-19 at 10:00
@@ -98,3 +54,47 @@
 [2026-09-22 08:57:43] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 37455
 [08:57:50] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
 [2026-09-22 08:57:50] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[08:57:52] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[2026-09-22 08:57:52] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[08:57:56] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[2026-09-22 08:57:56] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[08:57:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[2026-09-22 08:57:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[08:58:01] attempting capsolver cloudflare solve...
+[2026-09-22 08:58:01] attempting capsolver cloudflare solve...
+[08:58:01] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[2026-09-22 08:58:01] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[08:58:01] capsolver unavailable/failed; continuing with auto-click loop
+[2026-09-22 08:58:01] capsolver unavailable/failed; continuing with auto-click loop
+[08:58:04] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[2026-09-22 08:58:04] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
+[08:58:04] attempting capsolver cloudflare solve...
+[2026-09-22 08:58:04] attempting capsolver cloudflare solve...
+[08:58:04] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[2026-09-22 08:58:04] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[2026-09-22 08:58:04] capsolver unavailable/failed; continuing with auto-click loop
+[08:58:04] capsolver unavailable/failed; continuing with auto-click loop
+[08:58:09] ... still on challenge (20s)
+[2026-09-22 08:58:09] ... still on challenge (20s)
+[08:58:12] ... still on challenge (20s)
+[2026-09-22 08:58:12] ... still on challenge (20s)
+[08:58:12] alert: Welcome / Bienvenido
+[2026-09-22 08:58:12] alert: Welcome / Bienvenido
+[08:58:14] challenge passed after 24s
+[2026-09-22 08:58:14] challenge passed after 24s
+[08:58:17] alert: Welcome / Bienvenido
+[2026-09-22 08:58:17] alert: Welcome / Bienvenido
+[08:58:19] challenge passed after 27s
+[2026-09-22 08:58:19] challenge passed after 27s
+[08:58:19] captcha gate: clicked Continue / Continuar (attempt 1)
+[2026-09-22 08:58:19] captcha gate: clicked Continue / Continuar (attempt 1)
+[08:58:23] captcha gate: passed, widget page served
+[2026-09-22 08:58:23] captcha gate: passed, widget page served
+[08:58:24] captcha gate: clicked Continue / Continuar (attempt 1)
+[2026-09-22 08:58:24] captcha gate: clicked Continue / Continuar (attempt 1)
+[08:58:28] captcha gate: passed, widget page served
+[2026-09-22 08:58:28] captcha gate: passed, widget page served
+[08:58:32] widget page present after 8s (title='Embajada de España en República de Guine', has_loading=True) — proceeding to API check
+[2026-09-22 08:58:32] widget page present after 8s (title='Embajada de España en República de Guine', has_loading=True) — proceeding to API check
+[08:58:34] widget booted after 5s (title='Embajada de España en República de Guine')
+[2026-09-22 08:58:34] widget booted after 5s (title='Embajada de España en República de Guine')
