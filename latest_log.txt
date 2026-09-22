@@ -1,100 +1,100 @@
-[2026-09-22 08:38:03] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
-[2026-09-22 08:38:03] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
-[2026-09-22 08:38:03] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
-[2026-09-22 08:38:03] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
-[2026-09-22 08:38:03] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
-[2026-09-22 08:38:03] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
-[2026-09-22 08:38:03]   FREE SLOT: 2026-08-19 at 10:00
-[2026-09-22 08:38:03] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
-[2026-09-22 08:38:03] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
-[2026-09-22 08:38:03]   Applicant u1: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
-[2026-09-22 08:38:03] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
-[2026-09-22 08:38:03] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
-[2026-09-22 08:38:03] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
-[2026-09-22 08:38:03] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
-[2026-09-22 08:38:03] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
-[2026-09-22 08:38:03] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
-[2026-09-22 08:38:03] tokens: auto-saved login token for C001 (token=tok_123... expires in 2h)
-[2026-09-22 08:38:03] tokens: auto-saved login token for C001 (token=tok_456... expires in 2h)
-[2026-09-22 08:38:03] tokens: auto-saved login token for C002 (token=tok_exp... expires in 2h)
-[2026-09-22 08:38:03] tokens: auto-removed expired token for C002
-[2026-09-22 08:38:04] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-6/test_save_booking_pdf0/TEST_C001_2026-09-22_0915.pdf (30 bytes)
-[2026-09-22 08:38:04] ============================================================
-[2026-09-22 08:38:04] [DEEP-CHECK] >>> Checking application: TEST_C001 <<<
-[2026-09-22 08:38:04] ============================================================
-[2026-09-22 08:38:06] [DEEP-CHECK] TEST_C001: ACTIVE APPOINTMENT CONFIRMED: 22 de Septiembre de 2026 at 09:15h
-[2026-09-22 08:38:07] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-6/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf (20 bytes)
-[2026-09-22 08:38:07] [DEEP-CHECK] TEST_C001: Real consular PDF receipt saved -> /tmp/pytest-of-rbc/pytest-6/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf
-[2026-09-22 08:38:07] ============================================================
-[2026-09-22 08:38:07] [DEEP-CHECK] >>> Checking application: TEST_C002 <<<
-[2026-09-22 08:38:07] ============================================================
-[2026-09-22 08:38:09] [DEEP-CHECK] TEST_C002: Logged in properly. No active appointment ('NO TIENES NINGUNA CITA').
-[2026-09-22 08:38:12] [DEEP-CHECK] TEST_C002: Arrived at #datetime under authenticated session
-[2026-09-22 08:38:12] [DEEP-CHECK] TEST_C002: No free slots currently open in date window (2026-09-16..2027-12-31).
-[2026-09-22 08:38:12] [TOKEN-API-BOOK] Direct in-page booking succeeded for C001 (signedin): 2026-09-25 11:30
-[2026-09-22 08:38:12] [TOKEN-HTTP-BOOK] External HTTP API booking succeeded for C001 (signedin/): 2026-09-25 11:30
-[2026-09-22 08:38:12] tokens: auto-saved login token for C0099 (token=live_jwt_token... expires in 2h)
-[2026-09-22 08:38:12] [ANYHOW-BOOK] Engaging Tier 3: Direct external HTTP API booking with token for C0099...
-[2026-09-22 08:38:12] [ANYHOW-BOOK] SUCCESS: Slot 2026-09-25 11:30 booked via Direct Token API for C0099!
-[2026-09-22 08:40:54] 
-============================================================================================
-[2026-09-22 08:40:54]   TOTAL CONFIGURED APPLICANTS: 4
-[2026-09-22 08:40:54] ============================================================================================
-[2026-09-22 08:40:54] #   | LOGIN / PASSPORT  | PASSWORD         ********* TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[2026-09-22 08:40:54] --------------------------------------------------------------------------------------------
-[2026-09-22 08:40:54] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
-[2026-09-22 08:40:54] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
-[2026-09-22 08:40:54] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
-[2026-09-22 08:40:54] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
-[2026-09-22 08:40:54] ============================================================================================
-
-[2026-09-22 08:41:08] ==================================================================
-[08:41:08] ==================================================================
-[08:41:08] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[2026-09-22 08:41:08] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[08:41:08] ==================================================================
-[2026-09-22 08:41:08] ==================================================================
-[08:41:08] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 43421
-[2026-09-22 08:41:08] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 43421
-[08:41:25] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:41:25] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:41:31] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:41:31] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:41:37] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:41:37] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:41:37] attempting capsolver cloudflare solve...
-[2026-09-22 08:41:37] attempting capsolver cloudflare solve...
-[08:41:37] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
-[2026-09-22 08:41:37] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
-[08:41:37] capsolver unavailable/failed; continuing with auto-click loop
-[2026-09-22 08:41:37] capsolver unavailable/failed; continuing with auto-click loop
-[2026-09-22 08:41:43] alert: Welcome / Bienvenido
-[08:41:43] alert: Welcome / Bienvenido
-[08:41:44] challenge passed after 19s
-[2026-09-22 08:41:44] challenge passed after 19s
-[08:41:49] captcha gate: clicked Continue / Continuar (attempt 1)
-[2026-09-22 08:41:49] captcha gate: clicked Continue / Continuar (attempt 1)
-[08:41:53] captcha gate: passed, widget page served
-[2026-09-22 08:41:53] captcha gate: passed, widget page served
-[08:41:57] widget booted after 3s (title='Embajada de España en República de Guine')
-[2026-09-22 08:41:57] widget booted after 3s (title='Embajada de España en República de Guine')
-[08:42:01] session saved -> state/session.json (6 cookies)
-[2026-09-22 08:42:01] session saved -> state/session.json (6 cookies)
-[2026-09-22 08:42:01] ==================================================================
-[2026-09-22 08:42:01] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
-[08:42:01] ==================================================================
-[08:42:01] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
-[08:42:01] ==================================================================
-[2026-09-22 08:42:01] ==================================================================
-[2026-09-22 08:42:01] [LOGIN PHASE] Processing 4 applicant(s) needing fresh token authentication...
-[08:42:01] [LOGIN PHASE] Processing 4 applicant(s) needing fresh token authentication...
-[08:42:01] 
-[1/4] === Logging in applicant: C00581897 ===
-[2026-09-22 08:42:01] 
-[1/4] === Logging in applicant: C00581897 ===
-[08:42:06] entered login: C00581897
-[2026-09-22 08:42:06] entered login: C00581897
 [08:42:06] entered password
 [2026-09-22 08:42:06] entered password
 [08:42:07] login submit clicked via #idBktDefaultAccountLoginConfirmButton
 [2026-09-22 08:42:07] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[08:42:22] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[2026-09-22 08:42:22] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[08:42:22] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[2026-09-22 08:42:22] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[08:42:22] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
+[2026-09-22 08:42:22] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
+[08:42:22] trying to reach services view...
+[2026-09-22 08:42:22] trying to reach services view...
+[08:42:22] route=signinaccount
+[2026-09-22 08:42:22] route=signinaccount
+[2026-09-22 08:42:25] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[08:42:25] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[2026-09-22 08:42:27] transitioned from history to #services
+[08:42:27] transitioned from history to #services
+[2026-09-22 08:42:27] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[08:42:27] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[08:42:27] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[2026-09-22 08:42:27] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[08:42:29] [LOGIN PHASE] C00581897: Logged in successfully.
+[2026-09-22 08:42:29] [LOGIN PHASE] C00581897: Logged in successfully.
+[2026-09-22 08:42:29] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[08:42:29] tokens: auto-saved login token for C00581897 (token=jtx8Uq-frJsr2R7... expires in 2h)
+[08:42:29] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[2026-09-22 08:42:29] [TOKEN] Active token cached for C00581897 (token=jtx8Uq-frJsr2R7-...)
+[2026-09-22 08:42:29] [LOGIN PHASE] C00581897: SUCCESS: Fresh token cached -> jtx8Uq-frJsr2R... (valid 2h)
+[2026-09-22 08:42:29] 
+[2/4] === Logging in applicant: C00303363 ===
+[08:42:29] [LOGIN PHASE] C00581897: SUCCESS: Fresh token cached -> jtx8Uq-frJsr2R... (valid 2h)
+[08:42:29] 
+[2/4] === Logging in applicant: C00303363 ===
+[08:42:34] login: clicked idCaptchaButton (Continue)
+[2026-09-22 08:42:34] login: clicked idCaptchaButton (Continue)
+[2026-09-22 08:43:04] login skipped/failed: Message: 
+Stacktrace:
+#0 0x624dc357f9fa <unknown>
+#1 0x624dc2eb55b9 <unknown>
+#2 0x624dc2f0bdfc <unknown>
+#3 0x624dc2f0c071 <unknown>
+#4 0x624dc2f58664 <unknown>
+#5 0x624dc2f558de <unknown>
+#6 0x624dc2efeb8b <unknown>
+#7 0x624dc2eff971 <unknown>
+#8 0x624dc3542667 <unknown>
+#9 0x624dc3540e95 <unknown>
+#10 0x624dc352bf55 <unknown>
+#11 0x624dc3541aea <unknown>
+#12 0x624dc35146c9 <unknown>
+#13 0x624dc35699a8 <unknown>
+#14 0x624dc3569b45 <unknown>
+#15 0x624dc357e353 <unknown>
+#16 0x7dac5f2a3dfa <unknown>
+#17 0x7dac5f3375cc <unknown>
+
+[08:43:04] login skipped/failed: Message: 
+Stacktrace:
+#0 0x624dc357f9fa <unknown>
+#1 0x624dc2eb55b9 <unknown>
+#2 0x624dc2f0bdfc <unknown>
+#3 0x624dc2f0c071 <unknown>
+#4 0x624dc2f58664 <unknown>
+#5 0x624dc2f558de <unknown>
+#6 0x624dc2efeb8b <unknown>
+#7 0x624dc2eff971 <unknown>
+#8 0x624dc3542667 <unknown>
+#9 0x624dc3540e95 <unknown>
+#10 0x624dc352bf55 <unknown>
+#11 0x624dc3541aea <unknown>
+#12 0x624dc35146c9 <unknown>
+#13 0x624dc35699a8 <unknown>
+#14 0x624dc3569b45 <unknown>
+#15 0x624dc357e353 <unknown>
+#16 0x7dac5f2a3dfa <unknown>
+#17 0x7dac5f3375cc <unknown>
+
+[08:43:04] trying to reach services view...
+[2026-09-22 08:43:04] trying to reach services view...
+[08:43:04] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[2026-09-22 08:43:04] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[08:43:06] transitioned from history to #services
+[2026-09-22 08:43:06] transitioned from history to #services
+[2026-09-22 08:43:06] tokens: auto-saved login token for C00303363 (token=BX5yAdSkfxmemdK... expires in 2h)
+[08:43:06] tokens: auto-saved login token for C00303363 (token=BX5yAdSkfxmemdK... expires in 2h)
+[08:43:06] [TOKEN] Active token cached for C00303363 (token=BX5yAdSkfxmemdKa...)
+[2026-09-22 08:43:06] [TOKEN] Active token cached for C00303363 (token=BX5yAdSkfxmemdKa...)
+[2026-09-22 08:43:08] [LOGIN PHASE] C00303363: Logged in successfully.
+[08:43:08] [LOGIN PHASE] C00303363: Logged in successfully.
+[2026-09-22 08:43:08] tokens: auto-saved login token for C00303363 (token=BX5yAdSkfxmemdK... expires in 2h)
+[08:43:08] tokens: auto-saved login token for C00303363 (token=BX5yAdSkfxmemdK... expires in 2h)
+[08:43:08] [TOKEN] Active token cached for C00303363 (token=BX5yAdSkfxmemdKa...)
+[2026-09-22 08:43:08] [TOKEN] Active token cached for C00303363 (token=BX5yAdSkfxmemdKa...)
+[2026-09-22 08:43:08] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> BX5yAdSkfxmemd... (valid 2h)
+[08:43:08] [LOGIN PHASE] C00303363: SUCCESS: Fresh token cached -> BX5yAdSkfxmemd... (valid 2h)
+[08:43:08] 
+[3/4] === Logging in applicant: C00522628 ===
+[2026-09-22 08:43:08] 
+[3/4] === Logging in applicant: C00522628 ===
