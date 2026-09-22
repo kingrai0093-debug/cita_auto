@@ -21,3 +21,9 @@ state/
 .env*
 !.env.example
 config.json
+
+# PyInstaller build artifacts
+build/
+dist/
+release_package/
+*.zip

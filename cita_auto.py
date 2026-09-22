@@ -45,7 +45,18 @@ def log(msg):
 
 
 def load_conf():
-    with open(CONF_PATH) as f:
+    if not os.path.exists(CONF_PATH):
+        example_path = os.path.join(HERE, "config.example.json")
+        if os.path.exists(example_path):
+            try:
+                import shutil
+                shutil.copy(example_path, CONF_PATH)
+                log(f"config.json was not found; automatically created default from {example_path}")
+            except Exception:
+                pass
+        if not os.path.exists(CONF_PATH):
+            raise FileNotFoundError(f"Missing config.json! Please copy config.example.json to config.json and fill in your details.")
+    with open(CONF_PATH, encoding="utf-8") as f:
         conf = json.load(f)
     today_iso = datetime.now().date().isoformat()
     if not conf.get("date_start") or conf["date_start"] < today_iso:
@@ -1241,7 +1252,21 @@ def browser_new(conf):
     ensure_display(conf)
     opts = Options()
     binary = conf.get("browser", {}).get("binary")
-    if binary:
+    if binary and not os.path.exists(binary):
+        binary = None
+    if not binary and sys.platform == "win32":
+        for cand in (
+            os.path.expandvars(r"%ProgramFiles%\Google\Chrome\Application\chrome.exe"),
+            os.path.expandvars(r"%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"),
+            os.path.expandvars(r"%LocalAppData%\Google\Chrome\Application\chrome.exe"),
+            os.path.expandvars(r"%ProgramFiles%\BraveSoftware\Brave-Browser\Application\brave.exe"),
+            os.path.expandvars(r"%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe"),
+            os.path.expandvars(r"%ProgramFiles%\Microsoft\Edge\Application\msedge.exe"),
+        ):
+            if os.path.exists(cand):
+                binary = cand
+                break
+    if binary and os.path.exists(binary):
         opts.binary_location = binary
     opts.add_argument("--no-sandbox")
     opts.add_argument("--disable-dev-shm-usage")
@@ -1282,6 +1307,8 @@ def browser_new(conf):
     else:
         opts.add_argument("--window-size=1400,1000")
     path = conf.get("browser", {}).get("chromedriver", "")
+    if path and not os.path.exists(path):
+        path = ""
     service = Service(path) if path else None
     if conf.get("browser", {}).get("xvfb"):
         import shutil
@@ -4561,6 +4588,37 @@ def export_pdf_mode(conf, selector=None):
 
 
 def main():
+    if len(sys.argv) == 1:
+        print("=" * 68)
+        print("          CITA AUTO - Consular Appointment Automated System")
+        print("=" * 68)
+        print("  1. Start Continuous 24/7 Live Auto-Booking (Full Run) [DEFAULT]")
+        print("  2. Deep Check Applicants & Saved Consular PDF Receipts")
+        print("  3. Real-Time Slot Monitor (Watch Mode)")
+        print("  4. Quick Single-Pass Slot Check")
+        print("  5. Pre-Authenticate & Cache Applicant Tokens")
+        print("  6. Show Configured Applicants & Status")
+        print("  7. Exit")
+        print("=" * 68)
+        try:
+            choice = input("Select an option (1-7) [Press Enter for 1]: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            choice = "1"
+        mapping = {
+            "": "run",
+            "1": "run",
+            "2": "deep-check",
+            "3": "watch",
+            "4": "check",
+            "5": "auth-cache",
+            "6": "applicants",
+            "7": "exit"
+        }
+        selected = mapping.get(choice, "run")
+        if selected == "exit":
+            return 0
+        sys.argv.append(selected)
+
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("mode", choices=["setup", "check", "deep-check", "watch", "book", "verify", "auth-cache", "export-pdf", "applicants", "status", "run"])
     ap.add_argument("--auto-book", action="store_true", default=None, help="watch: book all accounts when a slot appears")
@@ -4585,26 +4643,40 @@ def main():
     elif args.auto_book is not None:
         conf["auto_book"] = args.auto_book
 
-    if args.mode in ("applicants", "status"):
-        show_applicants_info(conf, args.user)
-        return 0
-    if args.mode == "run":
-        return full_run_mode(conf, args.user)
-    if args.mode == "setup":
-        return setup_mode(conf)
-    if args.mode in ("check", "deep-check"):
-        return check_mode(conf, args.user, once=args.once)
-    if args.mode == "watch":
-        return watch_mode(conf, args.user)
-    if args.mode == "book":
-        return book_mode(conf, args.user, args.one_session)
-    if args.mode == "verify":
-        return verify_mode(conf, args.user)
-    if args.mode == "auth-cache":
-        return auth_cache_mode(conf, args.user)
-    if args.mode == "export-pdf":
-        return export_pdf_mode(conf, args.user)
-    return 0
+    ret = 0
+    try:
+        if args.mode in ("applicants", "status"):
+            show_applicants_info(conf, args.user)
+            ret = 0
+        elif args.mode == "run":
+            ret = full_run_mode(conf, args.user)
+        elif args.mode == "setup":
+            ret = setup_mode(conf)
+        elif args.mode in ("check", "deep-check"):
+            ret = check_mode(conf, args.user, once=args.once)
+        elif args.mode == "watch":
+            ret = watch_mode(conf, args.user)
+        elif args.mode == "book":
+            ret = book_mode(conf, args.user, args.one_session)
+        elif args.mode == "verify":
+            ret = verify_mode(conf, args.user)
+        elif args.mode == "auth-cache":
+            ret = auth_cache_mode(conf, args.user)
+        elif args.mode == "export-pdf":
+            ret = export_pdf_mode(conf, args.user)
+    except KeyboardInterrupt:
+        print("\n[CITA AUTO] Stopped by user.")
+        ret = 130
+    except Exception as e:
+        print(f"\n[CITA AUTO] Error: {e}")
+        ret = 1
+    finally:
+        if sys.platform == "win32" and not os.environ.get("CITA_NO_PAUSE"):
+            try:
+                input("\n[CITA AUTO] Press Enter to exit...")
+            except Exception:
+                pass
+    return ret
 
 
 if __name__ == "__main__":

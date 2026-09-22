@@ -1,0 +1,91 @@
+name: Build Windows Executable (.exe)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'cita_auto.py'
+      - 'cita_auto.spec'
+      - 'requirements.txt'
+      - '.github/workflows/build_exe.yml'
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies & PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build cita_auto.exe with PyInstaller
+        run: |
+          pyinstaller --clean cita_auto.spec
+
+      - name: Verify Executable
+        run: |
+          if (Test-Path "dist\cita_auto.exe") {
+            Write-Host "Build succeeded: dist\cita_auto.exe created successfully!"
+            Get-Item "dist\cita_auto.exe" | Select-Object Name, Length, LastWriteTime
+          } else {
+            Write-Error "dist\cita_auto.exe was not found!"
+            exit 1
+          }
+
+      - name: Create Windows Release Package (ZIP)
+        run: |
+          mkdir release_package
+          Copy-Item "dist\cita_auto.exe" -Destination "release_package\"
+          Copy-Item "config.example.json" -Destination "release_package\"
+          Copy-Item "start_windows.bat" -Destination "release_package\"
+          Copy-Item "README.md" -Destination "release_package\"
+          Compress-Archive -Path "release_package\*" -DestinationPath "cita_auto_windows.zip" -Force
+
+      - name: Upload Windows Executable Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cita_auto_windows_exe
+          path: |
+            dist/cita_auto.exe
+            cita_auto_windows.zip
+          retention-days: 30
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+        with:
+          tag_name: latest-release
+          name: "Cita Auto Windows Executable (.exe)"
+          body: |
+            ## Cita Auto Windows Release
+            Download the ready-to-run Windows executable below:
+            - **`cita_auto_windows.zip`**: Complete bundle with `cita_auto.exe`, `config.example.json`, and `start_windows.bat`.
+            - **`cita_auto.exe`**: Standalone Windows binary.
+            
+            ### Quick Start on Windows:
+            1. Download and extract `cita_auto_windows.zip`.
+            2. Open `config.json` (auto-created from `config.example.json`) to adjust credentials or dates.
+            3. Double-click `cita_auto.exe` or `start_windows.bat` to launch.
+          files: |
+            dist/cita_auto.exe
+            cita_auto_windows.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
