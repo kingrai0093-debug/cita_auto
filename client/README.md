@@ -2,13 +2,25 @@
 
 Turnkey, self-contained automated appointment slot monitor and fast auto-booking system for Spanish Consular appointments (Bookitit / citaconsular.es).
 
+This client distribution is a **pre-compiled, standalone binary package**. It does **not** require installing Python, compilers, or any external development tools.
+
+---
+
+## 📁 Package Contents
+
+- **`cita_auto.exe`**: Pre-compiled standalone executable bot.
+- **`start.bat`**: 1-click Windows launcher.
+- **`config.json`**: Configuration file with your applicant logins, passwords, and preferences.
+- **`config.example.json`**: Template configuration file for reference.
+
 ---
 
 ## 🚀 Quick Start (Windows)
 
-### Method A: 1-Click Runner
-1. Double-click **`start.bat`**.
-2. An interactive menu appears:
+1. Extract all files into the same folder.
+2. Edit **`config.json`** with your applicant credentials and desired booking dates.
+3. Double-click **`start.bat`** (or double-click **`cita_auto.exe`** directly).
+4. An interactive launcher menu will appear:
    ```text
    ====================================================================
              CITA AUTO - Consular Appointment Automated System
@@ -22,26 +34,13 @@ Turnkey, self-contained automated appointment slot monitor and fast auto-booking
      7. Exit
    ====================================================================
    ```
-3. Press **`Enter`** (or type `1`) to start 24/7 live monitoring and auto-booking.
-
----
-
-## 🛠️ How to Compile `cita_auto.exe`
-
-If you want a standalone `.exe` binary that runs without needing Python:
-
-1. Double-click **`build_exe.bat`** (or run `python build_exe.py` in your terminal).
-2. The script will automatically:
-   - Install required packages (`selenium`, `curl_cffi`, `requests`, `pyinstaller`)
-   - Compile `cita_auto.exe`
-   - Place `cita_auto.exe` right here in your client folder.
-3. You can now distribute or run `cita_auto.exe` directly on any Windows machine!
+5. Press **`Enter`** (or type `1`) to start 24/7 continuous slot monitoring and auto-booking.
 
 ---
 
 ## ⚙️ Configuration (`config.json`)
 
-Edit `config.json` in any text editor (Notepad, VS Code):
+Open `config.json` in any text editor (Notepad, VS Code, etc.):
 
 ```json
 {
@@ -67,38 +66,41 @@ Edit `config.json` in any text editor (Notepad, VS Code):
 }
 ```
 
-- **`accounts`**: Add as many applicants as you need. The bot will authenticate all of them and book distinct free slots simultaneously.
-- **`date_start` / `date_end`**: The calendar window you want to accept appointment dates in.
-- **`poll_interval`**: Checking speed in seconds (default: `5`).
-- **`auto_book`**: Set `true` to immediately book free slots the instant they appear.
+- **`accounts`**: Add as many applicants as you need. The system will authenticate each applicant and book available slots simultaneously.
+- **`date_start` / `date_end`**: The date range in which you want to book appointments (`YYYY-MM-DD`).
+- **`poll_interval`**: Checking interval in seconds (default: `5`).
+- **`auto_book`**: Set to `true` to immediately book appointments the millisecond a slot opens.
+- **`random_slots`**: Randomize slot selection when multiple slots appear at once.
 
 ---
 
 ## 📱 Telegram Live Updates & Alerts (`@CapSpain_bot`)
 
-Your private Telegram bot token is **securely embedded inside the executable** (hidden and protected against code inspection).
+Your private Telegram bot token is **securely embedded inside the executable binary** (hidden and protected against tampering).
 
 ### To link your Telegram:
 1. Open Telegram and search for **`@CapSpain_bot`** (or visit **[t.me/CapSpain_bot](https://t.me/CapSpain_bot)**).
 2. Tap **`/start`**.
-3. You will instantly receive a welcome confirmation.
+3. You will instantly receive a welcome notification.
 
-### What the bot does:
-- 🟢 **Live Dashboard**: Updates real-time scanning status and current round.
-- 🚨 **Instant Slot Discovery**: The millisecond a slot opens, you receive an alert with the available dates and times.
-- 🎉 **Full Booking Confirmation**: As soon as an applicant is booked, the bot sends:
+### Features:
+- 🟢 **Live Dashboard**: Displays real-time round counts, active applicants, and health metrics.
+- 🚨 **Instant Slot Discovery**: Alerts with available dates and times the instant a slot opens.
+- 🎉 **Full Booking Notification**: When an appointment is booked, the bot sends:
   - Applicant **Full Name**
   - **Login ID**
   - **Password**
   - **Booking Date & Time**
   - **Official Consular PDF Receipt** attached directly to the message.
 - 💬 **Interactive Commands**:
-  - Type **`/status`** or **`/logs`** anytime to get the live scanner status and recent logs.
+  - Type **`/status`** or **`/logs`** anytime to get the live scanner status and recent activity logs.
 
 ---
 
-## 📄 Official PDF Receipts
+## 📄 Official Consular Receipts
 
-When an appointment is confirmed (either existing or booked new), the system captures the official Bookitit consular receipt and saves it to:
-`state/receipts/<login>_<date>_<time>.pdf`
-and sends it directly to your Telegram chat.
+When an appointment is confirmed (existing or freshly booked), the system downloads the official consular receipt and saves it to:
+```text
+state/receipts/<login>_<date>_<time>.pdf
+```
+It is also automatically sent to your Telegram chat.

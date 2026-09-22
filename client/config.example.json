@@ -20,7 +20,7 @@
  ],
  "telegram": {
   "enabled": true,
-  "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "bot_token": "",
   "chat_id": ""
  }
 }
