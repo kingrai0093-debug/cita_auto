@@ -418,24 +418,157 @@ def telegram_notify_booking_success(conf, acc, slot, pdf_path=None):
     return telegram_notify(conf, msg, document_path=pdf_path)
 
 
+TELEGRAM_LIVE_CARD_IDS = {}  # cid -> {"msg_id": int, "sent_at": float}
+LAST_TELEGRAM_LOG_TIME = 0
+LAST_TELEGRAM_EDIT_TIME = 0
+
+
 def telegram_notify_live_check(conf, round_no, interval, window, pending_count, total_count, force=False):
-    """Send periodic live monitoring heartbeats to Telegram."""
-    global LAST_TELEGRAM_LOG_TIME
+    """Update live real-time dashboard message in Telegram or send fresh periodic scan log."""
+    global LAST_TELEGRAM_LOG_TIME, LAST_TELEGRAM_EDIT_TIME, TELEGRAM_LIVE_CARD_IDS
     now = time.time()
-    if not force and round_no > 1 and (now - LAST_TELEGRAM_LOG_TIME < 300):
+
+    # Throttle edits to at most once every 10 seconds to avoid Telegram rate-limits
+    if not force and (now - LAST_TELEGRAM_EDIT_TIME < 10):
         return False
-    LAST_TELEGRAM_LOG_TIME = now
+    LAST_TELEGRAM_EDIT_TIME = now
+
+    tg = conf.get("telegram", {})
+    if not tg or not tg.get("enabled"):
+        return False
+    token = str(tg.get("bot_token", "")).strip()
+    if not token or "YOUR_" in token:
+        return False
+
+    chat_ids = telegram_get_chat_ids(conf)
+    if not chat_ids:
+        return False
+
     now_str = datetime.now().strftime("%H:%M:%S")
     msg = (
         f"🟢 <b>CITA AUTO: 24/7 Real-Time Live Status</b>\n\n"
-        f"🕒 <b>Local Time:</b> {now_str} (Round {round_no})\n"
-        f"🔍 <b>Status:</b> Actively scanning dates & times real-time (every {interval}s)\n"
+        f"🕒 <b>Last Check:</b> {now_str} (Round #{round_no})\n"
+        f"🔍 <b>Status:</b> Scanning dates & times actively (every {interval}s)\n"
         f"📅 <b>Target Window:</b> {window}\n"
         f"👥 <b>Pending Applicants:</b> {pending_count} / {total_count}\n"
         f"⚡ <b>Engine:</b> 4-Layer multi-month calendar & in-page API\n\n"
-        f"<i>Bot will alert immediately as soon as a free slot opens!</i>"
+        f"<i>Updated live in real time. Bot alerts immediately when free slots appear!</i>"
     )
-    return telegram_notify(conf, msg)
+
+    import urllib.request
+    import urllib.parse
+
+    # Send a new log message every 60s so user has a chat trail, while live-editing the dashboard in between
+    send_new = force or (now - LAST_TELEGRAM_LOG_TIME >= 60)
+    if send_new:
+        LAST_TELEGRAM_LOG_TIME = now
+
+    for cid in chat_ids:
+        entry = TELEGRAM_LIVE_CARD_IDS.get(cid)
+        edited = False
+        if entry and not send_new:
+            try:
+                url = f"https://api.telegram.org/bot{token}/editMessageText"
+                payload = urllib.parse.urlencode({
+                    "chat_id": cid,
+                    "message_id": entry["msg_id"],
+                    "text": msg,
+                    "parse_mode": "HTML"
+                }).encode("utf-8")
+                req = urllib.request.Request(url, data=payload, headers={"User-Agent": "CitaAuto/1.0"})
+                with urllib.request.urlopen(req, timeout=5) as resp:
+                    if resp.status == 200:
+                        edited = True
+            except Exception:
+                pass
+
+        if not edited and (send_new or not entry):
+            try:
+                url = f"https://api.telegram.org/bot{token}/sendMessage"
+                payload = urllib.parse.urlencode({
+                    "chat_id": cid,
+                    "text": msg,
+                    "parse_mode": "HTML"
+                }).encode("utf-8")
+                req = urllib.request.Request(url, data=payload, headers={"User-Agent": "CitaAuto/1.0"})
+                with urllib.request.urlopen(req, timeout=5) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    if data.get("ok"):
+                        TELEGRAM_LIVE_CARD_IDS[cid] = {
+                            "msg_id": data["result"]["message_id"],
+                            "sent_at": now
+                        }
+            except Exception:
+                pass
+    return True
+
+
+def start_telegram_command_listener(conf):
+    """Background listener answering /status, /logs, /check commands in Telegram."""
+    def _run():
+        tg = conf.get("telegram", {})
+        if not tg or not tg.get("enabled"):
+            return
+        token = str(tg.get("bot_token", "")).strip()
+        if not token or "YOUR_" in token:
+            return
+        last_offset = 0
+        import urllib.request, urllib.parse
+        while True:
+            try:
+                url = f"https://api.telegram.org/bot{token}/getUpdates?offset={last_offset}&timeout=5"
+                req = urllib.request.Request(url, headers={"User-Agent": "CitaAuto/1.0"})
+                with urllib.request.urlopen(req, timeout=8) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    if data.get("ok"):
+                        for u in data.get("result", []):
+                            uid = u.get("update_id", 0)
+                            if uid >= last_offset:
+                                last_offset = uid + 1
+                            msg = u.get("message") or {}
+                            text = (msg.get("text") or "").strip().lower()
+                            chat = msg.get("chat") or {}
+                            cid = str(chat.get("id", "")).strip()
+                            if not cid:
+                                continue
+
+                            chats = set(str(c).strip() for c in load_telegram_chats() if c)
+                            if cid not in chats:
+                                chats.add(cid)
+                                save_telegram_chats(list(chats))
+
+                            if any(cmd in text for cmd in ("/status", "/check", "/log", "/logs", "/start", "/help")):
+                                recent_logs = []
+                                if os.path.exists(LOG_PATH):
+                                    try:
+                                        with open(LOG_PATH, encoding="utf-8", errors="ignore") as f:
+                                            lines = f.readlines()
+                                            recent_logs = [l.strip() for l in lines[-10:] if l.strip()]
+                                    except Exception:
+                                        pass
+                                logs_text = "\n".join(recent_logs) if recent_logs else "Scanner is active..."
+                                reply = (
+                                    f"🤖 <b>CapSpain_bot Live Scanner Status</b>\n\n"
+                                    f"🕒 <b>Local Time:</b> {datetime.now().strftime('%H:%M:%S')}\n"
+                                    f"⚡ <b>Scanner:</b> Actively scanning 24/7 (interval={conf.get('poll_interval', 5)}s)\n"
+                                    f"📅 <b>Window:</b> {conf.get('date_start')}..{conf.get('date_end')}\n\n"
+                                    f"<b>Latest Real-Time Logs:</b>\n"
+                                    f"<pre>{logs_text[-2500:]}</pre>"
+                                )
+                                s_url = f"https://api.telegram.org/bot{token}/sendMessage"
+                                s_payload = urllib.parse.urlencode({
+                                    "chat_id": cid,
+                                    "text": reply,
+                                    "parse_mode": "HTML"
+                                }).encode("utf-8")
+                                s_req = urllib.request.Request(s_url, data=s_payload, headers={"User-Agent": "CitaAuto/1.0"})
+                                urllib.request.urlopen(s_req, timeout=5)
+            except Exception:
+                pass
+            time.sleep(2)
+
+    t = threading.Thread(target=_run, daemon=True)
+    t.start()
 
 
 def show_applicants_info(conf, selector=None, logfn=log):
@@ -2568,6 +2701,11 @@ def watch_mode(conf, selector=None):
     log(f"starting continuous watch mode (interval={interval}s, auto_book={auto_book}, "
         f"pending={len(pending)} applicant(s): {[a['login'] for a in pending]})")
 
+    try:
+        start_telegram_command_listener(conf)
+    except Exception:
+        pass
+
     drv = None
     round_no = 0
     try:
@@ -4590,6 +4728,12 @@ def full_run_mode(conf, selector=None):
     randomize = conf.get("random_slots", True)
     d_start = conf.get("date_start", "start")
     d_end = conf.get("date_end", "end")
+
+    try:
+        start_telegram_command_listener(conf)
+        telegram_notify_live_check(conf, 0, interval, f"{d_start}..{d_end}", len(self_accounts(conf, selector)), len(self_accounts(conf, selector)), force=True)
+    except Exception:
+        pass
 
     drv = start_browser_lane(conf)
     if drv is None:
