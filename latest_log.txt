@@ -1,100 +1,100 @@
-[2026-09-22 10:02:39] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33085
-[2026-09-22 10:02:44] challenge passed after 3s
-[10:02:44] challenge passed after 3s
-[10:02:46] captcha gate: no Continue button; widget page served
-[2026-09-22 10:02:46] captcha gate: no Continue button; widget page served
-[2026-09-22 10:02:51] login skipped/failed: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-#0 0x6192563359fa <unknown>
-#1 0x619255c6b370 <unknown>
-#2 0x619255cb3e3e <unknown>
-#3 0x619255ce7a06 <unknown>
-#4 0x619255ce1d95 <unknown>
-#5 0x619255ce14bc <unknown>
-#6 0x619255c2f34b <unknown>
-#7 0x619255c2fab4 <unknown>
-#8 0x619255c300c5 <unknown>
-#9 0x6192562f8667 <unknown>
-#10 0x6192562f6e95 <unknown>
-#11 0x6192562e1f55 <unknown>
-#12 0x6192562f7aea <unknown>
-#13 0x6192562ca6c9 <unknown>
-#14 0x619255c2da6a <unknown>
-#15 0x7143de22a601 <unknown>
-#16 0x7143de22a718 __libc_start_main
-#17 0x619255bf896a _start
-
-[2026-09-22 10:02:51] trying to reach services view...
-[2026-09-22 10:02:55] widget page present after 9s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
-[10:02:55] widget page present after 9s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
-[10:02:59] session saved -> state/session.json (0 cookies)
-[2026-09-22 10:02:59] session saved -> state/session.json (0 cookies)
-[2026-09-22 10:03:03] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
-[2026-09-22 10:03:03] service select: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-#0 0x6192563359fa <unknown>
-#1 0x619255c6b370 <unknown>
-#2 0x619255cb3e3e <unknown>
-#3 0x619255ce7a06 <unknown>
-#4 0x619255ce1d95 <unknown>
-#5 0x619255ce14bc <unknown>
-#6 0x619255c2f34b <unknown>
-#7 0x619255c2fab4 <unknown>
-#8 0x619255c300c5 <unknown>
-#9 0x6192562f8667 <unknown>
-#10 0x6192562f6e95 <unknown>
-#11 0x6192562e1f55 <unknown>
-#12 0x6192562f7aea <unknown>
-#13 0x6192562ca6c9 <unknown>
-#14 0x619255c2da6a <unknown>
-#15 0x7143de22a601 <unknown>
-#16 0x7143de22a718 __libc_start_main
-#17 0x619255bf896a _start
-
-[2026-09-22 10:03:03] agenda select: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
-Stacktrace:
-#0 0x6192563359fa <unknown>
-#1 0x619255c6b370 <unknown>
-#2 0x619255cb3e3e <unknown>
-#3 0x619255ce7a06 <unknown>
-#4 0x619255ce1d95 <unknown>
-#5 0x619255ce14bc <unknown>
-#6 0x619255c2f34b <unknown>
-#7 0x619255c2fab4 <unknown>
-#8 0x619255c300c5 <unknown>
-#9 0x6192562f8667 <unknown>
-#10 0x6192562f6e95 <unknown>
-#11 0x6192562e1f55 <unknown>
-#12 0x6192562f7aea <unknown>
-#13 0x6192562ca6c9 <unknown>
-#14 0x619255c2da6a <unknown>
-#15 0x7143de22a601 <unknown>
-#16 0x7143de22a718 __libc_start_main
-#17 0x619255bf896a _start
-
-[2026-09-22 10:03:03] [10:03:03][ROUND 117] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:03:03] [10:03:03][ROUND 117] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:30:09] [10:30:09][ROUND 118] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:30:09] [10:30:09][ROUND 118] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 10:30:32] [10:30:32][ROUND 119] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:30:32] [10:30:32][ROUND 119] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:30:55] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:30:55] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[10:30:55] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:30:55] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[10:30:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:30:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[10:30:59] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:30:59] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 10:31:13] [10:31:13][ROUND 120] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:31:13] [10:31:13][ROUND 120] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:31:22] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)[2026-09-22 10:31:22] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-
-[2026-09-22 10:31:38] [10:31:38][ROUND 121] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:31:38] [10:31:38][ROUND 121] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:32:02] alert: Welcome / Bienvenido
-[2026-09-22 10:32:02] alert: Welcome / Bienvenido
-[2026-09-22 10:32:46] accepted terms dialog
-[10:32:46] accepted terms dialog
-[2026-09-22 10:33:23] [10:33:23][ROUND 122] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[10:33:23] [10:33:23][ROUND 122] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:33:29] login skipped/failed: 'str' object has no attribute 'find_element'
+[2026-09-22 10:33:29] trying to reach services view...
+[2026-09-22 10:33:29] [LOGIN PHASE] u3: Logged in successfully.
+[2026-09-22 10:33:29] [TOKEN] Note extracting token for u3: 'str' object has no attribute 'execute_script'
+[2026-09-22 10:33:29] [LOGIN PHASE] u3: Logged in, session active in browser.
+[2026-09-22 10:33:29] 
+[LOGIN PHASE COMPLETE] Active tokens: [] | Booked: ['u1'] | Remaining pending: 2
+[2026-09-22 10:33:29] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
+[2026-09-22 10:33:29]   FREE SLOT: 2026-08-19 at 10:00
+[2026-09-22 10:33:29] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
+[2026-09-22 10:33:29]   Applicant u2: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
+[2026-09-22 10:33:29] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Fallback: Claiming u2 via live driver DOM for 2026-08-19 10:00...
+[2026-09-22 10:33:29] [PARALLEL CLAIM] >>> SUCCESS <<< u2 booked slot 2026-08-19 10:00 via Driver DOM!
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM SUMMARY] 1/1 applicant(s) successfully booked ===
+[2026-09-22 10:33:29] 1 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
+[2026-09-22 10:33:29] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
+[2026-09-22 10:33:29]   FREE SLOT: 2026-08-19 at 10:00
+[2026-09-22 10:33:29] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
+[2026-09-22 10:33:29]   Applicant u3: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
+[2026-09-22 10:33:29] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Fallback: Claiming u3 via live driver DOM for 2026-08-19 10:00...
+[2026-09-22 10:33:29] [PARALLEL CLAIM] >>> SUCCESS <<< u3 booked slot 2026-08-19 10:00 via Driver DOM!
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM SUMMARY] 1/1 applicant(s) successfully booked ===
+[2026-09-22 10:33:29] All configured accounts booked successfully! Done.
+[2026-09-22 10:33:29] starting continuous watch mode (interval=1s, auto_book=True, pending=2 applicant(s): ['u1', 'u2'])
+[2026-09-22 10:33:29] opening browser lane for continuous watching & booking...
+[2026-09-22 10:33:29] Found 2 applicant(s) without active login token; executing fast login pass...
+[2026-09-22 10:33:29] ==================================================================
+[2026-09-22 10:33:29] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
+[2026-09-22 10:33:29] ==================================================================
+[2026-09-22 10:33:29] [LOGIN PHASE] Processing 2 applicant(s) needing fresh token authentication...
+[2026-09-22 10:33:29] 
+[1/2] === Logging in applicant: u1 ===
+[2026-09-22 10:33:29] login skipped/failed: 'str' object has no attribute 'find_element'
+[2026-09-22 10:33:29] trying to reach services view...
+[2026-09-22 10:33:29] [LOGIN PHASE] u1: Logged in successfully.
+[2026-09-22 10:33:29] [TOKEN] Note extracting token for u1: 'str' object has no attribute 'execute_script'
+[2026-09-22 10:33:29] [LOGIN PHASE] u1: Logged in, session active in browser.
+[2026-09-22 10:33:29] 
+[2/2] === Logging in applicant: u2 ===
+[2026-09-22 10:33:29] login skipped/failed: 'str' object has no attribute 'find_element'
+[2026-09-22 10:33:29] trying to reach services view...
+[2026-09-22 10:33:29] [LOGIN PHASE] u2: Logged in successfully.
+[2026-09-22 10:33:29] [TOKEN] Note extracting token for u2: 'str' object has no attribute 'execute_script'
+[2026-09-22 10:33:29] [LOGIN PHASE] u2: Logged in, session active in browser.
+[2026-09-22 10:33:29] 
+[LOGIN PHASE COMPLETE] Active tokens: [] | Booked: [] | Remaining pending: 2
+[2026-09-22 10:33:29] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
+[2026-09-22 10:33:29]   FREE SLOT: 2026-08-19 at 10:00
+[2026-09-22 10:33:29] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
+[2026-09-22 10:33:29]   Applicant u1: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
+[2026-09-22 10:33:29] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
+[2026-09-22 10:33:29] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
+[2026-09-22 10:33:29] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
+[2026-09-22 10:33:29] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
+[2026-09-22 10:33:29]   FREE SLOT: 2026-08-19 at 10:00
+[2026-09-22 10:33:29] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
+[2026-09-22 10:33:29]   Applicant u1: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
+[2026-09-22 10:33:29] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
+[2026-09-22 10:33:29] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
+[2026-09-22 10:33:29] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
+[2026-09-22 10:33:29] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
+[2026-09-22 10:33:29] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
+[2026-09-22 10:33:30] tokens: auto-saved login token for C001 (token=tok_123... expires in 2h)
+[2026-09-22 10:33:30] tokens: auto-saved login token for C001 (token=tok_456... expires in 2h)
+[2026-09-22 10:33:30] tokens: auto-saved login token for C002 (token=tok_exp... expires in 2h)
+[2026-09-22 10:33:30] tokens: auto-removed expired token for C002
+[2026-09-22 10:33:31] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-10/test_save_booking_pdf0/TEST_C001_2026-09-22_0915.pdf (30 bytes)
+[2026-09-22 10:33:31] ============================================================
+[2026-09-22 10:33:31] [DEEP-CHECK] >>> Checking application: TEST_C001 <<<
+[2026-09-22 10:33:31] ============================================================
+[2026-09-22 10:33:33] [DEEP-CHECK] TEST_C001: ACTIVE APPOINTMENT CONFIRMED: 22 de Septiembre de 2026 at 09:15h
+[2026-09-22 10:33:34] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-10/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf (20 bytes)
+[2026-09-22 10:33:34] [DEEP-CHECK] TEST_C001: Real consular PDF receipt saved -> /tmp/pytest-of-rbc/pytest-10/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf
+[2026-09-22 10:33:34] ============================================================
+[2026-09-22 10:33:34] [DEEP-CHECK] >>> Checking application: TEST_C002 <<<
+[2026-09-22 10:33:34] ============================================================
+[2026-09-22 10:33:36] [DEEP-CHECK] TEST_C002: Logged in properly. No active appointment ('NO TIENES NINGUNA CITA').
+[2026-09-22 10:33:39] [DEEP-CHECK] TEST_C002: Arrived at #datetime under authenticated session
+[2026-09-22 10:33:39] [DEEP-CHECK] TEST_C002: No free slots currently open in date window (2026-09-16..2027-12-31).
+[2026-09-22 10:33:39] [TOKEN-API-BOOK] Direct in-page booking succeeded for C001 (signedin): 2026-09-25 11:30
+[2026-09-22 10:33:39] [TOKEN-HTTP-BOOK] External HTTP API booking succeeded for C001 (signedin/): 2026-09-25 11:30
+[2026-09-22 10:33:39] tokens: auto-saved login token for C0099 (token=live_jwt_token... expires in 2h)
+[2026-09-22 10:33:39] [ANYHOW-BOOK] Engaging Tier 3: Direct external HTTP API booking with token for C0099...
+[2026-09-22 10:33:39] [ANYHOW-BOOK] SUCCESS: Slot 2026-09-25 11:30 booked via Direct Token API for C0099!
+[2026-09-22 10:33:51] [10:33:51][ROUND 123] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[10:33:51] [10:33:51][ROUND 123] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[10:34:24] [10:34:24][ROUND 124] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 10:34:24] [10:34:24][ROUND 124] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
