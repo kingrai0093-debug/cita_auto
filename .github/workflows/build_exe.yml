@@ -50,6 +50,13 @@ jobs:
             exit 1
           }
 
+      - name: Test start.bat on Native Windows cmd.exe
+        shell: cmd
+        run: |
+          copy dist\cita_auto.exe client\cita_auto.exe
+          cd client
+          echo 7 | start.bat
+
       - name: Create Windows Release Package (ZIP)
         run: |
           mkdir release_package

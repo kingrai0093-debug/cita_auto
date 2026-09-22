@@ -2,6 +2,7 @@
 title Cita Auto - Spanish Consular Appointment Bot
 color 0A
 cd /d "%~dp0"
+set CITA_NO_PAUSE=1
 
 echo ======================================================================
 echo          CITA AUTO - Spanish Consular Appointment Bot
