@@ -1,69 +1,3 @@
-[2026-09-22 08:56:57] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
-[2026-09-22 08:56:57] FOUND 1 AVAILABLE SLOT(S) in window 2026-09-22..2027-12-31!
-[2026-09-22 08:56:57]   FREE SLOT: 2026-08-19 at 10:00
-[2026-09-22 08:56:57] Claiming 1 distinct slot(s) for pending applicant(s) randomly & fast...
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM] Claiming 1 slot(s) for 1 applicant(s) SIMULTANEOUSLY ===
-[2026-09-22 08:56:57]   Applicant u1: No cached token -> will use live driver DOM -> Slot 2026-08-19 10:00
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Firing in-page batch AJAX for all applicants simultaneously...
-[2026-09-22 08:56:57] [BATCH-BOOK] In-page batch booking script error: 'str' object has no attribute 'execute_async_script'
-[2026-09-22 08:56:57] [PARALLEL CLAIM] Fallback: Claiming u1 via live driver DOM for 2026-08-19 10:00...
-[2026-09-22 08:56:57] [ANYHOW-BOOK] FAILED: All booking tiers exhausted for u1
-[2026-09-22 08:56:57] === [FAST PARALLEL CLAIM SUMMARY] 0/1 applicant(s) successfully booked ===
-[2026-09-22 08:56:57] 2 applicant(s) still unbooked; continuing continuous watch without missing any date and time...
-[2026-09-22 08:56:57] tokens: auto-saved login token for C001 (token=tok_123... expires in 2h)
-[2026-09-22 08:56:57] tokens: auto-saved login token for C001 (token=tok_456... expires in 2h)
-[2026-09-22 08:56:57] tokens: auto-saved login token for C002 (token=tok_exp... expires in 2h)
-[2026-09-22 08:56:57] tokens: auto-removed expired token for C002
-[08:56:58] [08:56:58][ROUND 28] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 08:56:58] [08:56:58][ROUND 28] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 08:56:58] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-8/test_save_booking_pdf0/TEST_C001_2026-09-22_0915.pdf (30 bytes)
-[2026-09-22 08:56:58] ============================================================
-[2026-09-22 08:56:58] [DEEP-CHECK] >>> Checking application: TEST_C001 <<<
-[2026-09-22 08:56:58] ============================================================
-[2026-09-22 08:57:00] [DEEP-CHECK] TEST_C001: ACTIVE APPOINTMENT CONFIRMED: 22 de Septiembre de 2026 at 09:15h
-[2026-09-22 08:57:01] [PDF-AUTO-SAVE] Real appointment PDF receipt saved -> /tmp/pytest-of-rbc/pytest-8/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf (20 bytes)
-[2026-09-22 08:57:01] [DEEP-CHECK] TEST_C001: Real consular PDF receipt saved -> /tmp/pytest-of-rbc/pytest-8/test_deep_check_account_alread0/TEST_C001_22_de_Septiembre_de_2026_0915.pdf
-[2026-09-22 08:57:01] ============================================================
-[2026-09-22 08:57:01] [DEEP-CHECK] >>> Checking application: TEST_C002 <<<
-[2026-09-22 08:57:01] ============================================================
-[2026-09-22 08:57:03] [DEEP-CHECK] TEST_C002: Logged in properly. No active appointment ('NO TIENES NINGUNA CITA').
-[2026-09-22 08:57:07] [DEEP-CHECK] TEST_C002: Arrived at #datetime under authenticated session
-[2026-09-22 08:57:07] [DEEP-CHECK] TEST_C002: No free slots currently open in date window (2026-09-16..2027-12-31).
-[2026-09-22 08:57:07] [TOKEN-API-BOOK] Direct in-page booking succeeded for C001 (signedin): 2026-09-25 11:30
-[2026-09-22 08:57:07] [TOKEN-HTTP-BOOK] External HTTP API booking succeeded for C001 (signedin/): 2026-09-25 11:30
-[2026-09-22 08:57:07] tokens: auto-saved login token for C0099 (token=live_jwt_token... expires in 2h)
-[2026-09-22 08:57:07] [ANYHOW-BOOK] Engaging Tier 3: Direct external HTTP API booking with token for C0099...
-[2026-09-22 08:57:07] [ANYHOW-BOOK] SUCCESS: Slot 2026-09-25 11:30 booked via Direct Token API for C0099!
-[08:57:17] [08:57:17][ROUND 29] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 08:57:17] [08:57:17][ROUND 29] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
-[2026-09-22 08:57:36] ==================================================================
-[08:57:36] ==================================================================
-[08:57:36] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[2026-09-22 08:57:36] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[08:57:36] ==================================================================
-[2026-09-22 08:57:36] ==================================================================
-[08:57:38] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33627
-[2026-09-22 08:57:38] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 33627
-[2026-09-22 08:57:41] ==================================================================
-[08:57:41] ==================================================================
-[08:57:41] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[2026-09-22 08:57:41] === LAUNCHING CITA_AUTO REAL-TIME LOGIN, SLOT CHECK & FAST BOOK ===
-[2026-09-22 08:57:41] ==================================================================
-[08:57:41] ==================================================================
-[08:57:43] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 37455
-[2026-09-22 08:57:43] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 37455
-[08:57:50] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:57:50] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:57:52] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:57:52] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:57:56] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:57:56] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:57:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[2026-09-22 08:57:58] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
-[08:58:01] attempting capsolver cloudflare solve...
-[2026-09-22 08:58:01] attempting capsolver cloudflare solve...
-[08:58:01] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
-[2026-09-22 08:58:01] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
 [08:58:01] capsolver unavailable/failed; continuing with auto-click loop
 [2026-09-22 08:58:01] capsolver unavailable/failed; continuing with auto-click loop
 [08:58:04] captcha/robot: coordinate-clicked Turnstile container #lVJB5 at offset (-420, 0)
@@ -98,3 +32,69 @@
 [2026-09-22 08:58:32] widget page present after 8s (title='Embajada de España en República de Guine', has_loading=True) — proceeding to API check
 [08:58:34] widget booted after 5s (title='Embajada de España en República de Guine')
 [2026-09-22 08:58:34] widget booted after 5s (title='Embajada de España en República de Guine')
+[08:58:36] session saved -> state/session.json (7 cookies)
+[2026-09-22 08:58:36] session saved -> state/session.json (7 cookies)
+[2026-09-22 08:58:36] ==================================================================
+[08:58:36] ==================================================================
+[08:58:36] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
+[2026-09-22 08:58:36] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
+[2026-09-22 08:58:36] ==================================================================
+[08:58:36] ==================================================================
+[2026-09-22 08:58:36] [LOGIN PHASE] C00581897: Token is already valid (jtx8Uq-frJsr... expires in 103m) -> SKIPPING re-login.
+[08:58:36] [LOGIN PHASE] C00581897: Token is already valid (jtx8Uq-frJsr... expires in 103m) -> SKIPPING re-login.
+[2026-09-22 08:58:36] [LOGIN PHASE] C00303363: Token is already valid (BX5yAdSkfxme... expires in 104m) -> SKIPPING re-login.
+[08:58:36] [LOGIN PHASE] C00303363: Token is already valid (BX5yAdSkfxme... expires in 104m) -> SKIPPING re-login.
+[08:58:36] [LOGIN PHASE] C00522628: Token is already valid (u3k8AIN0Jox8... expires in 105m) -> SKIPPING re-login.
+[2026-09-22 08:58:36] [LOGIN PHASE] C00522628: Token is already valid (u3k8AIN0Jox8... expires in 105m) -> SKIPPING re-login.
+[2026-09-22 08:58:36] [LOGIN PHASE] C00393019: Token is already valid (2cRw6orvj2ak... expires in 105m) -> SKIPPING re-login.
+[08:58:36] [LOGIN PHASE] C00393019: Token is already valid (2cRw6orvj2ak... expires in 105m) -> SKIPPING re-login.
+[08:58:36] [LOGIN PHASE] All 4 pending applicant(s) already have valid active tokens! Zero logins needed.
+[2026-09-22 08:58:36] [LOGIN PHASE] All 4 pending applicant(s) already have valid active tokens! Zero logins needed.
+[2026-09-22 08:58:36] 
+==================================================================
+[08:58:36] 
+==================================================================
+[08:58:36] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[2026-09-22 08:58:36] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[08:58:36] ==================================================================
+[2026-09-22 08:58:36] ==================================================================
+[2026-09-22 08:58:36] Navigating to consular services & calendar...
+[08:58:36] Navigating to consular services & calendar...
+[08:58:38] session saved -> state/session.json (7 cookies)
+[2026-09-22 08:58:38] session saved -> state/session.json (7 cookies)
+[08:58:38] ==================================================================
+[2026-09-22 08:58:38] ==================================================================
+[08:58:38] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
+[2026-09-22 08:58:38] === [PHASE 1] REAL-TIME APPLICANT LOGIN & TOKEN AUTHENTICATION ===
+[08:58:38] ==================================================================
+[2026-09-22 08:58:38] ==================================================================
+[08:58:38] [LOGIN PHASE] C00581897: Token is already valid (jtx8Uq-frJsr... expires in 103m) -> SKIPPING re-login.
+[2026-09-22 08:58:38] [LOGIN PHASE] C00581897: Token is already valid (jtx8Uq-frJsr... expires in 103m) -> SKIPPING re-login.
+[08:58:38] [LOGIN PHASE] C00303363: Token is already valid (BX5yAdSkfxme... expires in 104m) -> SKIPPING re-login.
+[2026-09-22 08:58:38] [LOGIN PHASE] C00303363: Token is already valid (BX5yAdSkfxme... expires in 104m) -> SKIPPING re-login.
+[08:58:38] [LOGIN PHASE] C00522628: Token is already valid (u3k8AIN0Jox8... expires in 105m) -> SKIPPING re-login.
+[2026-09-22 08:58:38] [LOGIN PHASE] C00522628: Token is already valid (u3k8AIN0Jox8... expires in 105m) -> SKIPPING re-login.
+[08:58:38] [LOGIN PHASE] C00393019: Token is already valid (2cRw6orvj2ak... expires in 105m) -> SKIPPING re-login.
+[2026-09-22 08:58:38] [LOGIN PHASE] C00393019: Token is already valid (2cRw6orvj2ak... expires in 105m) -> SKIPPING re-login.
+[08:58:38] [LOGIN PHASE] All 4 pending applicant(s) already have valid active tokens! Zero logins needed.
+[2026-09-22 08:58:38] [LOGIN PHASE] All 4 pending applicant(s) already have valid active tokens! Zero logins needed.
+[08:58:38] 
+==================================================================
+[2026-09-22 08:58:38] 
+==================================================================
+[08:58:38] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[2026-09-22 08:58:38] === [PHASE 2] PREPARING REAL-TIME SLOT MONITORING (4 pending) ===
+[08:58:38] ==================================================================
+[2026-09-22 08:58:38] ==================================================================
+[08:58:38] Navigating to consular services & calendar...
+[2026-09-22 08:58:38] Navigating to consular services & calendar...
+[08:58:40] accepted terms dialog via #bktContinue
+[2026-09-22 08:58:40] accepted terms dialog via #bktContinue
+[08:58:40] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[2026-09-22 08:58:40] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[08:58:40] === Continuous real-time slot checking active (window=2026-09-22..2027-12-31, interval=5s) ===
+[2026-09-22 08:58:40] === Continuous real-time slot checking active (window=2026-09-22..2027-12-31, interval=5s) ===
+[08:58:42] === Continuous real-time slot checking active (window=2026-09-22..2027-12-31, interval=5s) ===
+[2026-09-22 08:58:42] === Continuous real-time slot checking active (window=2026-09-22..2027-12-31, interval=5s) ===
+[08:58:52] [08:58:52][ROUND 1] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 08:58:52] [08:58:52][ROUND 1] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
