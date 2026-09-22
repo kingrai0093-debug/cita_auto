@@ -1,5 +1,3 @@
-[2026-09-22 09:13:02] [TOKEN] Note extracting token for u2: 'str' object has no attribute 'execute_script'
-[2026-09-22 09:13:02] [LOGIN PHASE] u2: Logged in, session active in browser.
 [2026-09-22 09:13:02] 
 [2/2] === Logging in applicant: u3 ===
 [2026-09-22 09:13:02] login skipped/failed: 'str' object has no attribute 'find_element'
@@ -98,3 +96,5 @@
 [2026-09-22 09:13:12] tokens: auto-saved login token for C0099 (token=live_jwt_token... expires in 2h)
 [2026-09-22 09:13:12] [ANYHOW-BOOK] Engaging Tier 3: Direct external HTTP API booking with token for C0099...
 [2026-09-22 09:13:12] [ANYHOW-BOOK] SUCCESS: Slot 2026-09-25 11:30 booked via Direct Token API for C0099!
+[09:13:27] [09:13:27][ROUND 32] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
+[2026-09-22 09:13:27] [09:13:27][ROUND 32] 0 free slots in 2026-09-22..2027-12-31; checking date & time real-time in 5s (4 applicant(s) pending)...
