@@ -27,3 +27,6 @@ build/
 dist/
 release_package/
 *.zip
+cita_auto
+*.exe
+client/cita_auto
