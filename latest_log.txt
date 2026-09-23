@@ -1,135 +1,148 @@
-[06:58:30] 
+[12:34:02] 
 ============================================================================================
-[06:58:30]   TOTAL CONFIGURED APPLICANTS: 4
-[06:58:30] ============================================================================================
-[06:58:30] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[06:58:30] --------------------------------------------------------------------------------------------
-[06:58:30] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
-[06:58:30] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
-[06:58:30] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
-[06:58:30] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
-[06:58:30] ============================================================================================
+[12:34:02]   TOTAL CONFIGURED APPLICANTS: 4
+[12:34:02] ============================================================================================
+[12:34:02] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+[12:34:02] --------------------------------------------------------------------------------------------
+[12:34:02] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
+[12:34:02] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
+[12:34:02] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
+[12:34:02] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
+[12:34:02] ============================================================================================
 
-[06:58:30] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
-[06:58:31] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 35485
-[06:58:40] Connecting to Bookitit (residential proxy & Turnstile solve)...
-[06:58:45] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
-[06:58:51] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
-[06:58:58] alert: Welcome / Bienvenido
-[06:58:59] challenge passed after 14s
-[06:59:03] captcha gate: clicked Continue / Continuar (attempt 1)
-[06:59:07] captcha gate: passed, widget page served
-[06:59:11] widget booted after 3s (title='Embajada de España en República de Guine')
-[06:59:15] session saved -> state/session.json (5 cookies)
-[06:59:15] 
+[12:34:02] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
+[12:34:03] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 46283
+[12:34:13] Connecting to Bookitit (residential proxy & Turnstile solve)...
+[12:34:21] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:27] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:32] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:33] attempting capsolver cloudflare solve...
+[12:34:33] capsolver: proxy not configured — skipping AntiCloudflareTask (needs proxy), using auto-click
+[12:34:33] capsolver unavailable/failed; continuing with auto-click loop
+[12:34:38] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:41] ... still on challenge (20s)
+[12:34:44] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:49] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:34:55] captcha/robot: coordinate-clicked Turnstile container #DEYIo7 at offset (-420, 0)
+[12:35:00] alert: Welcome / Bienvenido
+[12:35:01] challenge passed after 40s
+[12:35:04] captcha gate: clicked Continue / Continuar (attempt 1)
+[12:35:08] captcha gate: passed, widget page served
+[12:35:12] widget booted after 3s (title='Embajada de España en República de Guine')
+[12:35:16] session saved -> state/session.json (5 cookies)
+[12:35:16] 
 [ROUND 1] === Deep Checking 4 Pending Applicant(s) ===
-[06:59:15] 
+[12:35:16] 
 [1/4] === DEEP CHECK: APPLICANT C00581897 ===
-[06:59:15] ============================================================
-[06:59:15] [DEEP-CHECK] >>> Checking application: C00581897 <<<
-[06:59:15] ============================================================
-[06:59:19] entered login: C00581897
-[06:59:19] entered password
-[06:59:19] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[06:59:32] tokens: auto-saved login token for C00581897 (token=NjmXx8xWKXHWGpB... expires in 2h)
-[06:59:32] [TOKEN] Active token cached for C00581897 (token=NjmXx8xWKXHWGpBL...)
-[06:59:32] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
-[06:59:32] trying to reach services view...
-[06:59:32] route=signinaccount
-[06:59:35] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[06:59:37] transitioned from history to #services
-[06:59:37] tokens: auto-saved login token for C00581897 (token=NjmXx8xWKXHWGpB... expires in 2h)
-[06:59:37] [TOKEN] Active token cached for C00581897 (token=NjmXx8xWKXHWGpBL...)
-[06:59:39] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
-[06:59:41] accepted terms dialog
-[06:59:43] [DEEP-CHECK] C00581897: Arrived at #services under authenticated session
-[06:59:43] tokens: auto-saved login token for C00581897 (token=NjmXx8xWKXHWGpB... expires in 2h)
-[06:59:43] [TOKEN] Active token cached for C00581897 (token=NjmXx8xWKXHWGpBL...)
-[06:59:54] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-09-23..2027-12-31).
-[06:59:56] 
+[12:35:16] ============================================================
+[12:35:16] [DEEP-CHECK] >>> Checking application: C00581897 <<<
+[12:35:16] ============================================================
+[12:35:20] entered login: C00581897
+[12:35:20] entered password
+[12:35:20] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[12:35:33] tokens: auto-saved login token for C00581897 (token=XGe75Lbylgrz9Ce... expires in 2h)
+[12:35:33] [TOKEN] Active token cached for C00581897 (token=XGe75Lbylgrz9CeD...)
+[12:35:33] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
+[12:35:33] trying to reach services view...
+[12:35:33] route=signinaccount
+[12:35:37] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[12:35:38] transitioned from history to #services
+[12:35:38] tokens: auto-saved login token for C00581897 (token=XGe75Lbylgrz9Ce... expires in 2h)
+[12:35:38] [TOKEN] Active token cached for C00581897 (token=XGe75Lbylgrz9CeD...)
+[12:35:40] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
+[12:35:42] accepted terms dialog
+[12:35:44] [DEEP-CHECK] C00581897: Arrived at #services under authenticated session
+[12:35:44] tokens: auto-saved login token for C00581897 (token=XGe75Lbylgrz9Ce... expires in 2h)
+[12:35:44] [TOKEN] Active token cached for C00581897 (token=XGe75Lbylgrz9CeD...)
+[12:35:44] accepted terms dialog via #bktContinue
+[12:35:44] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[12:35:55] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-09-23..2027-12-31).
+[12:35:56] 
 [2/4] === DEEP CHECK: APPLICANT C00303363 ===
-[06:59:56] ============================================================
-[06:59:56] [DEEP-CHECK] >>> Checking application: C00303363 <<<
-[06:59:56] ============================================================
-[06:59:59] entered login: C00303363
-[06:59:59] entered password
-[07:00:00] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[07:00:13] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
-[07:00:13] trying to reach services view...
-[07:00:13] route=signinaccount
-[07:00:16] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[07:00:18] transitioned from history to #services
-[07:00:18] tokens: auto-saved login token for C00303363 (token=BZE0U9a0ou1hjmP... expires in 2h)
-[07:00:18] [TOKEN] Active token cached for C00303363 (token=BZE0U9a0ou1hjmPq...)
-[07:00:20] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
-[07:00:22] accepted terms dialog
-[07:00:24] [DEEP-CHECK] C00303363: Arrived at #services under authenticated session
-[07:00:24] tokens: auto-saved login token for C00303363 (token=BZE0U9a0ou1hjmP... expires in 2h)
-[07:00:24] [TOKEN] Active token cached for C00303363 (token=BZE0U9a0ou1hjmPq...)
-[07:00:34] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-09-23..2027-12-31).
-[07:00:36] 
+[12:35:56] ============================================================
+[12:35:56] [DEEP-CHECK] >>> Checking application: C00303363 <<<
+[12:35:56] ============================================================
+[12:36:00] entered login: C00303363
+[12:36:00] entered password
+[12:36:01] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[12:36:14] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | TRÁMITES DE VISADOS · [A] ... SOLICITUD DE VISADO | Cambiar de día | Miércoles 23 de Septiembre de 2026 | No hay horas disponibles. Inténtelo de nuevo dentro de unos días. | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | R
+[12:36:14] trying to reach services view...
+[12:36:14] route=signinaccount
+[12:36:17] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[12:36:18] transitioned from history to #services
+[12:36:18] tokens: auto-saved login token for C00303363 (token=vr-9qUAGltN2Try... expires in 2h)
+[12:36:18] [TOKEN] Active token cached for C00303363 (token=vr-9qUAGltN2Tryi...)
+[12:36:20] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
+[12:36:22] accepted terms dialog
+[12:36:25] [DEEP-CHECK] C00303363: Arrived at #services under authenticated session
+[12:36:25] tokens: auto-saved login token for C00303363 (token=vr-9qUAGltN2Try... expires in 2h)
+[12:36:25] [TOKEN] Active token cached for C00303363 (token=vr-9qUAGltN2Tryi...)
+[12:36:25] accepted terms dialog via #bktContinue
+[12:36:25] selected service bkt739959 ([A] ... SOLICITUD DE VISADO)
+[12:36:35] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-09-23..2027-12-31).
+[12:36:36] 
 [3/4] === DEEP CHECK: APPLICANT C00522628 ===
-[07:00:36] ============================================================
-[07:00:36] [DEEP-CHECK] >>> Checking application: C00522628 <<<
-[07:00:36] ============================================================
-[07:00:40] entered login: C00522628
-[07:00:40] entered password
-[07:00:40] login submit clicked via #idBktDefaultAccountLoginConfirmButton
-[07:00:54] after login body snippet: Embajada de España en República de Guinea Bissau V |  | LEIA ESTA MENSAGEM COM ATENÇÃO |  | 1. Você precisará ter credenciais para fazer um agendamento no sistema. | 2. Você pode cancelar a sua marcação até três (3) dias antes de ir à embaixada. | 3. Se não cancelar atempadamente a sua marcação e não se desloca
-[07:00:54] trying to reach services view...
-[07:00:54] route=signinaccount
-[07:00:57] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
-[07:00:58] transitioned from history to #services
-[07:00:58] tokens: auto-saved login token for C00522628 (token=-OpGrDnONJvU8Bk... expires in 2h)
-[07:00:58] [TOKEN] Active token cached for C00522628 (token=-OpGrDnONJvU8BkD...)
-[07:01:00] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
-[07:01:02] accepted terms dialog
-[07:01:04] [DEEP-CHECK] C00522628: Arrived at #https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/ under authenticated session
-[07:01:04] tokens: auto-saved login token for C00522628 (token=-OpGrDnONJvU8Bk... expires in 2h)
-[07:01:04] [TOKEN] Active token cached for C00522628 (token=-OpGrDnONJvU8BkD...)
-[07:01:14] [DEEP-CHECK] C00522628: No free slots currently open in date window (2026-09-23..2027-12-31).
-[07:01:16] 
+[12:36:36] ============================================================
+[12:36:36] [DEEP-CHECK] >>> Checking application: C00522628 <<<
+[12:36:36] ============================================================
+[12:36:40] entered login: C00522628
+[12:36:40] entered password
+[12:36:41] login submit clicked via #idBktDefaultAccountLoginConfirmButton
+[12:36:54] after login body snippet: Embajada de España en República de Guinea Bissau V |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | TRÁMITES DE VISADOS · [A] ... SOLICITUD DE VISADO | Cambiar de día | Miércoles 23 de Septiembre de 2026 | No hay horas disponibles. Inténtelo de nuevo dentro de unos días. | Soy usuario nuevo | Ya tengo cuenta | USE SOLO MAYÚSCULAS | Confirmar | R
+[12:36:54] trying to reach services view...
+[12:36:54] route=signinaccount
+[12:36:57] route=https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/
+[12:36:58] transitioned from history to #services
+[12:36:58] tokens: auto-saved login token for C00522628 (token=1os7cY3yw0MaHzt... expires in 2h)
+[12:36:58] [TOKEN] Active token cached for C00522628 (token=1os7cY3yw0MaHzt3...)
+[12:37:00] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
+[12:37:02] accepted terms dialog
+[12:37:04] [DEEP-CHECK] C00522628: Arrived at #https://www.citaconsular.es/es/hosteds/widgetdefault/2a6f108852f93a6a84463685beccc087b/ under authenticated session
+[12:37:04] tokens: auto-saved login token for C00522628 (token=1os7cY3yw0MaHzt... expires in 2h)
+[12:37:04] [TOKEN] Active token cached for C00522628 (token=1os7cY3yw0MaHzt3...)
+[12:37:13] [DEEP-CHECK] C00522628: No free slots currently open in date window (2026-09-23..2027-12-31).
+[12:37:15] 
 [4/4] === DEEP CHECK: APPLICANT C00393019 ===
-[07:01:16] ============================================================
-[07:01:16] [DEEP-CHECK] >>> Checking application: C00393019 <<<
-[07:01:16] ============================================================
-[07:01:45] login skipped/failed: Message: 
+[12:37:15] ============================================================
+[12:37:15] [DEEP-CHECK] >>> Checking application: C00393019 <<<
+[12:37:15] ============================================================
+[12:37:44] login skipped/failed: Message: 
 Stacktrace:
-#0 0x55af1a39903a <unknown>
-#1 0x55af19d014c9 <unknown>
-#2 0x55af19d57242 <unknown>
-#3 0x55af19d574a1 <unknown>
-#4 0x55af19da2394 <unknown>
-#5 0x55af19d9f5ad <unknown>
-#6 0x55af19d4a83b <unknown>
-#7 0x55af19d4b621 <unknown>
-#8 0x55af1a35d5f0 <unknown>
-#9 0x55af1a35bc6a <unknown>
-#10 0x55af1a3469f5 <unknown>
-#11 0x55af1a35c92a <unknown>
-#12 0x55af1a32fd10 <unknown>
-#13 0x55af1a384158 <unknown>
-#14 0x55af1a3842f5 <unknown>
-#15 0x55af1a397bc3 <unknown>
-#16 0x7f5cc389cb84 <unknown>
-#17 0x7f5cc3929d6c <unknown>
+#0 0x55f3bbbbf03a <unknown>
+#1 0x55f3bb5274c9 <unknown>
+#2 0x55f3bb57d242 <unknown>
+#3 0x55f3bb57d4a1 <unknown>
+#4 0x55f3bb5c8394 <unknown>
+#5 0x55f3bb5c55ad <unknown>
+#6 0x55f3bb57083b <unknown>
+#7 0x55f3bb571621 <unknown>
+#8 0x55f3bbb835f0 <unknown>
+#9 0x55f3bbb81c6a <unknown>
+#10 0x55f3bbb6c9f5 <unknown>
+#11 0x55f3bbb8292a <unknown>
+#12 0x55f3bbb55d10 <unknown>
+#13 0x55f3bbbaa158 <unknown>
+#14 0x55f3bbbaa2f5 <unknown>
+#15 0x55f3bbbbdbc3 <unknown>
+#16 0x7fa86f29cb84 <unknown>
+#17 0x7fa86f329d6c <unknown>
 
-[07:01:45] trying to reach services view...
-[07:01:45] route=signinaccount
-[07:01:47] transitioned from history to #services
-[07:01:47] tokens: auto-saved login token for C00393019 (token=9Afdymdta1k5LAM... expires in 2h)
-[07:01:47] [TOKEN] Active token cached for C00393019 (token=9Afdymdta1k5LAMF...)
-[07:01:49] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
-[07:01:52] [DEEP-CHECK] C00393019: Arrived at #services under authenticated session
-[07:01:52] tokens: auto-saved login token for C00393019 (token=9Afdymdta1k5LAM... expires in 2h)
-[07:01:52] [TOKEN] Active token cached for C00393019 (token=9Afdymdta1k5LAMF...)
-[07:02:01] [DEEP-CHECK] C00393019: No free slots currently open in date window (2026-09-23..2027-12-31).
-[07:02:03] 
+[12:37:44] trying to reach services view...
+[12:37:44] route=signinaccount
+[12:37:45] transitioned from history to #services
+[12:37:45] tokens: auto-saved login token for C00393019 (token=Y9Ct3yyvQnZHw7g... expires in 2h)
+[12:37:45] [TOKEN] Active token cached for C00393019 (token=Y9Ct3yyvQnZHw7gz...)
+[12:37:47] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
+[12:37:51] [DEEP-CHECK] C00393019: Arrived at #services under authenticated session
+[12:37:51] tokens: auto-saved login token for C00393019 (token=Y9Ct3yyvQnZHw7g... expires in 2h)
+[12:37:51] [TOKEN] Active token cached for C00393019 (token=Y9Ct3yyvQnZHw7gz...)
+[12:37:58] [DEEP-CHECK] C00393019: No free slots currently open in date window (2026-09-23..2027-12-31).
+[12:38:00] 
 ==================== ROUND 1 SUMMARY ====================
-[07:02:03]   C00581897: 0 slots available in configured window
-[07:02:03]   C00303363: 0 slots available in configured window
-[07:02:03]   C00522628: 0 slots available in configured window
-[07:02:03]   C00393019: 0 slots available in configured window
-[07:02:03] ============================================================
+[12:38:00]   C00581897: 0 slots available in configured window
+[12:38:00]   C00303363: 0 slots available in configured window
+[12:38:00]   C00522628: 0 slots available in configured window
+[12:38:00]   C00393019: 0 slots available in configured window
+[12:38:00] ============================================================
 
-[07:02:03] Single-pass check finished (--once); exiting.
+[12:38:00] Single-pass check finished (--once); exiting.
