@@ -1,45 +1,45 @@
-[02:30:36] 
+[08:20:01] 
 ============================================================================================
-[02:30:36]   TOTAL CONFIGURED APPLICANTS: 4
-[02:30:36] ============================================================================================
-[02:30:36] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[02:30:36] --------------------------------------------------------------------------------------------
-[02:30:36] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
-[02:30:36] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
-[02:30:36] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
-[02:30:36] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
-[02:30:36] ============================================================================================
+[08:20:01]   TOTAL CONFIGURED APPLICANTS: 4
+[08:20:01] ============================================================================================
+[08:20:01] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+[08:20:01] --------------------------------------------------------------------------------------------
+[08:20:01] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
+[08:20:01] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
+[08:20:01] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
+[08:20:01] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
+[08:20:01] ============================================================================================
 
-[02:30:36] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
-[02:30:36] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 41011
-[02:30:53] Connecting to Bookitit (residential proxy & Turnstile solve)...
+[08:20:01] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
+[08:20:01] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 39281
+[08:20:03] Connecting to Bookitit (residential proxy & Turnstile solve)...
 
 [CITA AUTO] Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
   (Session info: chrome=153.0.8010.52)
 Stacktrace:
-#0 0x5605057719fa <unknown>
-#1 0x5605050a75b9 <unknown>
-#2 0x56050509e44a <unknown>
-#3 0x56050508f4b1 <unknown>
-#4 0x5605050911f0 <unknown>
-#5 0x56050508f99a <unknown>
-#6 0x56050508f038 <unknown>
-#7 0x56050508ec56 <unknown>
-#8 0x56050508c890 <unknown>
-#9 0x56050508d0b0 <unknown>
-#10 0x5605050ab041 <unknown>
-#11 0x5605051485cb <unknown>
-#12 0x5605051478de <unknown>
-#13 0x5605050f0b8b <unknown>
-#14 0x5605050f1971 <unknown>
-#15 0x560505734667 <unknown>
-#16 0x560505732e95 <unknown>
-#17 0x56050571df55 <unknown>
-#18 0x560505733aea <unknown>
-#19 0x5605057066c9 <unknown>
-#20 0x56050575b9a8 <unknown>
-#21 0x56050575bb45 <unknown>
-#22 0x560505770353 <unknown>
-#23 0x7fc05749cb84 <unknown>
-#24 0x7fc057529ecc <unknown>
+#0 0x55a4433679fa <unknown>
+#1 0x55a442c9d5b9 <unknown>
+#2 0x55a442c9444a <unknown>
+#3 0x55a442c854b1 <unknown>
+#4 0x55a442c871f0 <unknown>
+#5 0x55a442c8599a <unknown>
+#6 0x55a442c85038 <unknown>
+#7 0x55a442c84c56 <unknown>
+#8 0x55a442c82890 <unknown>
+#9 0x55a442c830b0 <unknown>
+#10 0x55a442ca1041 <unknown>
+#11 0x55a442d3e5cb <unknown>
+#12 0x55a442d3d8de <unknown>
+#13 0x55a442ce6b8b <unknown>
+#14 0x55a442ce7971 <unknown>
+#15 0x55a44332a667 <unknown>
+#16 0x55a443328e95 <unknown>
+#17 0x55a443313f55 <unknown>
+#18 0x55a443329aea <unknown>
+#19 0x55a4432fc6c9 <unknown>
+#20 0x55a4433519a8 <unknown>
+#21 0x55a443351b45 <unknown>
+#22 0x55a443366353 <unknown>
+#23 0x7f2a22a9cb84 <unknown>
+#24 0x7f2a22b29ecc <unknown>
 
