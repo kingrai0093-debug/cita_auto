@@ -1,45 +1,45 @@
-[17:26:55] 
+[20:47:01] 
 ============================================================================================
-[17:26:55]   TOTAL CONFIGURED APPLICANTS: 4
-[17:26:55] ============================================================================================
-[17:26:55] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[17:26:55] --------------------------------------------------------------------------------------------
-[17:26:55] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
-[17:26:55] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
-[17:26:55] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
-[17:26:55] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
-[17:26:55] ============================================================================================
+[20:47:01]   TOTAL CONFIGURED APPLICANTS: 4
+[20:47:01] ============================================================================================
+[20:47:01] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+[20:47:01] --------------------------------------------------------------------------------------------
+[20:47:01] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
+[20:47:01] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
+[20:47:01] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
+[20:47:01] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
+[20:47:01] ============================================================================================
 
-[17:26:55] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
-[17:26:55] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 34875
-[17:27:04] Connecting to Bookitit (residential proxy & Turnstile solve)...
+[20:47:01] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
+[20:47:01] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 38815
+[20:47:05] Connecting to Bookitit (residential proxy & Turnstile solve)...
 
 [CITA AUTO] Error: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
-  (Session info: chrome=155.0.8059.39)
+  (Session info: chrome=155.0.8059.84)
 Stacktrace:
-#0 0x555f50c461da <unknown>
-#1 0x555f505655c9 <unknown>
-#2 0x555f5055c456 <unknown>
-#3 0x555f5054d491 <unknown>
-#4 0x555f5054f1a8 <unknown>
-#5 0x555f5054d97a <unknown>
-#6 0x555f5054d018 <unknown>
-#7 0x555f5054cc36 <unknown>
-#8 0x555f5054a840 <unknown>
-#9 0x555f5054b070 <unknown>
-#10 0x555f50569091 <unknown>
-#11 0x555f5060ba5b <unknown>
-#12 0x555f5060ad6e <unknown>
-#13 0x555f505af2f8 <unknown>
-#14 0x555f505b00d1 <unknown>
-#15 0x555f50c08cec <unknown>
-#16 0x555f50c07505 <unknown>
-#17 0x555f50bf23b5 <unknown>
-#18 0x555f50c0815a <unknown>
-#19 0x555f50bda939 <unknown>
-#20 0x555f50c30898 <unknown>
-#21 0x555f50c30a35 <unknown>
-#22 0x555f50c44b63 <unknown>
-#23 0x7f8e68c9cb84 <unknown>
-#24 0x7f8e68d29ecc <unknown>
+#0 0x5638375535ea <unknown>
+#1 0x563836e6d869 <unknown>
+#2 0x563836e646ba <unknown>
+#3 0x563836e55721 <unknown>
+#4 0x563836e57438 <unknown>
+#5 0x563836e55c0d <unknown>
+#6 0x563836e552ff <unknown>
+#7 0x563836e54ec6 <unknown>
+#8 0x563836e52ad0 <unknown>
+#9 0x563836e53300 <unknown>
+#10 0x563836e71341 <unknown>
+#11 0x563836f13a3b <unknown>
+#12 0x563836f12d4e <unknown>
+#13 0x563836eb729b <unknown>
+#14 0x563836eb80a1 <unknown>
+#15 0x563837515fec <unknown>
+#16 0x5638375147f5 <unknown>
+#17 0x5638374ff785 <unknown>
+#18 0x56383751545a <unknown>
+#19 0x5638374e7d99 <unknown>
+#20 0x56383753db18 <unknown>
+#21 0x56383753dcb5 <unknown>
+#22 0x563837551f73 <unknown>
+#23 0x7f6c18c9cb84 <unknown>
+#24 0x7f6c18d29ecc <unknown>
 
