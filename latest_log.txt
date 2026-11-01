@@ -1,322 +1,322 @@
-[19:49:15] 
+[23:13:53] 
 ============================================================================================
-[19:49:15]   TOTAL CONFIGURED APPLICANTS: 4
-[19:49:15] ============================================================================================
-[19:49:15] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
-[19:49:15] --------------------------------------------------------------------------------------------
-[19:49:15] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
-[19:49:15] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
-[19:49:15] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
-[19:49:15] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
-[19:49:15] ============================================================================================
+[23:13:53]   TOTAL CONFIGURED APPLICANTS: 4
+[23:13:53] ============================================================================================
+[23:13:53] #   | LOGIN / PASSPORT  | PASSWORD         | TYPE       | COUNTRY  | TOKEN STATUS     | STATUS    
+[23:13:53] --------------------------------------------------------------------------------------------
+[23:13:53] 1   | C00581897         | 6HY67UJU788      | document   | GNB      | Not cached       | PENDING   
+[23:13:53] 2   | C00303363         | 6LO0OLO0X1       | document   | GNB      | Not cached       | PENDING   
+[23:13:53] 3   | C00522628         | 5HU78IKI89       | document   | GNB      | Not cached       | PENDING   
+[23:13:53] 4   | C00393019         | NJKI89OLO94C2    | document   | GNB      | Not cached       | PENDING   
+[23:13:53] ============================================================================================
 
-[19:49:15] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
-[19:49:15] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 45377
-[19:49:17] Connecting to Bookitit (residential proxy & Turnstile solve)...
-[19:49:21] challenge passed after 3s
-[19:49:23] captcha gate: no Continue button; widget page served
-[19:49:32] widget page present after 8s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
-[19:49:36] session saved -> state/session.json (0 cookies)
-[19:49:36] 
+[23:13:53] === Starting Continuous Deep Slot Checking For 4 Application(s) (interval=5s) ===
+[23:13:53] residential proxy enabled: geo.g-w.info:10080 via local forwarder port 40133
+[23:13:55] Connecting to Bookitit (residential proxy & Turnstile solve)...
+[23:13:59] challenge passed after 3s
+[23:14:01] captcha gate: no Continue button; widget page served
+[23:14:10] widget page present after 8s (title='www.citaconsular.es', has_loading=False) — proceeding to API check
+[23:14:14] session saved -> state/session.json (0 cookies)
+[23:14:14] 
 [ROUND 1] === Deep Checking 4 Pending Applicant(s) ===
-[19:49:36] 
+[23:14:14] 
 [1/4] === DEEP CHECK: APPLICANT C00581897 ===
-[19:49:36] ============================================================
-[19:49:36] [DEEP-CHECK] >>> Checking application: C00581897 <<<
-[19:49:36] ============================================================
-[19:50:03] login skipped/failed: Message: 
+[23:14:14] ============================================================
+[23:14:14] [DEEP-CHECK] >>> Checking application: C00581897 <<<
+[23:14:14] ============================================================
+[23:14:41] login skipped/failed: Message: 
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63057f5f <unknown>
-#3 0x561e630580f1 <unknown>
-#4 0x561e63095da4 <unknown>
-#5 0x561e63094423 <unknown>
-#6 0x561e63093c39 <unknown>
-#7 0x561e6304ecd7 <unknown>
-#8 0x561e6304dfee <unknown>
-#9 0x561e6304eac1 <unknown>
-#10 0x561e636997ac <unknown>
-#11 0x561e63697fb5 <unknown>
-#12 0x561e63683315 <unknown>
-#13 0x561e63698c1a <unknown>
-#14 0x561e6366bbf9 <unknown>
-#15 0x561e636c0ef8 <unknown>
-#16 0x561e636c1095 <unknown>
-#17 0x561e636d5183 <unknown>
-#18 0x7f201e89cb84 <unknown>
-#19 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130eef5f <unknown>
+#3 0x5605130ef0f1 <unknown>
+#4 0x56051312cda4 <unknown>
+#5 0x56051312b423 <unknown>
+#6 0x56051312ac39 <unknown>
+#7 0x5605130e5cd7 <unknown>
+#8 0x5605130e4fee <unknown>
+#9 0x5605130e5ac1 <unknown>
+#10 0x5605137307ac <unknown>
+#11 0x56051372efb5 <unknown>
+#12 0x56051371a315 <unknown>
+#13 0x56051372fc1a <unknown>
+#14 0x560513702bf9 <unknown>
+#15 0x560513757ef8 <unknown>
+#16 0x560513758095 <unknown>
+#17 0x56051376c183 <unknown>
+#18 0x7f2bc309cb84 <unknown>
+#19 0x7f2bc3129ecc <unknown>
 
-[19:50:03] trying to reach services view...
-[19:50:03] route=signinaccount
-[19:50:05] route=signinaccount
-[19:50:08] route=signinaccount
-[19:50:10] route=signinaccount
-[19:50:13] route=signinaccount
-[19:50:15] route=signinaccount
-[19:50:18] route=signinaccount
-[19:50:20] route=signinaccount
-[19:50:23] route=signinaccount
-[19:50:25] route=signinaccount
-[19:50:30] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
-[19:50:33] [DEEP-CHECK] C00581897: Arrived at #signinaccount under authenticated session
-[19:50:34] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+[23:14:41] trying to reach services view...
+[23:14:41] route=signinaccount
+[23:14:44] route=signinaccount
+[23:14:46] route=signinaccount
+[23:14:49] route=signinaccount
+[23:14:51] route=signinaccount
+[23:14:54] route=signinaccount
+[23:14:56] route=signinaccount
+[23:14:59] route=signinaccount
+[23:15:01] route=signinaccount
+[23:15:04] route=signinaccount
+[23:15:08] [DEEP-CHECK] C00581897: Logged in properly. Navigating to calendar to check slots...
+[23:15:12] [DEEP-CHECK] C00581897: Arrived at #signinaccount under authenticated session
+[23:15:12] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
   (Session info: chrome=156.0.8078.47)
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63011243 <unknown>
-#3 0x561e63005b41 <unknown>
-#4 0x561e63006f93 <unknown>
-#5 0x561e63005e70 <unknown>
-#6 0x561e630059a4 <unknown>
-#7 0x561e630056b6 <unknown>
-#8 0x561e63003e3b <unknown>
-#9 0x561e63004110 <unknown>
-#10 0x561e63018991 <unknown>
-#11 0x561e630944cb <unknown>
-#12 0x561e63094423 <unknown>
-#13 0x561e63093c39 <unknown>
-#14 0x561e6304ecd7 <unknown>
-#15 0x561e6304dfee <unknown>
-#16 0x561e6304eac1 <unknown>
-#17 0x561e636997ac <unknown>
-#18 0x561e63697fb5 <unknown>
-#19 0x561e63683315 <unknown>
-#20 0x561e63698c1a <unknown>
-#21 0x561e6366bbf9 <unknown>
-#22 0x561e636c0ef8 <unknown>
-#23 0x561e636c1095 <unknown>
-#24 0x561e636d5183 <unknown>
-#25 0x7f201e89cb84 <unknown>
-#26 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130a8243 <unknown>
+#3 0x56051309cb41 <unknown>
+#4 0x56051309df93 <unknown>
+#5 0x56051309ce70 <unknown>
+#6 0x56051309c9a4 <unknown>
+#7 0x56051309c6b6 <unknown>
+#8 0x56051309ae3b <unknown>
+#9 0x56051309b110 <unknown>
+#10 0x5605130af991 <unknown>
+#11 0x56051312b4cb <unknown>
+#12 0x56051312b423 <unknown>
+#13 0x56051312ac39 <unknown>
+#14 0x5605130e5cd7 <unknown>
+#15 0x5605130e4fee <unknown>
+#16 0x5605130e5ac1 <unknown>
+#17 0x5605137307ac <unknown>
+#18 0x56051372efb5 <unknown>
+#19 0x56051371a315 <unknown>
+#20 0x56051372fc1a <unknown>
+#21 0x560513702bf9 <unknown>
+#22 0x560513757ef8 <unknown>
+#23 0x560513758095 <unknown>
+#24 0x56051376c183 <unknown>
+#25 0x7f2bc309cb84 <unknown>
+#26 0x7f2bc3129ecc <unknown>
 
-[19:50:34] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-11-01..2027-12-31).
-[19:50:34] 
+[23:15:13] [DEEP-CHECK] C00581897: No free slots currently open in date window (2026-11-01..2027-12-31).
+[23:15:13] 
 [2/4] === DEEP CHECK: APPLICANT C00303363 ===
-[19:50:34] ============================================================
-[19:50:34] [DEEP-CHECK] >>> Checking application: C00303363 <<<
-[19:50:34] ============================================================
-[19:51:02] login skipped/failed: Message: 
+[23:15:13] ============================================================
+[23:15:13] [DEEP-CHECK] >>> Checking application: C00303363 <<<
+[23:15:13] ============================================================
+[23:15:41] login skipped/failed: Message: 
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63057f5f <unknown>
-#3 0x561e630580f1 <unknown>
-#4 0x561e63095da4 <unknown>
-#5 0x561e63094423 <unknown>
-#6 0x561e63093c39 <unknown>
-#7 0x561e6304ecd7 <unknown>
-#8 0x561e6304dfee <unknown>
-#9 0x561e6304eac1 <unknown>
-#10 0x561e636997ac <unknown>
-#11 0x561e63697fb5 <unknown>
-#12 0x561e63683315 <unknown>
-#13 0x561e63698c1a <unknown>
-#14 0x561e6366bbf9 <unknown>
-#15 0x561e636c0ef8 <unknown>
-#16 0x561e636c1095 <unknown>
-#17 0x561e636d5183 <unknown>
-#18 0x7f201e89cb84 <unknown>
-#19 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130eef5f <unknown>
+#3 0x5605130ef0f1 <unknown>
+#4 0x56051312cda4 <unknown>
+#5 0x56051312b423 <unknown>
+#6 0x56051312ac39 <unknown>
+#7 0x5605130e5cd7 <unknown>
+#8 0x5605130e4fee <unknown>
+#9 0x5605130e5ac1 <unknown>
+#10 0x5605137307ac <unknown>
+#11 0x56051372efb5 <unknown>
+#12 0x56051371a315 <unknown>
+#13 0x56051372fc1a <unknown>
+#14 0x560513702bf9 <unknown>
+#15 0x560513757ef8 <unknown>
+#16 0x560513758095 <unknown>
+#17 0x56051376c183 <unknown>
+#18 0x7f2bc309cb84 <unknown>
+#19 0x7f2bc3129ecc <unknown>
 
-[19:51:02] trying to reach services view...
-[19:51:02] route=signinaccount
-[19:51:04] route=signinaccount
-[19:51:07] route=signinaccount
-[19:51:09] route=signinaccount
-[19:51:12] route=signinaccount
-[19:51:14] route=signinaccount
-[19:51:17] route=signinaccount
-[19:51:19] route=signinaccount
-[19:51:22] route=signinaccount
-[19:51:24] route=signinaccount
-[19:51:29] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
-[19:51:32] [DEEP-CHECK] C00303363: Arrived at #signinaccount under authenticated session
-[19:51:33] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+[23:15:41] trying to reach services view...
+[23:15:41] route=signinaccount
+[23:15:43] route=signinaccount
+[23:15:46] route=signinaccount
+[23:15:48] route=signinaccount
+[23:15:51] route=signinaccount
+[23:15:53] route=signinaccount
+[23:15:56] route=signinaccount
+[23:15:58] route=signinaccount
+[23:16:01] route=signinaccount
+[23:16:03] route=signinaccount
+[23:16:08] [DEEP-CHECK] C00303363: Logged in properly. Navigating to calendar to check slots...
+[23:16:11] [DEEP-CHECK] C00303363: Arrived at #signinaccount under authenticated session
+[23:16:12] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
   (Session info: chrome=156.0.8078.47)
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63011243 <unknown>
-#3 0x561e63005b41 <unknown>
-#4 0x561e63006f93 <unknown>
-#5 0x561e63005e70 <unknown>
-#6 0x561e630059a4 <unknown>
-#7 0x561e630056b6 <unknown>
-#8 0x561e63003e3b <unknown>
-#9 0x561e63004110 <unknown>
-#10 0x561e63018991 <unknown>
-#11 0x561e630944cb <unknown>
-#12 0x561e63094423 <unknown>
-#13 0x561e63093c39 <unknown>
-#14 0x561e6304ecd7 <unknown>
-#15 0x561e6304dfee <unknown>
-#16 0x561e6304eac1 <unknown>
-#17 0x561e636997ac <unknown>
-#18 0x561e63697fb5 <unknown>
-#19 0x561e63683315 <unknown>
-#20 0x561e63698c1a <unknown>
-#21 0x561e6366bbf9 <unknown>
-#22 0x561e636c0ef8 <unknown>
-#23 0x561e636c1095 <unknown>
-#24 0x561e636d5183 <unknown>
-#25 0x7f201e89cb84 <unknown>
-#26 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130a8243 <unknown>
+#3 0x56051309cb41 <unknown>
+#4 0x56051309df93 <unknown>
+#5 0x56051309ce70 <unknown>
+#6 0x56051309c9a4 <unknown>
+#7 0x56051309c6b6 <unknown>
+#8 0x56051309ae3b <unknown>
+#9 0x56051309b110 <unknown>
+#10 0x5605130af991 <unknown>
+#11 0x56051312b4cb <unknown>
+#12 0x56051312b423 <unknown>
+#13 0x56051312ac39 <unknown>
+#14 0x5605130e5cd7 <unknown>
+#15 0x5605130e4fee <unknown>
+#16 0x5605130e5ac1 <unknown>
+#17 0x5605137307ac <unknown>
+#18 0x56051372efb5 <unknown>
+#19 0x56051371a315 <unknown>
+#20 0x56051372fc1a <unknown>
+#21 0x560513702bf9 <unknown>
+#22 0x560513757ef8 <unknown>
+#23 0x560513758095 <unknown>
+#24 0x56051376c183 <unknown>
+#25 0x7f2bc309cb84 <unknown>
+#26 0x7f2bc3129ecc <unknown>
 
-[19:51:33] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-11-01..2027-12-31).
-[19:51:33] 
+[23:16:12] [DEEP-CHECK] C00303363: No free slots currently open in date window (2026-11-01..2027-12-31).
+[23:16:13] 
 [3/4] === DEEP CHECK: APPLICANT C00522628 ===
-[19:51:33] ============================================================
-[19:51:33] [DEEP-CHECK] >>> Checking application: C00522628 <<<
-[19:51:33] ============================================================
-[19:52:00] login skipped/failed: Message: 
+[23:16:13] ============================================================
+[23:16:13] [DEEP-CHECK] >>> Checking application: C00522628 <<<
+[23:16:13] ============================================================
+[23:16:40] login skipped/failed: Message: 
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63057f5f <unknown>
-#3 0x561e630580f1 <unknown>
-#4 0x561e63095da4 <unknown>
-#5 0x561e63094423 <unknown>
-#6 0x561e63093c39 <unknown>
-#7 0x561e6304ecd7 <unknown>
-#8 0x561e6304dfee <unknown>
-#9 0x561e6304eac1 <unknown>
-#10 0x561e636997ac <unknown>
-#11 0x561e63697fb5 <unknown>
-#12 0x561e63683315 <unknown>
-#13 0x561e63698c1a <unknown>
-#14 0x561e6366bbf9 <unknown>
-#15 0x561e636c0ef8 <unknown>
-#16 0x561e636c1095 <unknown>
-#17 0x561e636d5183 <unknown>
-#18 0x7f201e89cb84 <unknown>
-#19 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130eef5f <unknown>
+#3 0x5605130ef0f1 <unknown>
+#4 0x56051312cda4 <unknown>
+#5 0x56051312b423 <unknown>
+#6 0x56051312ac39 <unknown>
+#7 0x5605130e5cd7 <unknown>
+#8 0x5605130e4fee <unknown>
+#9 0x5605130e5ac1 <unknown>
+#10 0x5605137307ac <unknown>
+#11 0x56051372efb5 <unknown>
+#12 0x56051371a315 <unknown>
+#13 0x56051372fc1a <unknown>
+#14 0x560513702bf9 <unknown>
+#15 0x560513757ef8 <unknown>
+#16 0x560513758095 <unknown>
+#17 0x56051376c183 <unknown>
+#18 0x7f2bc309cb84 <unknown>
+#19 0x7f2bc3129ecc <unknown>
 
-[19:52:00] trying to reach services view...
-[19:52:00] route=signinaccount
-[19:52:03] route=signinaccount
-[19:52:05] route=signinaccount
-[19:52:08] route=signinaccount
-[19:52:11] route=signinaccount
-[19:52:13] route=signinaccount
-[19:52:16] route=signinaccount
-[19:52:18] route=signinaccount
-[19:52:21] route=signinaccount
-[19:52:23] route=signinaccount
-[19:52:28] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
-[19:52:31] [DEEP-CHECK] C00522628: Arrived at #signinaccount under authenticated session
-[19:52:31] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+[23:16:40] trying to reach services view...
+[23:16:40] route=signinaccount
+[23:16:43] route=signinaccount
+[23:16:45] route=signinaccount
+[23:16:48] route=signinaccount
+[23:16:50] route=signinaccount
+[23:16:53] route=signinaccount
+[23:16:55] route=signinaccount
+[23:16:58] route=signinaccount
+[23:17:00] route=signinaccount
+[23:17:03] route=signinaccount
+[23:17:07] [DEEP-CHECK] C00522628: Logged in properly. Navigating to calendar to check slots...
+[23:17:11] [DEEP-CHECK] C00522628: Arrived at #signinaccount under authenticated session
+[23:17:11] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
   (Session info: chrome=156.0.8078.47)
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63011243 <unknown>
-#3 0x561e63005b41 <unknown>
-#4 0x561e63006f93 <unknown>
-#5 0x561e63005e70 <unknown>
-#6 0x561e630059a4 <unknown>
-#7 0x561e630056b6 <unknown>
-#8 0x561e63003e3b <unknown>
-#9 0x561e63004110 <unknown>
-#10 0x561e63018991 <unknown>
-#11 0x561e630944cb <unknown>
-#12 0x561e63094423 <unknown>
-#13 0x561e63093c39 <unknown>
-#14 0x561e6304ecd7 <unknown>
-#15 0x561e6304dfee <unknown>
-#16 0x561e6304eac1 <unknown>
-#17 0x561e636997ac <unknown>
-#18 0x561e63697fb5 <unknown>
-#19 0x561e63683315 <unknown>
-#20 0x561e63698c1a <unknown>
-#21 0x561e6366bbf9 <unknown>
-#22 0x561e636c0ef8 <unknown>
-#23 0x561e636c1095 <unknown>
-#24 0x561e636d5183 <unknown>
-#25 0x7f201e89cb84 <unknown>
-#26 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130a8243 <unknown>
+#3 0x56051309cb41 <unknown>
+#4 0x56051309df93 <unknown>
+#5 0x56051309ce70 <unknown>
+#6 0x56051309c9a4 <unknown>
+#7 0x56051309c6b6 <unknown>
+#8 0x56051309ae3b <unknown>
+#9 0x56051309b110 <unknown>
+#10 0x5605130af991 <unknown>
+#11 0x56051312b4cb <unknown>
+#12 0x56051312b423 <unknown>
+#13 0x56051312ac39 <unknown>
+#14 0x5605130e5cd7 <unknown>
+#15 0x5605130e4fee <unknown>
+#16 0x5605130e5ac1 <unknown>
+#17 0x5605137307ac <unknown>
+#18 0x56051372efb5 <unknown>
+#19 0x56051371a315 <unknown>
+#20 0x56051372fc1a <unknown>
+#21 0x560513702bf9 <unknown>
+#22 0x560513757ef8 <unknown>
+#23 0x560513758095 <unknown>
+#24 0x56051376c183 <unknown>
+#25 0x7f2bc309cb84 <unknown>
+#26 0x7f2bc3129ecc <unknown>
 
-[19:52:32] [DEEP-CHECK] C00522628: No free slots currently open in date window (2026-11-01..2027-12-31).
-[19:52:32] 
+[23:17:12] [DEEP-CHECK] C00522628: No free slots currently open in date window (2026-11-01..2027-12-31).
+[23:17:12] 
 [4/4] === DEEP CHECK: APPLICANT C00393019 ===
-[19:52:32] ============================================================
-[19:52:32] [DEEP-CHECK] >>> Checking application: C00393019 <<<
-[19:52:32] ============================================================
-[19:52:59] login skipped/failed: Message: 
+[23:17:12] ============================================================
+[23:17:12] [DEEP-CHECK] >>> Checking application: C00393019 <<<
+[23:17:12] ============================================================
+[23:17:39] login skipped/failed: Message: 
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63057f5f <unknown>
-#3 0x561e630580f1 <unknown>
-#4 0x561e63095da4 <unknown>
-#5 0x561e63094423 <unknown>
-#6 0x561e63093c39 <unknown>
-#7 0x561e6304ecd7 <unknown>
-#8 0x561e6304dfee <unknown>
-#9 0x561e6304eac1 <unknown>
-#10 0x561e636997ac <unknown>
-#11 0x561e63697fb5 <unknown>
-#12 0x561e63683315 <unknown>
-#13 0x561e63698c1a <unknown>
-#14 0x561e6366bbf9 <unknown>
-#15 0x561e636c0ef8 <unknown>
-#16 0x561e636c1095 <unknown>
-#17 0x561e636d5183 <unknown>
-#18 0x7f201e89cb84 <unknown>
-#19 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130eef5f <unknown>
+#3 0x5605130ef0f1 <unknown>
+#4 0x56051312cda4 <unknown>
+#5 0x56051312b423 <unknown>
+#6 0x56051312ac39 <unknown>
+#7 0x5605130e5cd7 <unknown>
+#8 0x5605130e4fee <unknown>
+#9 0x5605130e5ac1 <unknown>
+#10 0x5605137307ac <unknown>
+#11 0x56051372efb5 <unknown>
+#12 0x56051371a315 <unknown>
+#13 0x56051372fc1a <unknown>
+#14 0x560513702bf9 <unknown>
+#15 0x560513757ef8 <unknown>
+#16 0x560513758095 <unknown>
+#17 0x56051376c183 <unknown>
+#18 0x7f2bc309cb84 <unknown>
+#19 0x7f2bc3129ecc <unknown>
 
-[19:52:59] trying to reach services view...
-[19:52:59] route=signinaccount
-[19:53:02] route=signinaccount
-[19:53:04] route=signinaccount
-[19:53:07] route=signinaccount
-[19:53:09] route=signinaccount
-[19:53:12] route=signinaccount
-[19:53:14] route=signinaccount
-[19:53:17] route=signinaccount
-[19:53:19] route=signinaccount
-[19:53:22] route=signinaccount
-[19:53:26] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
-[19:53:30] [DEEP-CHECK] C00393019: Arrived at #signinaccount under authenticated session
-[19:53:30] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
+[23:17:39] trying to reach services view...
+[23:17:39] route=signinaccount
+[23:17:42] route=signinaccount
+[23:17:44] route=signinaccount
+[23:17:47] route=signinaccount
+[23:17:49] route=signinaccount
+[23:17:52] route=signinaccount
+[23:17:54] route=signinaccount
+[23:17:57] route=signinaccount
+[23:18:00] route=signinaccount
+[23:18:02] route=signinaccount
+[23:18:07] [DEEP-CHECK] C00393019: Logged in properly. Navigating to calendar to check slots...
+[23:18:10] [DEEP-CHECK] C00393019: Arrived at #signinaccount under authenticated session
+[23:18:10] ensure_datetime_view note: Message: unknown error: net::ERR_TUNNEL_CONNECTION_FAILED
   (Session info: chrome=156.0.8078.47)
 Stacktrace:
-#0 0x561e636d67ea <unknown>
-#1 0x561e630159e5 <unknown>
-#2 0x561e63011243 <unknown>
-#3 0x561e63005b41 <unknown>
-#4 0x561e63006f93 <unknown>
-#5 0x561e63005e70 <unknown>
-#6 0x561e630059a4 <unknown>
-#7 0x561e630056b6 <unknown>
-#8 0x561e63003e3b <unknown>
-#9 0x561e63004110 <unknown>
-#10 0x561e63018991 <unknown>
-#11 0x561e630944cb <unknown>
-#12 0x561e63094423 <unknown>
-#13 0x561e63093c39 <unknown>
-#14 0x561e6304ecd7 <unknown>
-#15 0x561e6304dfee <unknown>
-#16 0x561e6304eac1 <unknown>
-#17 0x561e636997ac <unknown>
-#18 0x561e63697fb5 <unknown>
-#19 0x561e63683315 <unknown>
-#20 0x561e63698c1a <unknown>
-#21 0x561e6366bbf9 <unknown>
-#22 0x561e636c0ef8 <unknown>
-#23 0x561e636c1095 <unknown>
-#24 0x561e636d5183 <unknown>
-#25 0x7f201e89cb84 <unknown>
-#26 0x7f201e929ecc <unknown>
+#0 0x56051376d7ea <unknown>
+#1 0x5605130ac9e5 <unknown>
+#2 0x5605130a8243 <unknown>
+#3 0x56051309cb41 <unknown>
+#4 0x56051309df93 <unknown>
+#5 0x56051309ce70 <unknown>
+#6 0x56051309c9a4 <unknown>
+#7 0x56051309c6b6 <unknown>
+#8 0x56051309ae3b <unknown>
+#9 0x56051309b110 <unknown>
+#10 0x5605130af991 <unknown>
+#11 0x56051312b4cb <unknown>
+#12 0x56051312b423 <unknown>
+#13 0x56051312ac39 <unknown>
+#14 0x5605130e5cd7 <unknown>
+#15 0x5605130e4fee <unknown>
+#16 0x5605130e5ac1 <unknown>
+#17 0x5605137307ac <unknown>
+#18 0x56051372efb5 <unknown>
+#19 0x56051371a315 <unknown>
+#20 0x56051372fc1a <unknown>
+#21 0x560513702bf9 <unknown>
+#22 0x560513757ef8 <unknown>
+#23 0x560513758095 <unknown>
+#24 0x56051376c183 <unknown>
+#25 0x7f2bc309cb84 <unknown>
+#26 0x7f2bc3129ecc <unknown>
 
-[19:53:31] [DEEP-CHECK] C00393019: No free slots currently open in date window (2026-11-01..2027-12-31).
-[19:53:31] 
+[23:18:11] [DEEP-CHECK] C00393019: No free slots currently open in date window (2026-11-01..2027-12-31).
+[23:18:11] 
 ==================== ROUND 1 SUMMARY ====================
-[19:53:31]   C00581897: 0 slots available in configured window
-[19:53:31]   C00303363: 0 slots available in configured window
-[19:53:31]   C00522628: 0 slots available in configured window
-[19:53:31]   C00393019: 0 slots available in configured window
-[19:53:31] ============================================================
+[23:18:11]   C00581897: 0 slots available in configured window
+[23:18:11]   C00303363: 0 slots available in configured window
+[23:18:11]   C00522628: 0 slots available in configured window
+[23:18:11]   C00393019: 0 slots available in configured window
+[23:18:11] ============================================================
 
-[19:53:31] Single-pass check finished (--once); exiting.
+[23:18:11] Single-pass check finished (--once); exiting.
